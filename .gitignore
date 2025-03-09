@@ -1,0 +1,5 @@
+/.quarto/
+.DS_Store
+lesson-0_files
+_site
+_output

@@ -1,0 +1,228 @@
+---
+title: "Lesson 0: Why Relativity?"
+format:
+  revealjs:
+    theme:
+      default
+---
+
+# A brief history of pre-relativity physics
+
+## The speed of light — finite or infinite?
+
+* Prior to the 17th Century, it was not known whether the speed of light was finite or infinite.
+* The first experiment, performed by Galileo, aimed to measure the delay in turning on a light source and observing the delay for it to be observed a mile away.
+	* This experiment was inconclusive — we now know that the light would only take 5 millionths of a second to travel that far, which would have been imperceptible back then.
+
+## Thought experiment
+
+* The year is 1600. How would _you_ try measure the speed of light?
+
+## 1676: The first successful experiment
+
+::: {.column .nonincremental width="80%"}
+<ul>
+<li class="fragment" data-fragment-index="1">Precise observations of Io, a moon of Jupiter, revealed that when the Earth was moving _towards_ Jupiter, Io had a shorter orbital period than when the Earth was moving _away_ from Jupiter.</li>
+<li class="fragment" data-fragment-index="3">Either Io’s orbit changed periodically, in sync with Earth’s orbit, or — more likely — light had a finite speed.</li>
+</ul>
+:::
+
+::: {.column .fragment fragment-index=2 width="18%"}
+![](/images/0/Illustration_from_1676_article_on_Ole_R%C3%B8mer's_measurement_of_the_speed_of_light.jpg){fig-align="center"}
+:::
+
+
+## Estimates of the speed of light
+
+* This provided an estimate: light was observed to take 22 minutes to traverse the diameter of Earth's orbit around the Sun, which would give a speed of 226,663 km/s.
+* In 1849, this was refined to 315,000 km/s, and in 1862 to 298,000 km/s.
+
+
+# The nature of light: what _is_ it?
+
+## Electricity: a brief tour {auto-animate=true}
+
+* 1784: The electric force (Coulomb’s law)
+
+::: {.fragment}
+:::: {.column width="45%"}
+$$
+F = \frac{1}{4\pi \varepsilon_0}\frac{q_1q_2}{r^2}
+$$
+::::
+
+:::: {.column width="45%"}
+![](/images/0/Coulomb's%20Law.svg)
+::::
+:::
+
+* In English: the force that two electrically charged objects exert on each other is proportional to the magnitudes of their charge and inversely proportional to the square of the distance between them.
+
+## Electricity: a brief tour {auto-animate=true}
+
+::: {.nonincremental}
+* 1784: The electric force (Coulomb’s law)
+:::
+
+:::: {.column .nonincremental width="45%"}
+$$
+F = \frac{1}{4\pi \varepsilon_0}\frac{q_1q_2}{r^2}
+$$
+::::
+
+:::: {.column .nonincremental width="45%"}
+![](/images/0/Coulomb's%20Law.svg)
+::::
+
+::: {.nonincremental}
+* What is this $\varepsilon_0$ in the constant out in front?
+:::
+
+## Magnetism: a brief tour {auto-animate=true}
+
+* 1861: The magnetic force (Ampere’s law)
+
+::: {.center .fragment}
+:::: {.column width="45%"}
+$$
+\oint \vec B\cdot d\vec l=\mu_0I
+$$
+::::
+
+:::: {.column width="45%"}
+![](/images/0/Gerader_leiter.svg)
+::::
+:::
+
+* In English: the total magnetic field surrounding a wire is proportional to the amount of current flowing through the wire.
+
+## Magnetism: a brief tour {auto-animate=true}
+
+::: {.nonincremental}
+* 1861: The magnetic force (Ampere’s law)
+:::
+
+::: {.center}
+:::: {.column width="45%"}
+$$
+\oint \vec B\cdot d\vec l=\mu_0I
+$$
+::::
+
+:::: {.column width="45%"}
+![](/images/0/Gerader_leiter.svg)
+::::
+:::
+
+::: {.nonincremental}
+* What is this $\mu_0$ out in front?
+:::
+
+## Synthesis: electromagnetism
+
+* 1862: Maxwell’s equations
+
+::: {.fragment}
+$$
+\begin{align*}
+\nabla\cdot\vec E &= \frac{\rho}{\epsilon_0}&\nabla\cdot \vec B&=0\\
+\nabla\times\vec E&=-\frac{\partial \vec B}{\partial t}&\nabla\times B&=\mu_0\left(\vec J+\varepsilon_0\frac{\partial\vec E}{\partial t}\right)
+\end{align*}
+$$
+:::
+
+* We'll focus on the bottom two. In English: a changing magnetic field creates an electric field, and a changing electric field creates a magnetic field.
+
+## Electromagnetic waves
+
+* Scenario: An magnetic field changes, which produces an electric field.
+* But then the electric field changed (it went from zero to nonzero), which produces a magnetic field...
+* Which again produces an electric field...
+* Which again produces a magnetic field...
+* Forever!
+* We've got an electromagnetic wave!
+
+## The speed of electromagnetic waves
+
+* How fast do these waves propagate?
+* Maxwell did the math, and arrived at $v=\frac{1}{\sqrt{\varepsilon_0\mu_0}}$
+* Now, scientists had measured these constants to be:
+
+::: {.fragment}
+$$
+\begin{align*}
+\varepsilon_0&=8.854\times 10^{-12}\,\textrm{F/m}&\mu_0&=1.256\times 10^{-6}\,\textrm{N/A}^2
+\end{align*}
+$$
+:::
+
+* We take out our calculators and compute the speed of electromagnetic waves to be... $v=299,792\,\textrm{km/s}$.
+* Where have we seen (approximately) this value before?
+
+## {.center}
+
+Hypothesis: light is an electromagnetic wave, and its speed is roughly $c=300,000\,\textrm{km/s}$.
+
+# Speed
+
+## Conundrum: speed is relative
+
+* It only makes sense to talk about something’s speed _relative to_ something else — there is no such thing as absolute speed.
+* A road might have a speed limit of 30mph. [Is this relative to the driver?]{.fragment} [To other cars on the road?]{.fragment} [To the Sun?]{.fragment} [No, it is relative to the road itself.]{.fragment}
+* A car might be traveling 30mph on a road, but the road is itself moving relative to the center of the Earth, which is itself moving relative to the Sun, which is itself moving relative to the Milky Way, which is...
+
+## {.center}
+
+Maxwell had calculated the speed of light
+
+[...but relative to _what_?]{.fragment}
+
+## Hypothesis: the _luminiferous aether_
+
+* Let's take a step back and ask... what exactly is light traveling _through_?
+* It's a traveling wave, and waves require a medium, so... what is light’s medium?
+* Hypothesis: there is a “fabric of the universe” that light (and everything else) travels through, which would serve as the backdrop against which all speeds can be measured.
+
+## Thought experiment
+
+* Try to devise an experiment that could either detect the luminiferous aether or show that it doesn't exist.
+
+## 1887: The Michelson-Morley experiment
+
+::: {.column width="55%"}
+* Shine one beam of light to the East, and the other perpendicular to the first.
+* Slowly rotate the apparatus so that the beams can take every angle relative to the aether.
+* Since the Earth is moving through the aether, then if the aether is real, the beams’ speeds should depend on the angle.
+:::
+
+::: {.column .fragment .align-right width="40%"}
+:::: {style="text-align:center;"}
+![](/images/0/Michelson1881c.png){style="height:200px;--r-block-margin: 2px;"}
+![](/images/0/Michelson_morley_experiment_1887.jpg){style="height:140px;--r-block-margin: 2px;"}
+![](/images/0/On_the_Relative_Motion_of_the_Earth_and_the_Luminiferous_Ether_-_Fig_4.png){style="height:200px;--r-block-margin: 2px;"}
+::::
+:::
+
+## The result
+
+::: {.fragment}
+<figure>
+> The Experiments on the relative motion of the earth and ether have been completed and the result decidedly negative.
+
+<figcaption>Albert A. Michelson in a letter to Lord Raleigh, 1887</figcaption>
+</figure>
+:::
+
+## How to proceed
+
+* It appeared that the speed of light was _not_ relative to anything in particular.
+* Instead, experiments showed that light appears to have the same speed to all observers... how is this possible?
+
+## What is speed _really_?
+
+* Speed is a distance divided by a duration: how far you went divided by how long it took.
+* How can the speed of light remain the same even for observers in relative motion?
+* Something’s gotta give: [our notion of how far someone has gone and how long it took.]{.fragment}
+* That is, for the speed of light to remain constant for all observers, [_space and time themselves must change_]{.fragment}.
+
+# See you next time!

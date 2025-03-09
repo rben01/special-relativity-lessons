@@ -1,0 +1,7 @@
+project:
+  title: "Special relativity"
+  output-dir: _output
+
+format:
+  revealjs:
+    incremental: true
