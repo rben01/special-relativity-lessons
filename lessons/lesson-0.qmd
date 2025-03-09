@@ -1,9 +1,8 @@
 ---
 title: "Lesson 0: Why Relativity?"
-format:
-  revealjs:
-    theme:
-      default
+format: revealjs
+revealjs-plugins:
+  - chalkboard
 ---
 
 # A brief history of pre-relativity physics
@@ -118,20 +117,36 @@ $$
 * What is this $\mu_0$ out in front?
 :::
 
-## Synthesis: electromagnetism
+## Synthesis: electromagnetism {auto-animate=true auto-animate-restart=true}
 
 * 1862: Maxwell’s equations
 
-::: {.fragment}
+::: {.fragment .fade-in}
 $$
 \begin{align*}
-\nabla\cdot\vec E &= \frac{\rho}{\epsilon_0}&\nabla\cdot \vec B&=0\\
-\nabla\times\vec E&=-\frac{\partial \vec B}{\partial t}&\nabla\times B&=\mu_0\left(\vec J+\varepsilon_0\frac{\partial\vec E}{\partial t}\right)
+\nabla\cdot\vec E&=\frac{\rho}{\epsilon_0}\\
+\nabla\cdot\vec B&=0
 \end{align*}
 $$
 :::
 
-* We'll focus on the bottom two. In English: a changing magnetic field creates an electric field, and a changing electric field creates a magnetic field.
+## Synthesis: electromagnetism {auto-animate=true}
+
+::: {.nonincremental}
+* 1862: Maxwell’s equations
+:::
+
+::: {}
+$$
+\begin{align*}
+\nabla\times\vec E&=-\frac{\partial \vec B}{\partial t}\\
+\nabla\times\vec B&=\mu_0\left(\vec J+\varepsilon_0\frac{\partial\vec E}{\partial t}\right)
+\end{align*}
+$$
+:::
+
+* In English: a changing magnetic field creates an electric field, and vice versa.
+
 
 ## Electromagnetic waves
 
@@ -140,7 +155,8 @@ $$
 * Which again produces an electric field...
 * Which again produces a magnetic field...
 * Forever!
-* We've got an electromagnetic wave!
+
+## {background-video="/images/0/electromagnetic-waves.mp4" background-video-loop="true"}
 
 ## The speed of electromagnetic waves
 

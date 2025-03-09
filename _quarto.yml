@@ -5,3 +5,23 @@ project:
 format:
   revealjs:
     incremental: true
+    theme: blood
+
+    hash: true
+    hash-type: number
+    hash-one-based-index: true
+    fragment-in-url: true
+
+    chalkboard:
+      rememberColor: true
+      boardmarkers:
+        - color: white
+          cursor: "crosshair"
+        - color: "#fff703"
+          cursor: "crosshair"
+        - color: "#01ecfe"
+          cursor: "crosshair"
+        - color: "#ff5757"
+          cursor: "crosshair"
+
+html-math-method: katex
