@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-dashed"
+	viewBox="2.19 2.19 19.62 19.62" stroke-width="1.5" stroke="#ccc" fill="none"
+	stroke-linecap="round" stroke-linejoin="round">
+	<!-- viewbox explanation:
+		for lower bound: stroke_width = 1.5, and 3.69 - 1.5 = 2.19 (see paths #1, #2, #3)
+		for upper bound: x_max = 20.31, and 20.31 - 0.69 = 19.62 (see paths #4, #6)
+	-->
+	<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+	<!-- transform explanation:
+		rotation is 1/32 of a circle in order to get the dashes lined up the way we want
+		translation is 12x12, since the shape is centered inside a 24x24 square
+			(we shrunk the viewbox but that doesn't change the translation required
+			to move the center to the origin)
+	-->
+	<g transform="translate(12 12) rotate(11.25) translate(-12 -12)">
+		<path d="M8.56 3.69a9 9 0 0 0 -2.92 1.95" />
+		<path d="M3.69 8.56a9 9 0 0 0 -.69 3.44" />
+		<path d="M3.69 15.44a9 9 0 0 0 1.95 2.92" />
+		<path d="M8.56 20.31a9 9 0 0 0 3.44 .69" />
+		<path d="M15.44 20.31a9 9 0 0 0 2.92 -1.95" />
+		<path d="M20.31 15.44a9 9 0 0 0 .69 -3.44" />
+		<path d="M20.31 8.56a9 9 0 0 0 -1.95 -2.92" />
+		<path d="M15.44 3.69a9 9 0 0 0 -3.44 -.69" />
+	</g>
+</svg>
