@@ -1,4 +1,4 @@
-local o = import '../common.jsonnet';
+local o = import '../common.libjsonnet';
 
 o.spec {
   children+: [

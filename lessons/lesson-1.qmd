@@ -195,3 +195,28 @@ If a photon strikes a detector in one frame, it strikes the detector in all fram
 <object type="image/svg+xml" data="/images/1/light-clock-dynamic.svg" width="400"></object>
 ::::
 :::
+
+## Light clocks
+
+* How do we know that light clocks are just as valid as regular clocks?
+* Time is measured by clocks. [Light clocks are valid clocks.]{.fragment} [_Therefore we can, and will, use light clocks to measure time_]{.fragment}
+* _The time between two events — in our reference frame — is the number of round trips that a photon makes in a light clock in our reference._
+* Why can't we count individual bounces — why do we have to count round trips?
+
+::: {.notes}
+1. Because an observer could hold a light clock and a regular clock stationary in their frame, and they'd remain in sync. That gives us events of the ticks. And events cannot differ between frames, so every observer would agree those two clocks are in sync.
+1. Because we cannot be at the other mirror to observe the bounce — we can only observe events that happen where we are.
+:::
+
+# Observers in motion
+
+## Light clocks in motion
+
+* Key features:
+  * Time is measured by the number of round trips of the photon.
+  * The number of round trips depends on the distance the photon travels.
+* Question: [_what happens when a light clock is set in motion_?]{.fragment}
+
+::: {.notes}
+Time seems discrete but is of course continuous — we can make arbitrarily precise light clocks by making the mirrors closer together
+:::

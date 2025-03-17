@@ -1,4 +1,4 @@
-local o = import '../common.jsonnet';
+local o = import '../common.libjsonnet';
 
 local photonPeriod = 1;  //seconds
 local timerMax = 99;
