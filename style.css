@@ -1,0 +1,6 @@
+@import url(https://my-fonts.pages.dev/72/DEFAULT/72.css);
+@import url(https://my-fonts.pages.dev/RedditSans/DEFAULT/Reddit-Sans.css);
+
+.reveal {
+	--r-main-font: "Reddit Sans", sans-serif;
+}

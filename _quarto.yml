@@ -1,3 +1,4 @@
+# cSpell: disable
 project:
   title: "Special relativity"
   output-dir: _output
@@ -5,12 +6,18 @@ project:
 format:
   revealjs:
     incremental: true
-    theme: blood
+    theme:
+      - blood
+      - custom.scss
 
     hash: true
     hash-type: number
     hash-one-based-index: true
     fragment-in-url: true
+
+    progress: false
+
+    view-distance: 2
 
     chalkboard:
       rememberColor: true

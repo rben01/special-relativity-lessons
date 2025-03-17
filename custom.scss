@@ -1,0 +1,45 @@
+/*-- scss:defaults --*/
+@import url(https://my-fonts.pages.dev/RedditSans/DEFAULT/Reddit-Sans.css);
+
+$font-family-sans-serif: "Reddit Sans", sans-serif !default;
+$presentation-heading-font: $font-family-sans-serif;
+
+$body-bg: #0d0d0d;
+$body-color: #fff;
+$link-color: #42affa;
+
+/*-- scss:rules --*/
+body {
+	font-feature-settings: "cv14" off, "cv15" on, "case" on;
+}
+
+.reveal :is(h1, h2, h3, h4, h5, h6) {
+	text-transform: initial;
+}
+
+.reveal .slide {
+	&.title-slide {
+		h1 {
+			font-size: 2.8em;
+		}
+	}
+
+	h2 {
+		text-shadow: 0 2px 1px #aaa;
+	}
+
+	p {
+		font-weight: normal;
+	}
+
+	figure > figcaption,
+	img.stretch + p.caption,
+	img.r-stretch + p.caption {
+		font-size: 0.4em;
+		text-align: center;
+	}
+
+	figure:has(figcaption) p img {
+		margin-bottom: 0;
+	}
+}
