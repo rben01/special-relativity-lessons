@@ -1,0 +1,10 @@
+---
+interface Props {
+	id?: string;
+}
+
+let { id } = Astro.props;
+id ??= "drawing";
+---
+
+<svg {id}></svg>

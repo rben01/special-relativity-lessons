@@ -1,0 +1,116 @@
+---
+import Svg from "../../../components/Svg.astro";
+---
+
+<Svg />
+
+<script>
+	import { Circle, Rect, SVG, Svg } from "@svgdotjs/svg.js";
+	import {
+		photonPeriod,
+		linterp,
+		invLinterp,
+		dist,
+		mirrorAttrs,
+		photonAttrs,
+		textAttrs,
+	} from "../../../scripts/common";
+
+	const w = 100;
+	const h = 100;
+	const margin = 5;
+
+	const X_MIN = 0;
+	const X_MAX = 1;
+	const Y_MIN = 0;
+	const Y_MAX = 1;
+
+	function xScale(x: number) {
+		return linterp(invLinterp(x, X_MIN, X_MAX), margin, w - margin);
+	}
+
+	function yScale(y: number) {
+		return linterp(invLinterp(y, Y_MIN, Y_MAX), h - margin, margin);
+	}
+
+	const draw = SVG("#drawing", false) as Svg;
+	draw.viewbox(0, 0, w, h);
+
+	const rectHeight = h / 15;
+	const rectAttrs = {
+		width: dist(1, xScale),
+		height: rectHeight,
+		...mirrorAttrs,
+	};
+
+	const bottomRectTop = yScale(0) - rectHeight / 2;
+	const topRectBottom = yScale(1) + rectHeight / 2;
+
+	const bottomRect = new Rect({
+		id: "bottomMirror",
+		x: xScale(0),
+		y: bottomRectTop,
+		...rectAttrs,
+	}).addTo(draw);
+	const topRect = new Rect({
+		id: "topMirror",
+		x: xScale(0),
+		y: topRectBottom - rectHeight,
+		...rectAttrs,
+	}).addTo(draw);
+
+	const photonRadius = w / 20;
+	const photonYMin = bottomRectTop - photonRadius;
+	const photonYMax = topRectBottom + photonRadius;
+	const photonCx = w / 3;
+	const photonCy = bottomRectTop - photonRadius;
+
+	const photon = new Circle({
+		cx: photonCx,
+		cy: photonCy,
+		r: photonRadius,
+		...photonAttrs,
+	}).addTo(draw);
+
+	let isPlaying = false;
+	let startMs: number | null = null;
+	let tText = "0";
+	let animationFrame: number;
+
+	const text = draw
+		.text(tText)
+		.x(0.8 * w)
+		.y(0.7 * h)
+		.attr({ "text-anchor": "end", "dominant-baseline": "text-bottom", ...textAttrs });
+
+	function step(timestamp: number) {
+		if (startMs === null) {
+			startMs = timestamp;
+		}
+
+		const elapsed = timestamp - startMs;
+		const t = elapsed / (1000 * photonPeriod);
+
+		const tFrac = t % 1;
+		const cy = linterp(1 - Math.abs(2 * tFrac - 1), photonYMin, photonYMax);
+		photon.cy(cy);
+
+		const tInt = Math.floor(t);
+		text.words(tInt.toString());
+
+		animationFrame = requestAnimationFrame(step);
+	}
+
+	bottomRect.on("click", () => {
+		if (isPlaying) {
+			return;
+		}
+		isPlaying = true;
+		animationFrame = requestAnimationFrame(step);
+	});
+	topRect.on("click", () => {
+		cancelAnimationFrame(animationFrame);
+		startMs = null;
+		isPlaying = false;
+	});
+</script>

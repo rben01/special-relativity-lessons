@@ -173,7 +173,7 @@ What is the experimental basis of these two points, especially point 2?
 
 1. No “privileged” frame — we can all claim to be perfectly capable scientists, and all of our observations are as valid as anyone else’s, regardless of our relative motion.
 
-    * In particular, no two observers can disagree on whether two events are identical. [They may disagree on the coordinates, but not that they're equal: if $(t_A,x_A)=(t_B,x_B)$, then $(t_A',x_A')=(t_B',x_B')$.]{.fragment}
+    * In particular, no two observers can disagree on whether two events $A$ and $B$ are identical. [They may disagree on the coordinates, but not that they're equal: if $(t_A,x_A)=(t_B,x_B)$, then $(t_A',x_A')=(t_B',x_B')$.]{.fragment}
 
 1. We can use the speed of light as a “measuring stick” with which to perform our experiments.
 
@@ -192,19 +192,20 @@ If a photon strikes a detector in one frame, it strikes the detector in all fram
 
 ::: {.r-stack}
 :::: {.fragment}
-<object type="image/svg+xml" data="/images/1/light-clock-dynamic.svg" width="400"></object>
+<iframe src="/_astro/lesson-1/light-clocks/Basic" width="500" height="500" frameborder="true" ></iframe>
 ::::
 :::
 
 ## Light clocks
 
 * How do we know that light clocks are just as valid as regular clocks?
-* Time is measured by clocks. [Light clocks are valid clocks.]{.fragment} [_Therefore we can, and will, use light clocks to measure time_]{.fragment}
+* Time is measured by clocks. [Light clocks are valid clocks.]{.fragment} [_Therefore we can, and will, use light clocks to measure time_.]{.fragment}
 * _The time between two events — in our reference frame — is the number of round trips that a photon makes in a light clock in our reference._
 * Why can't we count individual bounces — why do we have to count round trips?
 
 ::: {.notes}
 1. Because an observer could hold a light clock and a regular clock stationary in their frame, and they'd remain in sync. That gives us events of the ticks. And events cannot differ between frames, so every observer would agree those two clocks are in sync.
+1. Note that (light) clocks are not a phenomenon that happens separately from time — they are the thing that measures time, just as a ruler measures length. All physical processes can be tied back to a light clock.
 1. Because we cannot be at the other mirror to observe the bounce — we can only observe events that happen where we are.
 :::
 
@@ -220,3 +221,18 @@ If a photon strikes a detector in one frame, it strikes the detector in all fram
 ::: {.notes}
 Time seems discrete but is of course continuous — we can make arbitrarily precise light clocks by making the mirrors closer together
 :::
+
+## Light clocks in motion
+
+::: {}
+<object type="image/svg+xml" data="/images/1/light-clocks/light-clocks-in-motion.svg" width="1000"></object>
+:::
+
+## How much slower?
+
+* How much more slowly does the moving clock tick off time?
+  * It ticks off once every time it does an “up-down”.
+  * How long does it take this photon to do an “up-down”?
+    * Certainly more than a second, as it is “wasting” some of its velocity traveling sideways.
+
+## Let's compute

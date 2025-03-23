@@ -2,6 +2,8 @@
 project:
   title: "Special relativity"
   output-dir: _output
+  resources:
+    - images
 
 format:
   revealjs:

@@ -1,0 +1,45 @@
+---
+import Svg from "../../../components/Svg.astro";
+---
+
+<Svg />
+
+<script>
+	import { Circle, Rect, SVG, Svg } from "@svgdotjs/svg.js";
+	import {
+		photonPeriod,
+		linterp,
+		invLinterp,
+		dist,
+		mirrorAttrs,
+		photonAttrs,
+		textAttrs,
+	} from "../../../scripts/common";
+
+	const w = 600;
+	const h = 100;
+	const margin = 5;
+
+	const X_MIN = 0;
+	const X_MAX = w / h;
+	const Y_MIN = 0;
+	const Y_MAX = 2;
+
+	function xScale(x: number) {
+		return linterp(invLinterp(x, X_MIN, X_MAX), margin, w - margin);
+	}
+
+	function yScale(y: number) {
+		return linterp(invLinterp(y, Y_MIN, Y_MAX), h - margin, margin);
+	}
+
+	const draw = SVG("#drawing", false) as Svg;
+	draw.viewbox(0, 0, w, h);
+
+	const rectHeight = h / 15;
+	const rectAttrs = {
+		width: dist(0.3, xScale),
+		height: rectHeight,
+		...mirrorAttrs,
+	};
+</script>
