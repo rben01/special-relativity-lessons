@@ -1,0 +1,14 @@
+local scale(t, tMin, tMax, extent) =
+  ((1 - t) * tMin + t * tMax) * extent;
+
+local linterp(t, min, max) = (1 - t) * min + t * max;
+
+local dimScale(t, extent, tMin) =
+  local tMax = 1 - tMin;
+  scale(t, tMin, tMax, extent);
+
+{
+  scale: scale,
+  dimScale: dimScale,
+  linterp: linterp,
+}
