@@ -1,10 +1,31 @@
 ---
 interface Props {
 	id?: string;
+	cssVars?: { [k: string]: any };
 }
 
-let { id } = Astro.props;
+let { id, cssVars } = Astro.props;
 id ??= "drawing";
+cssVars ??= {};
 ---
 
-<svg {id}></svg>
+<svg {id}>
+	<defs>
+		<!-- https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/marker -->
+		<!-- A marker to be used as an arrowhead -->
+		<marker
+			id="arrowhead"
+			viewBox="0 0 10 10"
+			refX="5"
+			refY="5"
+			markerWidth="4"
+			markerHeight="4"
+			orient="auto-start-reverse"
+			fill="context-fill"
+		>
+			<path d="M 0 0 L 9 4 L 0 9 z" fill="#ccc" stroke="#ccc"></path>
+		</marker>
+	</defs>
+</svg>
+
+<style define:vars={cssVars}></style>

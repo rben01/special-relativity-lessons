@@ -1,29 +1,34 @@
 ---
+import NumericInput from "../../../components/NumericInput.astro";
 import Svg from "../../../components/Svg.astro";
 ---
 
 <Svg />
 
+<NumericInput id="input" class="below" />
+
 <script>
-	import { Circle, Rect, SVG, Svg } from "@svgdotjs/svg.js";
+	import { Element, G, SVG, Svg } from "@svgdotjs/svg.js";
 	import {
-		photonPeriod,
+		photonPeriodSec,
 		linterp,
 		invLinterp,
 		dist,
 		mirrorAttrs,
 		photonAttrs,
 		textAttrs,
+		getGamma,
+		photonPeriodMs,
 	} from "../../../scripts/common";
 
-	const w = 600;
-	const h = 100;
-	const margin = 5;
+	const w = 700;
+	const h = 150; // per group
+	const margin = 8;
 
 	const X_MIN = 0;
 	const X_MAX = w / h;
 	const Y_MIN = 0;
-	const Y_MAX = 2;
+	const Y_MAX = 1; // per group
 
 	function xScale(x: number) {
 		return linterp(invLinterp(x, X_MIN, X_MAX), margin, w - margin);
@@ -34,12 +39,161 @@ import Svg from "../../../components/Svg.astro";
 	}
 
 	const draw = SVG("#drawing", false) as Svg;
-	draw.viewbox(0, 0, w, h);
+	draw.viewbox(0, 0, w, 2 * h + margin);
 
 	const rectHeight = h / 15;
-	const rectAttrs = {
-		width: dist(0.3, xScale),
-		height: rectHeight,
-		...mirrorAttrs,
-	};
+	const rectWidth = dist(0.4, xScale);
+
+	const bottomPanelTy = h + margin;
+
+	const topPanel = draw.group();
+	const bottomPanel = draw.group().transform({ translateY: bottomPanelTy });
+
+	const bottomRectTop = yScale(0) - rectHeight / 2;
+	const topRectBottom = yScale(1) + rectHeight / 2;
+
+	const photonRadius = h / 20;
+	const photonYMin = bottomRectTop - photonRadius;
+	const photonYMax = topRectBottom + photonRadius;
+	const photonCx = xScale(0) + rectWidth / 5;
+	const photonCy = photonYMin;
+
+	type Panel = { panel: G } & {
+		[k in "bottomRect" | "topRect" | "photon" | "textElem"]: Element;
+	} & { counter: number };
+	const panels = {
+		top: { panel: topPanel },
+		bottom: { panel: bottomPanel },
+	} as unknown as { [k in "top" | "bottom"]: Panel };
+
+	for (const k of ["top", "bottom"] as const) {
+		const panel = panels[k].panel;
+
+		const bottomRect = panel
+			.rect(rectWidth, rectHeight)
+			.attr({ x: xScale(0), y: bottomRectTop, ...mirrorAttrs });
+		const topRect = panel
+			.rect(rectWidth, rectHeight)
+			.attr({ x: xScale(0), y: topRectBottom - rectHeight, ...mirrorAttrs });
+
+		const photon = panel
+			.circle()
+			.radius(photonRadius)
+			.cx(photonCx)
+			.cy(photonCy)
+			.attr(photonAttrs);
+
+		const text = panel
+			.text("0.0")
+			.x(margin + rectWidth - 4)
+			.y(0.8 * h)
+			.attr({
+				...textAttrs,
+				"text-anchor": "end",
+				"dominant-baseline": "text-bottom",
+				"font-size": 14,
+			});
+
+		panels[k] = {
+			...panels[k],
+			bottomRect,
+			topRect,
+			photon,
+			textElem: text,
+			counter: 0,
+		};
+	}
+
+	panels.bottom.bottomRect.on("click", play);
+	panels.top.topRect.on("click", reset);
+	panels.top.bottomRect.on("click", () => {
+		switch (topPanelPosition) {
+			case "left":
+				topPanel.transform({ translateX: w / 2 - rectWidth / 2 - margin / 2 });
+				topPanelPosition = "center";
+				break;
+			case "center":
+				topPanel.transform({ translateX: w - rectWidth - margin });
+				topPanelPosition = "right";
+				break;
+			case "right":
+				topPanel.transform({ translateX: 0 });
+				topPanelPosition = "left";
+				break;
+			default:
+				return topPanelPosition satisfies never;
+		}
+	});
+
+	let isPlaying = false;
+	let animationFrame: number;
+	let topPanelPosition: "left" | "center" | "right" = "left";
+
+	const stationaryPhotonDist = 2 * Math.abs(photonYMax - photonYMin);
+	const c = stationaryPhotonDist / photonPeriodSec;
+	let v: number;
+	let gamma: number;
+
+	let startMs: number | null = null;
+
+	function step(timestamp: number) {
+		if (startMs === null) {
+			startMs = timestamp;
+		}
+
+		const elapsed = timestamp - startMs;
+		const t = elapsed / photonPeriodMs;
+
+		{
+			const { photon, textElem } = panels.top;
+			const tFrac = t % 1;
+			const cy = linterp(1 - Math.abs(2 * tFrac - 1), photonYMin, photonYMax);
+			photon.cy(cy);
+
+			const tInt = Math.round(t * 10) / 10;
+			textElem.words(tInt.toFixed(1));
+		}
+
+		{
+			const { panel, photon, textElem } = panels.bottom;
+			panel.transform({ translate: [t * v * c, bottomPanelTy] });
+
+			const tPrime = t / gamma;
+			const tFrac = tPrime % 1;
+			const cy = linterp(1 - Math.abs(2 * tFrac - 1), photonYMin, photonYMax);
+			photon.cy(cy);
+
+			const tInt = Math.round(tPrime * 10) / 10;
+			textElem.words(tInt.toFixed(1));
+		}
+
+		if (
+			isPlaying &&
+			+panels.bottom.panel.transform("translateX") + rectWidth < w - 2 * margin
+		) {
+			animationFrame = requestAnimationFrame(step);
+		}
+	}
+
+	document.getElementById("input")!.style.transform = `translateX(${2 * margin}px)`;
+
+	function play() {
+		if (isPlaying) {
+			return;
+		}
+		isPlaying = true;
+
+		v = +(document.getElementById("input")! as HTMLInputElement).value; // of c
+		gamma = getGamma(v);
+
+		animationFrame = requestAnimationFrame(step);
+	}
+
+	function reset() {
+		cancelAnimationFrame(animationFrame);
+		isPlaying = false;
+		startMs = null;
+		step(0);
+		startMs = null;
+	}
 </script>

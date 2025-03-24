@@ -7,7 +7,7 @@ import Svg from "../../../components/Svg.astro";
 <script>
 	import { Circle, Rect, SVG, Svg } from "@svgdotjs/svg.js";
 	import {
-		photonPeriod,
+		photonPeriodSec,
 		linterp,
 		invLinterp,
 		dist,
@@ -63,7 +63,7 @@ import Svg from "../../../components/Svg.astro";
 	const photonYMin = bottomRectTop - photonRadius;
 	const photonYMax = topRectBottom + photonRadius;
 	const photonCx = w / 3;
-	const photonCy = bottomRectTop - photonRadius;
+	const photonCy = photonYMin;
 
 	const photon = new Circle({
 		cx: photonCx,
@@ -89,7 +89,7 @@ import Svg from "../../../components/Svg.astro";
 		}
 
 		const elapsed = timestamp - startMs;
-		const t = elapsed / (1000 * photonPeriod);
+		const t = elapsed / (1000 * photonPeriodSec);
 
 		const tFrac = t % 1;
 		const cy = linterp(1 - Math.abs(2 * tFrac - 1), photonYMin, photonYMax);

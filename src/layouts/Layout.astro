@@ -4,19 +4,85 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<script is:inline>
+			MathJax = {
+				tex: {
+					inlineMath: [["\\(", "\\)"]],
+				},
+			};
+		</script>
+		<script
+			id="MathJax-script"
+			is:inline
+			async
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Demonstration</title>
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
 
-<style>
+<style is:global>
 	html,
 	body {
 		margin: 0;
 		width: 100%;
 		height: 100%;
+	}
+
+	@keyframes opaque {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+
+	.math {
+		position: absolute;
+		vertical-align: middle;
+		color: white;
+		font-size: 1.5em;
+		transform: translateY(-50%);
+	}
+
+	.hidden {
+		opacity: 0;
+	}
+
+	.animating {
+		animation: opaque 1s ease-in-out;
+	}
+
+	.animated {
+		opacity: 1;
+	}
+
+	.light-path {
+		stroke: var(--photonColor);
+		stroke-width: 2px;
+		stroke-linecap: butt;
+		stroke-linejoin: round;
+		fill: none;
+	}
+
+	.rule {
+		stroke: #ccc;
+		stroke-width: 2px;
+		stroke-linecap: round;
+		fill: none;
+	}
+
+	.rule.arrow {
+		fill: #ccc;
+	}
+
+	.mirror {
+		fill: var(--mirrorFill);
+		stroke: var(--mirrorStroke);
+		rx: calc(var(--mirrorCornerRadius) * 1px);
 	}
 </style>

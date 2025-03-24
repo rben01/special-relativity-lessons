@@ -12,6 +12,21 @@ format:
       - blood
       - custom.scss
 
+    include-in-header:
+      # todo: make this actually disable assistive mml
+      - text: >
+          <script>
+          window.MathJax = {
+              options: {
+                menuOptions: { settings: { assistiveMml: true } },
+                enableEnrichment: false,
+                enableExplorer: false,
+                enableAssistiveMml: false,
+                assistiveMml: false
+              }
+            };
+          </script>
+
     hash: true
     hash-type: number
     hash-one-based-index: true
@@ -33,4 +48,4 @@ format:
         - color: "#ff5757"
           cursor: "crosshair"
 
-html-math-method: katex
+html-math-method: mathjax

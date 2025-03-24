@@ -1,12 +1,12 @@
 {
-	"cSpell.words": ["linterp", "revealjs", "svgdotjs"],
+	"cSpell.words": ["linterp", "opaquify", "revealjs", "svgdotjs", "viewbox"],
 	"svg.preview.background": "dark-transparent",
 	"emeraldwalk.runonsave": {
 		"commands": [
-			{
-				"match": ".*\\.astro$",
-				"cmd": "npm run build && touch lessons/*.qmd"
-			}
+			// {
+			// 	"match": ".*\\.astro$",
+			// 	"cmd": "npm run build && touch lessons/*.qmd"
+			// }
 		]
 	}
 }

@@ -225,7 +225,13 @@ Time seems discrete but is of course continuous — we can make arbitrarily prec
 ## Light clocks in motion
 
 ::: {}
-<object type="image/svg+xml" data="/images/1/light-clocks/light-clocks-in-motion.svg" width="1000"></object>
+<iframe src="/_astro/lesson-1/light-clocks/InMotion" width="1600" height="500" frameborder="true" ></iframe>
+:::
+
+::: {.notes}
+Who can describe what is happening here?
+
+Why is that happening?
 :::
 
 ## How much slower?
@@ -235,4 +241,60 @@ Time seems discrete but is of course continuous — we can make arbitrarily prec
   * How long does it take this photon to do an “up-down”?
     * Certainly more than a second, as it is “wasting” some of its velocity traveling sideways.
 
-## Let's compute
+::: {.notes}
+Again, how do we know that the photon in the bottom frame is traveling partially horizontally? (Because it has to hit the mirror again as it bounces, as observed by the moving observer.)
+:::
+
+## Diagram
+
+<iframe src="/_astro/lesson-1/ComputationOfGamma" width="1600" height="800" frameborder="true" ></iframe>
+
+# Let's solve for $t'$!
+
+##
+
+$$
+\begin{align}
+  t&\class{fragment}{{} =\frac{2l}{c}}\\
+  \class{fragment}{l}&\class{fragment}{{} =\frac{ct}{2}}\\\\
+  \class{fragment}{\frac{ct'}{2}}&\class{fragment}{{} =\sqrt{l^2+\left(\frac{vt'}{2}\right)^2}}\\
+  &\class{fragment}{{} =\sqrt{\frac{c^2t^2}{2^2}+\frac{v^2t'^2}{2^2}}}\\
+  \class{fragment}{\frac{c^2t'^2}{2^2}}&\class{fragment}{{} =\frac{c^2t^2}{2^2}+\frac{v^2t'^2}{2^2}}
+\end{align}
+$$
+
+##
+
+$$
+\begin{align}
+\frac{c^2t'^2}{2^2}&=\frac{c^2t^2}{2^2}+\frac{v^2t'^2}{2^2}\\
+\class{fragment}{c^2t'^2}&\class{fragment}{{}=c^2t^2+v^2t'^2}\\
+\class{fragment}{(c^2-v^2)t'^2}&\class{fragment}{{}=c^2t^2}\\
+\class{fragment}{t'^2}&\class{fragment}{{}=\frac{c^2}{c^2-v^2}t^2}\\
+&\class{fragment}{{}=\frac{1}{1-(v/c)^2}t^2}\\
+\class{fragment}{t'}&\class{fragment}{{}=\frac{1}{\sqrt{1-(v/c)^2}}t}\\
+\end{align}
+$$
+
+## That constant...
+
+* We are going to see $\frac{1}{\sqrt{1-(v/c)^2}}$ _everywhere_.
+* So, let's give it a name: [$\gamma$.]{.fragment}
+
+## What we found today
+
+* If two observers are given identical clocks, [and they are in relative motion,]{.fragment} [each will observe the other’s clock run slow]{.fragment} [by a factor of $\gamma$.]{.fragment}
+
+::: {.notes}
+Important notes:
+
+1. Each individual thinks their own clock ticks at the correct rate and thinks the other’s clock ticks slowly
+1. This is about the rate of ticking, not a lag like time zones
+:::
+
+## For next time
+
+* Make sure you're comfortable with the derivation of $\gamma$. You may want to run through it again before we meet next week.
+  * Feel free to work together!
+* (Optional) Compute $\gamma$ for a handful of values of $v$, and use this to explain why we don't observe relativistic effects in our everyday lives.
+* Ponder: How can I perceive your clock running slow while you perceive my clock running slow? Isn't this a contradiction? (Two things cannot each be less than each other.)

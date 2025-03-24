@@ -1,0 +1,295 @@
+---
+import Svg from "../../components/Svg.astro";
+import Layout from "../../layouts/Layout.astro";
+import { photonAttrs, mirrorAttrs } from "../../scripts/common";
+
+const { fill: photonColor } = photonAttrs;
+const { fill: mirrorFill, stroke: mirrorStroke, rx: mirrorCornerRadius } = mirrorAttrs;
+
+// of the svg elem
+const w = 1200;
+const h = 600;
+const topPanelYMid = 0.25 * h;
+const bottomPanelYMid = 0.75 * h;
+---
+
+<Layout>
+	<Svg
+		id="drawing"
+		cssVars={{ w, h, photonColor, mirrorFill, mirrorStroke, mirrorCornerRadius }}
+	/>
+	<div class="math hidden" id="vertical-time" is:raw>
+		\[ \begin{align*}t&=\frac{\text{distance}}{\text{speed}}=\frac{2l}{c} \end{align*}
+		\]
+	</div>
+	<div class="math hidden" id="vertical-length" is:raw>\[ l \]</div>
+	<div class="math hidden" id="velocity-label" is:raw>\[ v \]</div>
+	<div class="math hidden" id="diagonal-height" is:raw>\[ l \]</div>
+	<div class="math hidden" id="diagonal-base" is:raw>\[ \textrm{horizontal}=vt' \]</div>
+	<div class="math hidden" id="hypotenuse-1" is:raw>
+		\[ \sqrt{l^2+\left(\frac{vt'}{2}\right)^2} \]
+	</div>
+	<div class="math hidden" id="hypotenuse-2" is:raw>\[ \frac{ct'}{2} \]</div>
+</Layout>
+
+<style define:vars={{ topPanelYMid, bottomPanelYMid, w, h }}>
+	#vertical-time {
+		top: calc(var(--topPanelYMid) * 1px);
+		left: 120px;
+	}
+
+	#vertical-length {
+		top: calc(var(--topPanelYMid) * 1px);
+		left: 40px;
+	}
+
+	#velocity-label {
+		top: calc(var(--bottomPanelYMid) * 1px - 140px);
+		left: 123px;
+	}
+
+	#diagonal-height {
+		top: calc(var(--bottomPanelYMid) * 1px);
+		/* I'm sure I could get this rigorously by using gamma, but w/e */
+		left: 320px;
+	}
+
+	#diagonal-base {
+		top: calc(var(--bottomPanelYMid) * 1px + 90px);
+		text-align: center;
+		/* I'm sure I could get this rigorously by using gamma, but w/e */
+		left: 280px;
+	}
+
+	#hypotenuse-1 {
+		top: calc(var(--bottomPanelYMid) * 1px - 40px);
+		text-align: center;
+		/* I'm sure I could get this rigorously by using gamma, but w/e */
+		left: 80px;
+	}
+
+	#hypotenuse-2 {
+		top: calc(var(--bottomPanelYMid) * 1px - 20px);
+		text-align: center;
+		/* I'm sure I could get this rigorously by using gamma, but w/e */
+		left: 520px;
+	}
+
+	:global(#drawing) {
+		width: calc(var(--w) * 1px);
+		height: calc(var(--h) * 1px);
+	}
+</style>
+
+<script>
+	import { Svg, SVG } from "@svgdotjs/svg.js";
+	import {
+		dist,
+		getGamma,
+		invLinterp,
+		linterp,
+		photonPeriodSec,
+		photonPeriodMs,
+	} from "../../scripts/common";
+
+	function opaquify(elem: string | HTMLElement, durationMs: number) {
+		if (typeof elem === "string") {
+			elem = document.getElementById(elem)!;
+		}
+
+		elem.classList.add("animating");
+		setTimeout(() => {
+			elem.classList.remove("animating");
+			elem.classList.add("animated");
+		}, durationMs);
+	}
+
+	// w and h should result in the same aspect ratio as the SVG in HTML
+	const w = 400;
+	const h = 100; // per group
+	const margin = 5;
+
+	const X_MIN = 0;
+	const X_MAX = 1;
+	const Y_MIN = 0;
+	const Y_MAX = 1;
+
+	function xScale(x: number) {
+		return linterp(invLinterp(x, X_MIN, X_MAX), margin, w - margin);
+	}
+
+	function yScale(y: number) {
+		return linterp(invLinterp(y, Y_MIN, Y_MAX), h - margin, margin);
+	}
+
+	const draw = SVG("#drawing", false) as Svg;
+	draw.viewbox(0, 0, w, 2 * h);
+
+	document.body.addEventListener("click", advance);
+
+	const topPanel = draw.group();
+	const bottomPanel = draw.group().transform({ translateY: h });
+
+	const rectHeight = h / 15;
+	const rectWidth = margin + dist(0.1, xScale);
+	const photonX0 = margin + dist(0.05, xScale);
+
+	const bottomRectTop = yScale(0.25);
+	const topRectBottom = yScale(0.75);
+
+	topPanel.rect(rectWidth, rectHeight).addClass("mirror").x(margin).y(bottomRectTop);
+	topPanel
+		.rect(rectWidth, rectHeight)
+		.addClass("mirror")
+		.x(margin)
+		.y(topRectBottom - rectHeight);
+
+	bottomPanel.rect(rectWidth, rectHeight).addClass("mirror").x(margin).y(bottomRectTop);
+	bottomPanel
+		.rect(rectWidth, rectHeight)
+		.addClass("mirror")
+		.x(margin)
+		.y(topRectBottom - rectHeight);
+
+	const stationaryPhotonDist = 2 * Math.abs(topRectBottom - bottomRectTop);
+	const c = stationaryPhotonDist / photonPeriodSec;
+	const v = 0.9;
+	const gamma = getGamma(v);
+
+	const tMaxSec = photonPeriodSec * gamma;
+	const xDist = v * c * tMaxSec;
+
+	let stage:
+		| "empty"
+		| "vertical-time"
+		| "velocity-vector"
+		| "diagonal-light-path"
+		| "diagonal-height"
+		| "diagonal-base"
+		| "hypotenuse-1-math"
+		| "hypotenuse-2-math"
+		| "done" = "empty";
+
+	function advance(_evt: Event) {
+		console.log({ stage });
+
+		switch (stage) {
+			case "empty":
+				opaquify("vertical-length", photonPeriodMs);
+				topPanel
+					.line([
+						[photonX0 - 2, yScale(0.25)],
+						[photonX0 - 2, yScale(0.25)],
+					])
+					.removeClass("hidden")
+					.addClass("light-path")
+					.animate(photonPeriodMs)
+					.ease("-")
+					.attr({ y2: yScale(0.75) })
+					.after(() => {
+						topPanel
+							.line([
+								[photonX0 + 5, yScale(0.75)],
+								[photonX0 + 5, yScale(0.75)],
+							])
+							.removeClass("hidden")
+							.addClass("light-path")
+							.animate(photonPeriodMs)
+							.ease("-")
+							.attr({ y2: yScale(0.25) });
+					});
+				stage = "vertical-time";
+				break;
+			case "vertical-time":
+				opaquify("vertical-time", photonPeriodMs);
+				stage = "velocity-vector";
+				break;
+			case "velocity-vector":
+				opaquify("velocity-label", photonPeriodMs);
+				bottomPanel
+					.line()
+					.attr({
+						x1: photonX0,
+						y1: topRectBottom - rectHeight - 10,
+						x2: photonX0,
+						y2: topRectBottom - rectHeight - 10,
+						"marker-end": "url(#arrowhead)",
+					})
+					.addClass("rule")
+					.addClass("arrow")
+					.animate(photonPeriodMs)
+					.attr({ x2: photonX0 + 40 });
+				stage = "diagonal-light-path";
+				break;
+			case "diagonal-light-path":
+				const lightBeam = bottomPanel.path().addClass("light-path");
+				const runner = lightBeam.animate(tMaxSec * 1000).ease("-");
+				runner.during(() => {
+					const t = runner.time() / runner.duration();
+					if (t < 0.5) {
+						const x = photonX0 + linterp(t / 0.5, 0, xDist / 2);
+						const y = linterp(t / 0.5, bottomRectTop, topRectBottom);
+						lightBeam.attr({ d: `M ${photonX0} ${bottomRectTop} L ${x} ${y}` });
+					} else {
+						const x = photonX0 + linterp((t - 0.5) / 0.5, xDist / 2, xDist);
+						const y = linterp((t - 0.5) / 0.5, topRectBottom, bottomRectTop);
+						lightBeam.attr({
+							d: `M ${photonX0} ${bottomRectTop} L ${photonX0 + xDist / 2} ${topRectBottom} L ${x} ${y}`,
+						});
+					}
+				});
+
+				bottomPanel.find(".mirror").forEach(elem => {
+					elem
+						.animate(tMaxSec * 1000)
+						.ease("-")
+						.transform({ translateX: xDist });
+				});
+
+				stage = "diagonal-height";
+				break;
+			case "diagonal-height":
+				opaquify("diagonal-height", photonPeriodMs);
+				bottomPanel
+					.line()
+					.addClass("rule")
+					.attr({
+						x1: photonX0 + xDist / 2,
+						y1: bottomRectTop,
+						x2: photonX0 + xDist / 2,
+						y2: bottomRectTop,
+					})
+					.animate(photonPeriodMs)
+					.attr({ y2: topRectBottom + 1 });
+				stage = "diagonal-base";
+				break;
+			case "diagonal-base":
+				opaquify("diagonal-base", photonPeriodMs);
+				bottomPanel
+					.line()
+					.addClass("rule")
+					.attr({
+						x1: photonX0,
+						y1: bottomRectTop,
+						x2: photonX0,
+						y2: bottomRectTop,
+					})
+					.animate(photonPeriodMs)
+					.attr({ x2: photonX0 + xDist });
+				stage = "hypotenuse-1-math";
+				break;
+			case "hypotenuse-1-math":
+				opaquify("hypotenuse-1", photonPeriodMs);
+				stage = "hypotenuse-2-math";
+				break;
+			case "hypotenuse-2-math":
+				opaquify("hypotenuse-2", photonPeriodMs);
+				stage = "done";
+				break;
+			case "done":
+				break;
+			default:
+				return stage satisfies never;
+		}
+	}
+</script>

@@ -10,6 +10,10 @@ function dist(x: number, scale: (_: number) => number, from = 0) {
 	return Math.abs(scale(x) - scale(from));
 }
 
+function getGamma(fracOfC: number) {
+	return 1 / Math.sqrt(1 - fracOfC ** 2);
+}
+
 const mirrorAttrs = {
 	fill: "#adf",
 	stroke: "#cef",
@@ -17,7 +21,8 @@ const mirrorAttrs = {
 };
 
 const photonAttrs = { fill: "#fc0" };
-const photonPeriod = 1;
+const photonPeriodSec = 1;
+const photonPeriodMs = photonPeriodSec * 1000;
 
 const textAttrs = {
 	fill: "white",
@@ -25,4 +30,14 @@ const textAttrs = {
 	"font-size": 16,
 };
 
-export { dist, invLinterp, linterp, mirrorAttrs, photonAttrs, photonPeriod, textAttrs };
+export {
+	dist,
+	getGamma,
+	invLinterp,
+	linterp,
+	mirrorAttrs,
+	photonAttrs,
+	photonPeriodSec,
+	photonPeriodMs,
+	textAttrs,
+};
