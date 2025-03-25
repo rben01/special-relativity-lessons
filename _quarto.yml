@@ -18,7 +18,7 @@ format:
           <script>
           window.MathJax = {
               options: {
-                menuOptions: { settings: { assistiveMml: true } },
+                menuOptions: { settings: { assistiveMml: false } },
                 enableEnrichment: false,
                 enableExplorer: false,
                 enableAssistiveMml: false,

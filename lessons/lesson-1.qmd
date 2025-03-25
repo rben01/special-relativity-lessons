@@ -294,7 +294,14 @@ Important notes:
 
 ## For next time
 
-* Make sure you're comfortable with the derivation of $\gamma$. You may want to run through it again before we meet next week.
+* Make sure you're comfortable with everything we covered today, including:
+  * The constancy of the speed of light
+  * The “no privileged reference frames” argument
+  * The derivation of $\gamma$
   * Feel free to work together!
-* (Optional) Compute $\gamma$ for a handful of values of $v$, and use this to explain why we don't observe relativistic effects in our everyday lives.
-* Ponder: How can I perceive your clock running slow while you perceive my clock running slow? Isn't this a contradiction? (Two things cannot each be less than each other.)
+* Ponder: How can I perceive your clock running slow while you perceive my clock running slow?
+
+::: {.notes}
+* Isn't this a contradiction?
+* No — why not?
+:::
