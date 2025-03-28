@@ -15,7 +15,7 @@ title-slide-attributes:
 ## Speed {auto-animate="true"}
 
 <ul>
-<li class="fragment">Definition: $v=d/t$</li>
+<li class="fragment">Definition: $v=d/\Delta t$</li>
   <li class="fragment">Units are usually m/s</li>
 <li class="fragment" data-id="relative-speed">It only makes sense to talk about something’s speed _relative to_ something else.</li>
 </ul>
@@ -249,17 +249,17 @@ Again, how do we know that the photon in the bottom frame is traveling partially
 
 <iframe src="/_astro/lesson-1/ComputationOfGamma" width="1600" height="800" frameborder="true" ></iframe>
 
-# Let's solve for $t'$!
+# Let's solve for $\Delta t'$!
 
 ##
 
 $$
 \begin{align}
-  t&\class{fragment}{{} =\frac{2l}{c}}\\
-  \class{fragment}{l}&\class{fragment}{{} =\frac{ct}{2}}\\\\
-  \class{fragment}{\frac{ct'}{2}}&\class{fragment}{{} =\sqrt{l^2+\left(\frac{vt'}{2}\right)^2}}\\
-  &\class{fragment}{{} =\sqrt{\frac{c^2t^2}{2^2}+\frac{v^2t'^2}{2^2}}}\\
-  \class{fragment}{\frac{c^2t'^2}{2^2}}&\class{fragment}{{} =\frac{c^2t^2}{2^2}+\frac{v^2t'^2}{2^2}}
+  \Delta t&\class{fragment}{{} =\frac{2h}{c}}\\
+  \class{fragment}{h}&\class{fragment}{{} =\frac{c\Delta t}{2}}\\\\
+  \class{fragment}{\frac{c\Delta t'}{2}}&\class{fragment}{{} =\sqrt{h^2+\left(\frac{v\Delta t'}{2}\right)^2}}\\
+  &\class{fragment}{{} =\sqrt{\frac{c^2\Delta t^2}{2^2}+\frac{v^2\Delta t'^2}{2^2}}}\\
+  \class{fragment}{\frac{c^2\Delta t'^2}{2^2}}&\class{fragment}{{} =\frac{c^2\Delta t^2}{2^2}+\frac{v^2\Delta t'^2}{2^2}}
 \end{align}
 $$
 
@@ -267,12 +267,12 @@ $$
 
 $$
 \begin{align}
-\frac{c^2t'^2}{2^2}&=\frac{c^2t^2}{2^2}+\frac{v^2t'^2}{2^2}\\
-\class{fragment}{c^2t'^2}&\class{fragment}{{}=c^2t^2+v^2t'^2}\\
-\class{fragment}{(c^2-v^2)t'^2}&\class{fragment}{{}=c^2t^2}\\
-\class{fragment}{t'^2}&\class{fragment}{{}=\frac{c^2}{c^2-v^2}t^2}\\
-&\class{fragment}{{}=\frac{1}{1-(v/c)^2}t^2}\\
-\class{fragment}{t'}&\class{fragment}{{}=\frac{1}{\sqrt{1-(v/c)^2}}t}\\
+\frac{c^2\Delta t'^2}{2^2}&=\frac{c^2\Delta t^2}{2^2}+\frac{v^2\Delta t'^2}{2^2}\\
+\class{fragment}{c^2\Delta t'^2}&\class{fragment}{{}=c^2\Delta t^2+v^2\Delta t'^2}\\
+\class{fragment}{(c^2-v^2)\Delta t'^2}&\class{fragment}{{}=c^2\Delta t^2}\\
+\class{fragment}{\Delta t'^2}&\class{fragment}{{}=\frac{c^2}{c^2-v^2}\Delta t^2}\\
+&\class{fragment}{{}=\frac{1}{1-(v/c)^2}\Delta t^2}\\
+\class{fragment}{\Delta t'}&\class{fragment}{{}=\frac{1}{\sqrt{1-(v/c)^2}}\Delta t}\\
 \end{align}
 $$
 

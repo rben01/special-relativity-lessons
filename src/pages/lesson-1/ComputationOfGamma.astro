@@ -18,18 +18,20 @@ const bottomPanelYMid = 0.75 * h;
 		id="drawing"
 		cssVars={{ w, h, photonColor, mirrorFill, mirrorStroke, mirrorCornerRadius }}
 	/>
+	<div class="math hidden" id="vertical-length" is:raw>\[ h \]</div>
 	<div class="math hidden" id="vertical-time" is:raw>
-		\[ \begin{align*}t&=\frac{\text{distance}}{\text{speed}}=\frac{2l}{c} \end{align*}
-		\]
+		\[ \begin{align*}\Delta t&=\frac{\text{distance}}{\text{speed}}=\frac{2h}{c}
+		\end{align*} \]
 	</div>
-	<div class="math hidden" id="vertical-length" is:raw>\[ l \]</div>
 	<div class="math hidden" id="velocity-label" is:raw>\[ v \]</div>
-	<div class="math hidden" id="diagonal-height" is:raw>\[ l \]</div>
-	<div class="math hidden" id="diagonal-base" is:raw>\[ \textrm{horizontal}=vt' \]</div>
-	<div class="math hidden" id="hypotenuse-1" is:raw>
-		\[ \sqrt{l^2+\left(\frac{vt'}{2}\right)^2} \]
+	<div class="math hidden" id="diagonal-height" is:raw>\[ h \]</div>
+	<div class="math hidden" id="diagonal-base" is:raw>
+		\[ \textrm{horizontal}=v\Delta t' \]
 	</div>
-	<div class="math hidden" id="hypotenuse-2" is:raw>\[ \frac{ct'}{2} \]</div>
+	<div class="math hidden" id="hypotenuse-1" is:raw>
+		\[ \sqrt{h^2+\left(\frac{v\Delta t'}{2}\right)^2} \]
+	</div>
+	<div class="math hidden" id="hypotenuse-2" is:raw>\[ \frac{c\Delta t'}{2} \]</div>
 </Layout>
 
 <style define:vars={{ topPanelYMid, bottomPanelYMid, w, h }}>
@@ -51,7 +53,7 @@ const bottomPanelYMid = 0.75 * h;
 	#diagonal-height {
 		top: calc(var(--bottomPanelYMid) * 1px);
 		/* I'm sure I could get this rigorously by using gamma, but w/e */
-		left: 320px;
+		left: 330px;
 	}
 
 	#diagonal-base {
@@ -65,7 +67,7 @@ const bottomPanelYMid = 0.75 * h;
 		top: calc(var(--bottomPanelYMid) * 1px - 40px);
 		text-align: center;
 		/* I'm sure I could get this rigorously by using gamma, but w/e */
-		left: 80px;
+		left: 60px;
 	}
 
 	#hypotenuse-2 {

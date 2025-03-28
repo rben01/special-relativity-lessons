@@ -1,0 +1,37 @@
+---
+title: "Lesson 2: Length Contraction"
+format: revealjs
+title-slide-attributes:
+  data-notes: |
+    Hi everyone. It's good to see you all again! I'll quickly recap what we covered last time and then dive right into this lesson. Last time, we discussed the axioms of relativity and time dilation. Can someone remind me what the two axioms of relativity were? (All inertial reference frames equivalent, and the speed of light is constant.) And can someone remind me of what time dilation is and what the equation for time dilation is?
+---
+
+# Length contraction
+
+## Relativistic length
+
+* Unsurprisingly, if the passage of time changes for observers in motion, [and speed (of light) is distance divided by time,]{.fragment} [then distance should change too.]{.fragment}
+* By how much?
+* Say we wanted to measure the length of a train whizzing by us at speed $v$. [What would we measure its length to be?]{.fragment}
+
+## Challenges
+
+* Maybe I want to measure the train by running alongside it with a ruler or tape measure... [why wouldn't this work?]{.fragment}
+
+## The method
+
+* When the front of the train passes me, I start my stopwatch (light clock).
+* When the back of the train passes me, I stop my stopwatch.
+* Call the elapsed time (on _my_ watch) $\Delta t$.
+* The (front of the) train was traveling at speed $v$ for $\Delta t$, so it traveled $v\Delta t$.
+* And it's now exactly that distance from me, and I'm at the same spot as the back of the train, [so $v\Delta t$ is also the length of the train.]{.fragment}
+* How can we use this to figure out the apparent length of the train (to me)? If we know the rest length $L$ and the speed $v$, can we predict what we'll measure for $\Delta t$?
+
+## The method (pt. 2)
+
+
+
+
+* Suppose the train has a _rest length_ of $L$:
+	* Meaning that someone at rest with respect to the train perceives it as having length $L$.
+* To

@@ -1,0 +1,41 @@
+---
+import NumericInput from "../../components/NumericInput.astro";
+import Svg from "../../components/Svg.astro";
+---
+
+<Svg />
+
+<NumericInput id="input" class="below" />
+
+<style>
+	body {
+		background-color: black;
+	}
+</style>
+
+<script>
+	import { Element, G, SVG, Svg } from "@svgdotjs/svg.js";
+	import {
+		photonPeriodSec,
+		linterp,
+		invLinterp,
+		dist,
+		mirrorAttrs,
+		photonAttrs,
+		textAttrs,
+		getGamma,
+		photonPeriodMs,
+	} from "../../scripts/common";
+
+	const w = 500;
+	const h = 150; // per group
+	const margin = 8;
+
+	const X_MIN = 0;
+	const X_MAX = w / h;
+	const Y_MIN = 0;
+	const Y_MAX = 1; // per group
+
+	const draw = SVG("#drawing", false) as Svg;
+	draw.image("/images/2/Toy_train.svg");
+</script>
