@@ -6,32 +6,182 @@ title-slide-attributes:
     Hi everyone. It's good to see you all again! I'll quickly recap what we covered last time and then dive right into this lesson. Last time, we discussed the axioms of relativity and time dilation. Can someone remind me what the two axioms of relativity were? (All inertial reference frames equivalent, and the speed of light is constant.) And can someone remind me of what time dilation is and what the equation for time dilation is?
 ---
 
-# Length contraction
+# Recap
+
+## Time dilation
+
+* If I'm watching a person move relative to me, whose clock do I perceive to run slower: mine or theirs?
+* Whose clock do they perceive to run slower: mine or theirs?
+* By what factor?
+  * $\gamma = \frac{1}{\sqrt{1-(v/c)^2}}$
+
+# Distance
 
 ## Relativistic length
 
-* Unsurprisingly, if the passage of time changes for observers in motion, [and speed (of light) is distance divided by time,]{.fragment} [then distance should change too.]{.fragment}
+* Unsurprisingly, if the passage of time changes for observers in relative motion, [and speed (of light) is distance divided by time,]{.fragment} [and the speed of light is constant for all observers,]{.fragment} [then distance should change too.]{.fragment}
 * By how much?
 * Say we wanted to measure the length of a train whizzing by us at speed $v$. [What would we measure its length to be?]{.fragment}
 
 ## Challenges
 
 * Maybe I want to measure the train by running alongside it with a ruler or tape measure... [why wouldn't this work?]{.fragment}
+* Your turn: how can we measure the length of a train in motion?
 
 ## The method
 
 * When the front of the train passes me, I start my stopwatch (light clock).
 * When the back of the train passes me, I stop my stopwatch.
 * Call the elapsed time (on _my_ watch) $\Delta t$.
-* The (front of the) train was traveling at speed $v$ for $\Delta t$, so it traveled $v\Delta t$.
+* The train (in particular, the front of the train) was traveling at speed $v$ for $\Delta t$, so it traveled $v\Delta t$.
 * And it's now exactly that distance from me, and I'm at the same spot as the back of the train, [so $v\Delta t$ is also the length of the train.]{.fragment}
-* How can we use this to figure out the apparent length of the train (to me)? If we know the rest length $L$ and the speed $v$, can we predict what we'll measure for $\Delta t$?
+* So, what will we measure $\Delta t$ to be?
 
-## The method (pt. 2)
-
-
-
+## The method
 
 * Suppose the train has a _rest length_ of $L$:
 	* Meaning that someone at rest with respect to the train perceives it as having length $L$.
-* To
+	* Naively, we'd simply expect to measure $\Delta t=\frac{L}{v}$ — but this is not the case.
+* To _them_ I'm moving by at $v$.
+* We'll have a person standing at the back of the train.
+  * When I pass by the front of the train, they start their stopwatch.
+  * When I pass by the back of the train, they stop their stopwatch and simultaneously record the time on my stopwatch.
+  * Question: what will they see my stopwatch read?
+
+## ⚠️ Major issue with this setup!
+
+* How do they know when I pass by the front of the train? [They're not there when it happens!]{.fragment}
+
+# Synchronization
+
+## Events that happen somewhere else
+
+* We need a way to talk about events that don't happen where we're located
+* Solution:
+  * At each event, place an observer.
+  * Make sure the observers are stationary relative to each other (i.e. are in the same frame).
+  * Have them record the coordinates of their respective events.
+  * Afterwards, they reconvene and discuss their findings.
+* New problem: they need a shared coordinate system to make sense of their findings.
+
+## Synchronizing clocks
+
+* Example:
+  * You forget to update your clock after daylight savings, so yours reads 1pm when mine reads 2pm.
+  * We go to see a movie together.
+  * According to my watch, it started at 4pm.
+  * According to your watch, it ended at 5pm.
+  * How long was the movie? [Not one hour...]{.fragment}
+* Takeaway: it only makes sense to compare readings of two clocks that are _synchronized_!
+
+## The procedure
+
+* Your turn: how can we synchronize the clocks of two observers stationary with respect to each other?
+* The goal: a procedure that will ensure that two stationary observers located at different points in space (a known distance apart) have the same reading on their respective clocks.
+* Hint: use light as a tool.
+
+## The procedure
+
+1. Suppose the distance between them is $L$.
+1. Alice sets her clock to $-L/c$, but doesn't start it yet.
+1. Bob sets his clock to $0$, but doesn't start it yet.
+1. Alice emits a photon towards Bob, and at the same time starts her clock.
+1. When Bob receives the photon, he starts his clock.
+
+   * Bob’s clock will read $0$ (that's what he'd set it to...)
+   * And it will take $L/c$ for the photon to arrive at Bob, so Alice’s clock will read $-L/c+L/c=0$.
+
+1. And so the two clocks are synchronized!
+
+# Now, back to the train
+
+## Train observers
+
+* We put _two_ observers on the train, one at the front (Frank) and one at the back (Beth).
+  * And ensure their clocks are synchronized!
+* When I (on the platform) pass by the front of the train, Frank records the time on his clock and the time he reads on my clock.
+* When I pass by the back of the train, Beth records the time on her clock and the time she reads on my clock.
+
+## Their time measurement
+
+* Afterwards, Frank and Beth reconvene. [What is the difference they observe between when I pass by Frank and when I pass by Beth?]{.fragment}
+* To those on the train, it takes $\Delta t'=\frac{L}{v}$ for me to move from the front of the train to the back, so that's what the time difference is on _their_ two clocks.
+* But they think my time is dilated! So the difference between Frank’s reading of my clock and Beth’s reading of my clock will be $\Delta t=\frac{\Delta t'}{\gamma}\frac{L}{\gamma v}$.
+
+## My time measurement
+
+* Key point: [Frank and Beth were at the same place and time as me when they saw my clock...]{.fragment} [so that's _also what I'll read on my clock_.]{.fragment}
+  * Remember — no privileged reference frames. If two observers are in the same spot at the same time, they agree on the state of things there and then.
+  * More precisely, if one observer says two events are the same, all observers agree.
+  * Beth says that when she passed me, my clock had advanced $\frac{L}{\gamma v}$ from when Frank saw my clock, and therefore I must agree!
+
+## My length measurement
+
+* So from my perspective, the front of the train is now $v\Delta t=v\cdot\frac{L}{\gamma v}=\frac{L}{\gamma}$ from me.
+* And that's the length of the train (to me).
+* The train is shorter by a factor of $\gamma$!
+
+## Conclusion
+
+* Objects in motion appear contracted by a factor of $\gamma$ along their direction of motion.
+* Another contradiction? [Two trains with the same rest length travel past each other — each perceives the other as being shorter.]{.fragment}
+
+## Contracted lengthwise?
+
+* Why only along their direction of motion? Why not in every direction?
+  * E.g. why would a train appear squashed from front to back but not top to bottom or left to right?
+  * As always, let's devise an experiment that would violate the axioms of relativity.
+
+## Contracted lengthwise
+
+* Supposing that objects in motion appeared contracted in all three dimensions...
+* Suppose a train were traveling towards a tunnel exactly big enough to fit it when both are at rest relative to each other.
+* Set the train in motion.
+  * From the train’s perspective, the tunnel shrinks and is now too small for it to fit.
+  * From the tunnel’s perspective, the train shrinks and can now fit with room to spare.
+  * What happens when the train reaches the tunnel: [does it crash or fly through?]{.fragment}
+* The tunnel and train must agree, but they don't — contradiction!
+
+## Exercise (5 minutes)
+
+* A space probe will be sent to Io to record some data.
+* The probe travels from Earth at a constant speed of $\frac{4}{5}c$. According to a clock on the probe, at this speed it takes ten hours to travel from Earth to Io.
+* When the probe arrives at Io, it sends a single photon back to Earth to let us know it arrived safely.
+* Q: According to us on Earth, how many hours after the probe leaves Earth should we expect the photon to arrive?
+
+## Solution
+
+* The probe travels for $t'=10\,\textrm{hrs}$ at $v=\frac{4}{5}c$, so it perceives the distance between Earth and Io to be $l'=t'v=10\,\textrm{hrs}\cdot \frac{4}{5}c$.
+* But the probe perceives the distance between Earth and Io (which are moving relative to it) as length-contracted.
+  * Earth observers would see that same distance as $l=l'\gamma=10\,\textrm{hrs}\cdot \frac{4}{5}c\cdot \gamma$.
+  * $\gamma=\frac{1}{\sqrt{1-(4/5)^2}}=\frac{1}{\sqrt{1-16/25}}=\frac{1}{\sqrt{9/25}}=5/3$.
+  * So the rest distance between Earth and Io is $l=10\,\textrm{hrs}\cdot \frac{4}{5}c\cdot \frac{5}{3}=\frac{40}{3}\,\textrm{hrs}\cdot c$.
+
+## Solution
+
+* For the probe to travel that distance would take $t_1=l/v=\frac{(40/3)\,\textrm{hrs}\cdot c}{(4/5)\,c}=\frac{50}{3}\,\textrm{hrs}$.
+* For the photon to travel that distance would take $t_2=l/c=\frac{(40/3)\,\textrm{hrs}\cdot c}{c}=\frac{40}{3}\,\textrm{hrs}$.
+* And so the total time is $t_1+t_2=\frac{90}{3}\,\textrm{hrs}=30\,\textrm{hrs}$.
+
+<!-- ::: {.notes}
+Imagine one of us forgot to change our watch for daylight savings, so when my watch says noon yours says 1:00. I say I saw someone go into a restaurant at 12:00 on my watch and you say you saw them came out at 1:30 on your watch. How long were they in the restaurant? Obviously not an hour and a half, because our watches weren't in sync.
+:::
+
+## Synchronizing clocks across space
+
+* We need a method by which the person at the front of the train [can talk about events occurring at the back of the train.]{.fragment}
+* More generally, we need a way to get observers in the same frame on the same page when it comes to the events in their frame: [a method of synchronizing clocks across space.]{.fragment}
+* How might we do this? [Hint: use light as a tool.]{.fragment}
+
+## Synchronizing clocks across space
+
+* Answer: suppose I know you're a distance $c\Delta t$ from me.
+* Then it will take a time $\Delta t$ for a photon I emit to reach you.
+* I set my clock to 0, and tell you to set yours to $\Delta t$.
+* I'll start my clock and at the same time send a photon towards you.
+* When you receive my photon, start your clock.
+* When the photon reaches you, $\Delta t$ will have elapsed on my clock, and your clock already be set to $\Delta t$, so our clocks will be in sync.
+* Now we have a common language for talking about when events take place in our frame of reference.
+
+
+* The two people on the train can compare the readings of their clocks, but first... [we need to make sure their clocks are in sync!]{.fragment} -->

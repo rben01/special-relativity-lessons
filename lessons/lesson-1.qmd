@@ -3,7 +3,7 @@ title: "Lesson 1: The Basics of Relativity"
 format: revealjs
 title-slide-attributes:
   data-notes: |
-    Hi everyone. I'm Robert. To those of you who are new, welcome, it's nice to meet you, and to those of you who were at Lesson 0, welcome back, it's good to see you again! I'll quickly recap what we covered last time and then dive right into this lesson. Last time, we discussed all of the physics that led up to relativity. Can anyone fill us in on the main points we covered?
+    Hi everyone. I'm Robert. To those of you who are new, welcome, it's nice to meet you, and to those of you who were at Lesson 0, welcome back, it's good to see you again! Let's recap what we covered last time and then dive right into this lesson. Last time, we discussed all of the physics that led up to relativity. Can anyone fill us in on the main points we covered?
 
     _Hit these points_: 1. light is an electromagnetic wave 2. its speed is c=300,000km/s 3. unlike everything else in the universe, it has the same speed to all observers, regardless of their relative motion 4. speed is relative
 
@@ -21,7 +21,9 @@ title-slide-attributes:
 </ul>
 
 ::: {.notes}
-Speed is distance divided by time: how far you went, divided by how long it took
+Speed is distance divided by time: how far you went, divided by how long it took. Units are distance or length in the numerator and time in the denominator.
+
+_Explain meaning of Delta_
 
 No such thing as absolute speed.
 
@@ -62,6 +64,8 @@ The Earth orbits the Sun at 67,000mph — we'd all be breaking the speed limit.
 
 ::: {.notes}
 We sometimes draw vectors as if they did have a position, e.g. we usually draw a velocity vector coming out of the object whose velocity it refers to, but that's just to help us interpret the drawing; it's not intrinsic to the vector. Two vectors that differ only in position don't differ at all!
+
+Length is nonnegative
 :::
 
 ## Vectors
@@ -98,21 +102,31 @@ The arrowheads mean different things here: for the axes, they indicate that the 
 [![Inductiveload, CC0, via Wikimedia Commons](/images/1/Spherical_Coordinates_(Colatitude,_Longitude)_(b).svg){width="300"}](https://commons.wikimedia.org/wiki/File:Spherical_Coordinates_(Colatitude,_Longitude)_(b).svg)
 :::
 
+::: {.notes}
+_Ask for thumbs up: “who's seen the Cartesian plane before?”_
+:::
+
 ## Reference frames
 
-* We'll generally restrict ourselves to just one spatial dimension, so coordinates will look like $(t, x)$. [An _event_ is just point in this coordinate system: a point in time at a given location.]{.fragment}
+* We'll generally restrict ourselves to just one spatial dimension, so coordinates will look like $(t, x)$. [In two spatial dimensions, they'd look like $(t, x, y)$.]{.fragment} [An _event_ is just a point in this coordinate system: a point in time at a given location.]{.fragment}
 
 ::: {.fragment}
 [![Stigmatella aurantiaca, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons](/images/1/Observer_in_special_relativity.svg){fig-align=center width=900}](https://commons.wikimedia.org/wiki/File:Observer_in_special_relativity.svg)
 :::
 
+::: {.notes}
+You can imagine that at every point in space is a clock. And when something happens, we can record where and when it happened. So in this example, if I'm at the origin, meaning x=0, then the explosion is at roughly 5.8, and it happened at 2:50 and 36 seconds. So for this event, t would be 2:50:36 and our x would be 5.8.
+:::
+
 ## Inertial reference frames
 
 * Definition: a reference frame _in which Newton’s first law of motion applies_, namely:
-  * An object’s velocity remains constant with respect to the frame of reference unless a force acts on it
+  * An object’s velocity remains constant with respect to the frame of reference unless an external force acts on it.
+* Galileo and Isaac Newton thought that _one_ of these inertial reference frames was privileged: [that it was the fixed frame relative to which all phenomena could be measured.]{.fragment}
+* Einstein disagreed...
 
 ::: {.notes}
-Highlight that inertial reference frames is one of the most important concepts; the rest of relativity is founded upon it
+Highlight that inertial reference frames is one of the most important concepts; the rest of special relativity is founded upon it
 :::
 
 ## Inertial reference frames
@@ -229,6 +243,10 @@ Time seems discrete but is of course continuous — we can make arbitrarily prec
 :::
 
 ::: {.notes}
+Instructions: start off slowly, 0.1. Gradually increase.
+
+Top pane top mirror resets, bottom pane bottom mirror starts, top pane bottom mirror shifts top
+
 Who can describe what is happening here?
 
 Why is that happening?
@@ -248,6 +266,10 @@ Again, how do we know that the photon in the bottom frame is traveling partially
 ## Diagram
 
 <iframe src="/_astro/lesson-1/ComputationOfGamma" width="1600" height="800" frameborder="true" ></iframe>
+
+::: {.notes}
+Just click a bunch of times to advance
+:::
 
 # Let's solve for $\Delta t'$!
 
@@ -291,6 +313,28 @@ Important notes:
 1. Each individual thinks their own clock ticks at the correct rate and thinks the other’s clock ticks slowly
 1. This is about the rate of ticking, not a lag like time zones
 :::
+
+## Some values of $\gamma$
+
+* A fast car: $v=50\,\textrm{m/s}$, [$\gamma=1+1.40\times 10^{-14}$.]{.fragment}
+* The ISS: $v=7900\,\textrm{m/s}$, [$\gamma=1+3.47\times 10^{-10}$.]{.fragment}
+* Sun through the Milky Way: $v=230,000\,\textrm{m/s}$, [$\gamma=1+2.94\times 10^{-7}$.]{.fragment}
+* Now for some faster objects...
+  * $v=0.1c$, $\gamma=1.005$
+  * $v=0.5c$, $\gamma=1.15$
+  * $v=0.9c$, $\gamma=2.29$
+  * $v=0.99c$, $\gamma=7.09$
+  * $v=0.999c$, $\gamma=22.37$
+  * $v=0.9999c$, $\gamma=70.71$
+
+## Some values of $\gamma$
+
+![The Lorentz factor](/images/1/gamma.svg)
+
+## Exercises (5 minutes)
+
+* Find $\gamma$ for $v=\frac{3}{5}c$.
+* Find $\gamma$ for $v=\frac{4}{5}c$.
 
 ## For next time
 

@@ -1,0 +1,74 @@
+---
+title: "Lesson 3: Simultaneity"
+format: revealjs
+title-slide-attributes:
+  data-notes: |
+    Hi everyone. It's good to see you all again! I'll quickly recap what we covered last time and then dive right into this lesson. Last time, we discussed the axioms of relativity and time dilation. Can someone remind me what the two axioms of relativity were? (All inertial reference frames equivalent, and the speed of light is constant.) And can someone remind me of what time dilation is and what the equation for time dilation is?
+---
+
+# Recap
+
+## The Lorentz factor, $\gamma$
+
+* A clock in motion appears to... run slow by a factor of $\gamma$.
+* An object in motion appears... contracted along the direction of its length by a factor of $\gamma$.
+* Where $\gamma=\class{fragment}\frac{1}{\sqrt{1-(v/c)^2}}$.
+
+## Synchronization
+
+* What is the challenge of having observers are different locations discuss their findings?
+
+# The relativity of simultaneity
+
+## Simultaneity
+
+* Hopefully by now you've given up on trusting your intuition of space and time.
+* So it should not come as a surprise that two observers can disagree on whether two events are simultaneous (i.e. occur at the same time)!
+
+## Design an experiment
+
+* Your turn: try to design an experiment where different observers would disagree on whether two events happened simultaneously or not.
+
+## The procedure
+
+* Place a lightbulb, initially off, in the middle of a train car of length $L$.
+* Set the train in motion at speed $v$.
+* Turn on the lightbulb.
+* When does it arrive at the front of the train (Frank)?
+* When does it arrive at the back (Beth)?
+
+## The train perspective
+
+* Let's add a third observer, Larry, at the center of the train, who controls the lightbulb.
+* Frank’s, Beth’s, and Larry’s clocks are all synchronized.
+* All three agree on the procedure:
+
+  * When their clocks hit 0, Larry turns on the light.
+  * When Frank receives a photon at the front of the train, he stops his clock.
+  * When Beth receives a photon at the back of the train, she stops her clock.
+
+* They all agree: the photons each travel $\frac{L}{2}$, and so Frank’s and Beth’s clocks both read $\frac{L/2}{c}$.
+
+## The platform perspective
+
+* Remember: all inertial frames agree on events, regardless of their relative motion.
+	* A platform observer right next to Frank when he stops his clock will see it read $\frac{L/2}{c}$.
+	* A separate platform observer right next to Beth when she stops her clock will see it read $\frac{L/2}{c}$.
+* The “issue”: those two observers won't agree that Frank and Beth stop their clocks at the same time!
+* Why not?
+
+## The platform perspective
+
+* Everyone agrees that the forward-moving and backward-moving photons have the same speed...
+* but to those on the platform, the front of the train is moving _away_ from the forward-moving photon,
+* and the back of the train is moving _towards_ the forward moving photon,
+* and so platform observers will see Beth stop her clock before Frank!
+* Takeaway 1: Events simultaneous in one frame are not simultaneous in other frames.
+
+## The platform perspective
+
+* But if Frank’s and Beth’s clocks are ticking at the same rate,
+* and they both read the same value when they stop,
+* and they stop at different times,
+* they must not have been in sync to begin with!
+* Takeaway 2: Clocks synchronized in one frame are not synchronized in other frames.

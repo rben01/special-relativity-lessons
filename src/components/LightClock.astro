@@ -1,0 +1,43 @@
+---
+interface MirrorAttrs {
+	x: number;
+	topMirrorBottom: number;
+	bottomMirrorTop: number;
+	width: number;
+	height: number;
+	fill?: string;
+	stroke?: string;
+	"stroke-width"?: number;
+}
+
+interface PhotonAttrs {
+	r: number;
+	cy: number;
+	fill?: string;
+}
+
+interface Props {
+	id?: string;
+	mirror: MirrorAttrs;
+	photon: PhotonAttrs;
+	stationaryPeriodSec: number;
+	vFracOfC: number;
+}
+
+let {
+	id,
+	mirror: { topMirrorBottom, bottomMirrorTop, ...mirror },
+	photon,
+	stationaryPeriodSec,
+	vFracOfC,
+} = Astro.props;
+id ??= "light-clock";
+
+const topMirrorTop = topMirrorBottom - mirror.height;
+---
+
+<g {id} data-period-sec={stationaryPeriodSec} data-velocity={vFracOfC}>
+	<rect class="top-mirror" y={topMirrorTop} {...mirror}></rect>
+	<rect class="bottom-mirror" y={bottomMirrorTop} {...mirror}></rect>
+	<circle cx={bottomMirrorTop + photon.r} {...photon}></circle>
+</g>

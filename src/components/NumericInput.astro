@@ -2,13 +2,15 @@
 interface Props {
 	id?: string;
 	class?: string;
+	value?: number;
 }
-const { id, class: class_ } = Astro.props;
+const { id, class: class_, value } = Astro.props;
 ---
 
 <input
 	{id}
 	class={class_}
+	{value}
 	type="number"
 	inputmode="decimal"
 	min="0"
@@ -18,6 +20,7 @@ const { id, class: class_ } = Astro.props;
 
 <style>
 	input {
+		display: block;
 		position: relative;
 		width: 3.5em;
 		font-size: 1.3rem;
