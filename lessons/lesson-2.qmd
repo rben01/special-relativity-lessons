@@ -28,6 +28,13 @@ title-slide-attributes:
 * Maybe I want to measure the train by running alongside it with a ruler or tape measure... [why wouldn't this work?]{.fragment}
 * Your turn: how can we measure the length of a train in motion?
 
+
+::: {.notes}
+This is a hard question and there's more than one right answer, although what I'm going to present is probably the simplest.
+
+_Pause for a bit here and really let them think. If they want to use light as a measuring stick, they may need to think outside the box a bit._
+:::
+
 ## The method
 
 * When the front of the train passes me, I start my stopwatch (light clock).
@@ -35,14 +42,14 @@ title-slide-attributes:
 * Call the elapsed time (on _my_ watch) $\Delta t$.
 * The train (in particular, the front of the train) was traveling at speed $v$ for $\Delta t$, so it traveled $v\Delta t$.
 * And it's now exactly that distance from me, and I'm at the same spot as the back of the train, [so $v\Delta t$ is also the length of the train.]{.fragment}
-* So, what will we measure $\Delta t$ to be?
+* If the train has _rest length_ $L$, what will _we_ measure $\Delta t$ to be?
 
 ## The method
 
-* Suppose the train has a _rest length_ of $L$:
+* Suppose the train has a rest length of $L$:
 	* Meaning that someone at rest with respect to the train perceives it as having length $L$.
-	* Naively, we'd simply expect to measure $\Delta t=\frac{L}{v}$ — but this is not the case.
-* To _them_ I'm moving by at $v$.
+	* Naively, we'd simply expect to measure $\Delta t=\frac{L}{v}$. But this is not the case.
+* To _them_, _I'm_ moving by at $v$.
 * We'll have a person standing at the back of the train.
   * When I pass by the front of the train, they start their stopwatch.
   * When I pass by the back of the train, they stop their stopwatch and simultaneously record the time on my stopwatch.
@@ -56,13 +63,13 @@ title-slide-attributes:
 
 ## Events that happen somewhere else
 
-* We need a way to talk about events that don't happen where we're located
+* We need a way to talk about events that don't happen where we're located.
 * Solution:
-  * At each event, place an observer.
+  * At each position, place an observer.
   * Make sure the observers are stationary relative to each other (i.e. are in the same frame).
   * Have them record the coordinates of their respective events.
   * Afterwards, they reconvene and discuss their findings.
-* New problem: they need a shared coordinate system to make sense of their findings.
+* New problem: they need to agree on a common coordinate system to make sense of their findings.
 
 ## Synchronizing clocks
 
@@ -80,18 +87,47 @@ title-slide-attributes:
 * The goal: a procedure that will ensure that two stationary observers located at different points in space (a known distance apart) have the same reading on their respective clocks.
 * Hint: use light as a tool.
 
+
+## One bad procedure
+
+* Alice starts with Clock A.
+* She walks it over to Bob, who's holding Clock B.
+* Bob sets B’s time to A’s.
+* Alice walks A back to its starting position.
+* Now Clocks A and B are at different positions and are in sync.
+* _Why doesn't this work?_
+
+## Another bad procedure
+
+* Alice starts with Clock A.
+* She sends uses wifi (or radio or bluetooth or...) to transmit A’s time to Bob.
+* Bob sets Clock B to the time given in the signal.
+* _Why doesn't this work?_
+
 ## The procedure
 
-1. Suppose the distance between them is $L$.
-1. Alice sets her clock to $-L/c$, but doesn't start it yet.
-1. Bob sets his clock to $0$, but doesn't start it yet.
+1. Suppose the distance between Clocks A and B is $L$.
+1. Alice sets Clock A to $-L/c$, but doesn't start it yet.
+1. Bob sets Clock B to $0$, but doesn't start it yet.
 1. Alice emits a photon towards Bob, and at the same time starts her clock.
 1. When Bob receives the photon, he starts his clock.
 
    * Bob’s clock will read $0$ (that's what he'd set it to...)
    * And it will take $L/c$ for the photon to arrive at Bob, so Alice’s clock will read $-L/c+L/c=0$.
 
-1. And so the two clocks are synchronized!
+1. And so the two clocks are synchronized! [(And because they're in the same frame, they remain synchronized.)]{.fragment}
+
+::: {.notes}
+Importantly, this could be verified by a third party in the same frame and equidistant from the two clocks — they'd see the same time on both clocks.
+:::
+
+## Synchronized clocks
+
+[![Stigmatella aurantiaca, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons](/images/1/Observer_in_special_relativity.svg){fig-align=center width=900}](https://commons.wikimedia.org/wiki/File:Observer_in_special_relativity.svg)
+
+::: {.notes}
+If you remember this diagram from Lesson 1, it may not have even occurred to you to wonder how we got those clocks in sync in the first place, but it is an important problem that we have to solve.
+:::
 
 # Now, back to the train
 
@@ -106,7 +142,7 @@ title-slide-attributes:
 
 * Afterwards, Frank and Beth reconvene. [What is the difference they observe between when I pass by Frank and when I pass by Beth?]{.fragment}
 * To those on the train, it takes $\Delta t'=\frac{L}{v}$ for me to move from the front of the train to the back, so that's what the time difference is on _their_ two clocks.
-* But they think my time is dilated! So the difference between Frank’s reading of my clock and Beth’s reading of my clock will be $\Delta t=\frac{\Delta t'}{\gamma}\frac{L}{\gamma v}$.
+* But they think my time is dilated! [So the difference between Frank’s reading of my clock and Beth’s reading of my clock will be $\Delta t=\frac{\Delta t'}{\gamma}=\frac{L}{\gamma v}$.]{.fragment}
 
 ## My time measurement
 
@@ -135,26 +171,32 @@ title-slide-attributes:
 ## Contracted lengthwise
 
 * Supposing that objects in motion appeared contracted in all three dimensions...
-* Suppose a train were traveling towards a tunnel exactly big enough to fit it when both are at rest relative to each other.
+* Suppose a train were traveling towards a tunnel exactly big enough for the train to fit when both are at rest relative to each other.
 * Set the train in motion.
   * From the train’s perspective, the tunnel shrinks and is now too small for it to fit.
   * From the tunnel’s perspective, the train shrinks and can now fit with room to spare.
   * What happens when the train reaches the tunnel: [does it crash or fly through?]{.fragment}
 * The tunnel and train must agree, but they don't — contradiction!
 
-## Exercise (5 minutes)
+## Exercise (5–10 minutes)
 
 * A space probe will be sent to Io to record some data.
 * The probe travels from Earth at a constant speed of $\frac{4}{5}c$. According to a clock on the probe, at this speed it takes ten hours to travel from Earth to Io.
 * When the probe arrives at Io, it sends a single photon back to Earth to let us know it arrived safely.
 * Q: According to us on Earth, how many hours after the probe leaves Earth should we expect the photon to arrive?
 
+::: {.notes}
+We mentioned before that there is no such thing as a truly inertial reference frame in our universe, but here, assume that the Earth and Io are stationary relative to each other and are not accelerating.
+
+Also, as stated, the space probe is launched, but if it makes you feel better you can imagine that it's always been traveling at (4/5)c and that ten hours starts when it passes by Earth.
+:::
+
 ## Solution
 
 * The probe travels for $t'=10\,\textrm{hrs}$ at $v=\frac{4}{5}c$, so it perceives the distance between Earth and Io to be $l'=t'v=10\,\textrm{hrs}\cdot \frac{4}{5}c$.
 * But the probe perceives the distance between Earth and Io (which are moving relative to it) as length-contracted.
   * Earth observers would see that same distance as $l=l'\gamma=10\,\textrm{hrs}\cdot \frac{4}{5}c\cdot \gamma$.
-  * $\gamma=\frac{1}{\sqrt{1-(4/5)^2}}=\frac{1}{\sqrt{1-16/25}}=\frac{1}{\sqrt{9/25}}=5/3$.
+  * $\gamma=\frac{1}{\sqrt{1-(4/5)^2}}=\frac{1}{\sqrt{1-\frac{16}{25}}}=\frac{1}{\sqrt{\frac{9}{25}}}=\frac{5}{3}$.
   * So the rest distance between Earth and Io is $l=10\,\textrm{hrs}\cdot \frac{4}{5}c\cdot \frac{5}{3}=\frac{40}{3}\,\textrm{hrs}\cdot c$.
 
 ## Solution
@@ -162,6 +204,30 @@ title-slide-attributes:
 * For the probe to travel that distance would take $t_1=l/v=\frac{(40/3)\,\textrm{hrs}\cdot c}{(4/5)\,c}=\frac{50}{3}\,\textrm{hrs}$.
 * For the photon to travel that distance would take $t_2=l/c=\frac{(40/3)\,\textrm{hrs}\cdot c}{c}=\frac{40}{3}\,\textrm{hrs}$.
 * And so the total time is $t_1+t_2=\frac{90}{3}\,\textrm{hrs}=30\,\textrm{hrs}$.
+
+## Special topic: muons
+
+* Subatomic particle similar to the electron except 200x more massive. When observed in the lab, their average lifetime is about $2\,\upmu\textrm{s}$.
+* _Secondary muons_ are generated by cosmic rays hitting the atmosphere. They travel at roughly $0.99c$ and can be detected even underground.
+* The atmosphere is roughly $100\,\textrm{km}$ thick.
+* At this speed, it takes muons roughly $300\,\upmu\textrm{s}$ to travel through the whole atmosphere.
+* Q: How do they survive that long?
+
+::: {.notes}
+Let's use relativity to explain this phenomenon.
+
+Two things that are not the answer:
+
+1. The average lifetime is short, but some muons get lucky and last a long time
+1. Some get generated right at the bottom of the atmosphere and don't have to travel so far
+1. A combination of these
+:::
+
+## Special topic: muons
+
+* What do we see?
+* What do the muons see?
+* (These need to be in accord with each other.)
 
 <!-- ::: {.notes}
 Imagine one of us forgot to change our watch for daylight savings, so when my watch says noon yours says 1:00. I say I saw someone go into a restaurant at 12:00 on my watch and you say you saw them came out at 1:30 on your watch. How long were they in the restaurant? Obviously not an hour and a half, because our watches weren't in sync.

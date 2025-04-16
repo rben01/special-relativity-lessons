@@ -144,6 +144,3 @@ $$
 
 * Frank’s clock must have started out $\frac{Lv}{c^2}$ _behind_ Beth’s clock!
 * Clocks separated by a distance $L$ and traveling at speed $v$, [and synchronized in their own frame,]{.fragment} [appear to differ by $\frac{Lv}{c^2}$,]{.fragment} [with the clock in front lagging behind the clock in the back — “leading clocks lag”.]{.fragment}
-
-
-# Fin!
