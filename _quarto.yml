@@ -13,7 +13,6 @@ format:
       - custom.scss
 
     include-in-header:
-      # todo: make this actually disable assistive mml
       - text: >
           <script>
           window.MathJax = {
@@ -22,7 +21,8 @@ format:
                 enableEnrichment: false,
                 enableExplorer: false,
                 enableAssistiveMml: false,
-                assistiveMml: false
+                assistiveMml: false,
+                renderer: 'SVG'
               }
             };
           </script>

@@ -23,6 +23,10 @@ title-slide-attributes:
 * By how much?
 * Say we wanted to measure the length of a train whizzing by us at speed $v$. [What would we measure its length to be?]{.fragment}
 
+::: {.notes}
+For the speed of light to remain constant (with respect to a given frame), either neither or both of space and time must change. Our intuition says that the speed of light is constant with respect to a universal background frame, and neither space nor time change. But in reality the speed of light is constant with respect to each and every observer, and that leads to time changing, which requires that space change as well.
+:::
+
 ## Challenges
 
 * Maybe I want to measure the train by running alongside it with a ruler or tape measure... [why wouldn't this work?]{.fragment}
@@ -31,6 +35,8 @@ title-slide-attributes:
 
 ::: {.notes}
 This is a hard question and there's more than one right answer, although what I'm going to present is probably the simplest.
+
+Remember the tools in our toolbox: light as a measuring stick, the concept of observers agreeing on events. And now, we also know about time dilation.
 
 _Pause for a bit here and really let them think. If they want to use light as a measuring stick, they may need to think outside the box a bit._
 :::
@@ -42,18 +48,26 @@ _Pause for a bit here and really let them think. If they want to use light as a 
 * Call the elapsed time (on _my_ watch) $\Delta t$.
 * The train (in particular, the front of the train) was traveling at speed $v$ for $\Delta t$, so it traveled $v\Delta t$.
 * And it's now exactly that distance from me, and I'm at the same spot as the back of the train, [so $v\Delta t$ is also the length of the train.]{.fragment}
-* If the train has _rest length_ $L$, what will _we_ measure $\Delta t$ to be?
 
 ## The method
 
-* Suppose the train has a rest length of $L$:
+* Suppose the train has a _rest length_ of $L$:
 	* Meaning that someone at rest with respect to the train perceives it as having length $L$.
-	* Naively, we'd simply expect to measure $\Delta t=\frac{L}{v}$. But this is not the case.
-* To _them_, _I'm_ moving by at $v$.
+* What will _we_ measure $\Delta t$ to be?
+* Naively, we'd simply expect to measure $\Delta t=\frac{L}{v}$. [But, unsurprisingly, this is not the case.]{.fragment}
+
+::: {.notes}
+Because the front of the train has traveled a distance of L when the back of the train reaches me, and it's traveling at v.
+:::
+
+## The method
+
 * We'll have a person standing at the back of the train.
   * When I pass by the front of the train, they start their stopwatch.
   * When I pass by the back of the train, they stop their stopwatch and simultaneously record the time on my stopwatch.
   * Question: what will they see my stopwatch read?
+  * Hint: to them, I'm speeding by at $v$.
+
 
 ## ⚠️ Major issue with this setup!
 
@@ -97,23 +111,31 @@ _Pause for a bit here and really let them think. If they want to use light as a 
 * Now Clocks A and B are at different positions and are in sync.
 * _Why doesn't this work?_
 
+::: {.notes}
+An alternative to this is that maybe Alice and Bob meet in the middle, synchronize their clocks, then walk back to their starting points. This would work because by symmetry their clocks would dilate in the same way. But we'll see why this is less than ideal in a second.
+:::
+
 ## Another bad procedure
 
 * Alice starts with Clock A.
-* She sends uses wifi (or radio or bluetooth or...) to transmit A’s time to Bob.
+* She uses wifi (or radio or bluetooth or...) to transmit A’s current time to Bob.
 * Bob sets Clock B to the time given in the signal.
 * _Why doesn't this work?_
+
+::: {.notes}
+Bob’s clock will be behind by the time it took the light to travel. So we have to take into account this travel time, which is what we'll do in our chosen method.
+:::
 
 ## The procedure
 
 1. Suppose the distance between Clocks A and B is $L$.
-1. Alice sets Clock A to $-L/c$, but doesn't start it yet.
-1. Bob sets Clock B to $0$, but doesn't start it yet.
+1. Alice sets Clock A to $0$, but doesn't start it yet.
+1. Bob sets Clock B to $L/c$, but doesn't start it yet.
 1. Alice emits a photon towards Bob, and at the same time starts her clock.
 1. When Bob receives the photon, he starts his clock.
 
-   * Bob’s clock will read $0$ (that's what he'd set it to...)
-   * And it will take $L/c$ for the photon to arrive at Bob, so Alice’s clock will read $-L/c+L/c=0$.
+   * Bob’s clock will read $L/c$ (that's what he'd set it to...)
+   * And it will take $L/c$ for the photon to arrive at Bob, so Alice’s clock will read $L/c$ as well.
 
 1. And so the two clocks are synchronized! [(And because they're in the same frame, they remain synchronized.)]{.fragment}
 
@@ -121,12 +143,31 @@ _Pause for a bit here and really let them think. If they want to use light as a 
 Importantly, this could be verified by a third party in the same frame and equidistant from the two clocks — they'd see the same time on both clocks.
 :::
 
+## Scaling up
+
+* We can use this same method to synchronize an arbitrary (even an infinite) number of clocks.
+* Each clock has its initial time set to $d/c$, where $d$ is its distance from Alice.
+* Alice sends out a spherical pulse of light.
+* Each clock is started when the pulse reaches it.
+* Conclusion: we can talk about the times of events at arbitrary points in space (in our reference frame).
+
 ## Synchronized clocks
 
 [![Stigmatella aurantiaca, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons](/images/1/Observer_in_special_relativity.svg){fig-align=center width=900}](https://commons.wikimedia.org/wiki/File:Observer_in_special_relativity.svg)
 
 ::: {.notes}
 If you remember this diagram from Lesson 1, it may not have even occurred to you to wonder how we got those clocks in sync in the first place, but it is an important problem that we have to solve.
+:::
+
+## Time of travel
+
+* FAQ: when we record the time of a distant event, are we referring to when it “actually” happened or when we saw it happen?
+  * The latter incurs a delay due to the time it takes light to reach us from the event.
+* Answer: when it “actually” happened. [We know how far away it is, so we know how long it took the light to reach us.]{.fragment}
+* So whenever we talk about the time of an event, we're always talking about the time a clock located there would have read when the event occurred.
+
+::: {.notes}
+Let's say an event happens one light second away from me, and I observe its light reach me at t=5s. Then I know the event took place at t=4s.
 :::
 
 # Now, back to the train
@@ -149,7 +190,7 @@ If you remember this diagram from Lesson 1, it may not have even occurred to you
 * Key point: [Frank and Beth were at the same place and time as me when they saw my clock...]{.fragment} [so that's _also what I'll read on my clock_.]{.fragment}
   * Remember — no privileged reference frames. If two observers are in the same spot at the same time, they agree on the state of things there and then.
   * More precisely, if one observer says two events are the same, all observers agree.
-  * Beth says that when she passed me, my clock had advanced $\frac{L}{\gamma v}$ from when Frank saw my clock, and therefore I must agree!
+  * Beth says that when she passed me, my clock had advanced $\frac{L}{\gamma v}$ from when Frank saw my clock, [and therefore I must agree!]{.fragment}
 
 ## My length measurement
 
@@ -207,10 +248,10 @@ Also, as stated, the space probe is launched, but if it makes you feel better yo
 
 ## Special topic: muons
 
-* Subatomic particle similar to the electron except 200x more massive. When observed in the lab, their average lifetime is about $2\,\upmu\textrm{s}$.
-* _Secondary muons_ are generated by cosmic rays hitting the atmosphere. They travel at roughly $0.99c$ and can be detected even underground.
-* The atmosphere is roughly $100\,\textrm{km}$ thick.
-* At this speed, it takes muons roughly $300\,\upmu\textrm{s}$ to travel through the whole atmosphere.
+* Subatomic particle similar to the electron except 200x more massive. When observed in the lab, their average lifetime is about $2.2\upmu\textrm{s}$.
+* _Secondary muons_ are generated by cosmic rays hitting the upper atmosphere (roughly $15\,\textrm{km}$ up).
+* They travel at roughly $0.999c$ and can be detected even underground.
+* At this speed, it takes muons roughly $50\upmu\textrm{s}$ to travel through the whole atmosphere.
 * Q: How do they survive that long?
 
 ::: {.notes}
@@ -218,9 +259,12 @@ Let's use relativity to explain this phenomenon.
 
 Two things that are not the answer:
 
-1. The average lifetime is short, but some muons get lucky and last a long time
+1. The average lifetime is short, but some muons get lucky and last a long time.
+   * True, but statistically, there wouldn't be as many muons reaching the ground as we observe.
 1. Some get generated right at the bottom of the atmosphere and don't have to travel so far
-1. A combination of these
+   * True, but statistically, there wouldn't be as many muons reaching the ground as we observe.
+1. A combination of these.
+   * True, but...
 :::
 
 ## Special topic: muons
@@ -229,25 +273,25 @@ Two things that are not the answer:
 * What do the muons see?
 * (These need to be in accord with each other.)
 
-<!-- ::: {.notes}
-Imagine one of us forgot to change our watch for daylight savings, so when my watch says noon yours says 1:00. I say I saw someone go into a restaurant at 12:00 on my watch and you say you saw them came out at 1:30 on your watch. How long were they in the restaurant? Obviously not an hour and a half, because our watches weren't in sync.
+## Our perspective
+
+* For these muons, $\gamma=\frac{1}{\sqrt{1-0.999^2}}\approx 22.4$.
+* And so their average lifespan _to us_ is $22.4\times 2.2\upmu\textrm{s}=49.3\upmu\textrm{s}$.
+* Enough for a healthy fraction of muons to be detected!
+
+## The muons’ perspective
+
+* Meanwhile, the muons think the distance to the ground is $\frac{15\,\textrm{km}}{22.4}=0.67\,\textrm{km}$.
+* And with the Earth rushing at a muon at $0.999c$, it would take $2.2\upmu\textrm{s}$ for the Earth to reach it.
+* Again, enough for a healthy fraction of muons to be detected!
+
+::: {.notes}
+Remember, we said they needed to survive 50µs to make it to the ground.
 :::
 
-## Synchronizing clocks across space
+## For next time
 
-* We need a method by which the person at the front of the train [can talk about events occurring at the back of the train.]{.fragment}
-* More generally, we need a way to get observers in the same frame on the same page when it comes to the events in their frame: [a method of synchronizing clocks across space.]{.fragment}
-* How might we do this? [Hint: use light as a tool.]{.fragment}
-
-## Synchronizing clocks across space
-
-* Answer: suppose I know you're a distance $c\Delta t$ from me.
-* Then it will take a time $\Delta t$ for a photon I emit to reach you.
-* I set my clock to 0, and tell you to set yours to $\Delta t$.
-* I'll start my clock and at the same time send a photon towards you.
-* When you receive my photon, start your clock.
-* When the photon reaches you, $\Delta t$ will have elapsed on my clock, and your clock already be set to $\Delta t$, so our clocks will be in sync.
-* Now we have a common language for talking about when events take place in our frame of reference.
-
-
-* The two people on the train can compare the readings of their clocks, but first... [we need to make sure their clocks are in sync!]{.fragment} -->
+* Make sure you are comfortable with the concepts of:
+  * Clock synchronization
+  * The derivation of length contraction
+  * The way time dilation and length contraction interact to produce a perfectly consistent picture between reference frames.
