@@ -3,12 +3,18 @@ title: "Lesson 1: The Basics of Relativity"
 format: revealjs
 title-slide-attributes:
   data-notes: |
-    Hi everyone. I'm Robert. To those of you who are new, welcome, it's nice to meet you, and to those of you who were at Lesson 0, welcome back, it's good to see you again! Let's recap what we covered last time and then dive right into this lesson. Last time, we discussed all of the physics that led up to relativity. Can anyone fill us in on the main points we covered?
-
-    _Hit these points_: 1. light is an electromagnetic wave 2. its speed is c=300,000km/s 3. unlike everything else in the universe, it has the same speed to all observers, regardless of their relative motion 4. speed is relative
-
-    Great, so now we'll dive in and formalize some of these concepts, and by the end we'll have proved our first major result, time dilation.
+    Hi everyone. I'm Robert. To those of you who are new, welcome, it's nice to meet you, and to those of you who were at Lesson 0, welcome back, it's good to see you again! I'll be teaching this course on Special Relativity, and I hope that by the end of this course, you not only understand special relativity and the limits of our everyday intuition, but also develop an appreciation for math and the power of math and critical thinking in science.
 ---
+
+# Recap
+
+::: {.notes}
+ Let's recap what we covered last time and then dive right into this lesson. Last time, we discussed all of the physics that led up to relativity. Can anyone fill us in on the main points we covered?
+
+_Hit these points_: 1. light is an electromagnetic wave 2. its speed is c=300,000km/s 3. unlike everything else in the universe, it has the same speed to all observers, regardless of their relative motion 4. speed is relative
+
+Great, so now we'll dive in and formalize some of these concepts, and by the end we'll have proved our first major result, time dilation.
+:::
 
 # Speed
 
@@ -50,10 +56,14 @@ The Earth orbits the Sun at 67,000mph — we'd all be breaking the speed limit.
 ## Velocity
 
 * You may be familiar with the concept of acceleration, which is the rate of change of velocity.
-* How is it that you can feel like you're accelerating even when your speed doesn't change, such as taking a curve in a car?
+* How is it that you can feel like you're accelerating even when your speed doesn't change, such as turning in a car?
 * Answer: [velocity is not the same as speed!]{.fragment}
 * Velocity is speed _together with a direction_.
 * Formally, we call objects with both magnitude and direction “vectors”, [whereas a magnitude alone is a “scalar”.]{.fragment}
+
+::: {.notes}
+Before showing anything on the slide: Show of hands: who has heard of acceleration?
+:::
 
 ## Vectors
 
@@ -81,9 +91,13 @@ Length is nonnegative
 :::
 
 ::: {.notes}
-Magnitude uses the absolute value symbol for good reason: if the number line is a vector space...
-
 The arrowheads mean different things here: for the axes, they indicate that the axis continues forever. But for the vector, the arrowhead just indicates which end of the vector is the end (and the other end is the start). The vector has a finite length.
+
+Magnitude uses the absolute value symbol. Who has seen absolute value before?
+
+We use absolute value to denote magnitude for good reason: if the number line is a vector space...
+
+If you're not familiar with the Greek alphabet, you will become familiar over the course of this course. Mathematicians and scientists love using the Greek alphabet.
 :::
 
 # Frames of Reference
@@ -122,7 +136,7 @@ You can imagine that at every point in space is a clock. And when something happ
 
 * Definition: a reference frame _in which Newton’s first law of motion applies_, namely:
   * An object’s velocity remains constant with respect to the frame of reference unless an external force acts on it.
-* Galileo and Isaac Newton thought that _one_ of these inertial reference frames was privileged: [that it was the fixed frame relative to which all phenomena could be measured.]{.fragment}
+* Galileo and Newton thought that _one_ of these inertial reference frames was privileged: [that it was the fixed frame relative to which all phenomena could be measured.]{.fragment}
 * Einstein disagreed...
 
 ::: {.notes}
@@ -135,9 +149,9 @@ Highlight that inertial reference frames is one of the most important concepts; 
   * You sitting in a chair
   * You walking down the street at constant velocity
 * Some non-inertial frames:
-  * You in a car that's speeding up
-  * You in a car that's braking
-  * You in a car that's turning
+  * You in a train that's speeding up
+  * You in a train that's slowing down
+  * You in a train that's turning
   * _Why? Why would Newton’s first law of motion not apply?_
 
 ::: {.notes}
@@ -165,6 +179,8 @@ Does the universe have a hidden acceleration-only backdrop that acceleration is 
   * (The math is well beyond us — it took Einstein eight years to come up with it.)
 
 ::: {.notes}
+_Ask for someone to remind us what an event is._
+
 Now you might wonder why gravity is excluded here, and the answer is that it makes things accelerate. General relativity covers the why and how, but to make a long story short, acceleration is actually equivalent to a gravitational field in the opposite direction, which is why when you're in free fall on Earth, like on a roller coaster, you feel weightless. It's not that you're not accelerating, and it's not that you're not in a gravitational field, but rather that in terms of what you feel, your acceleration is exactly canceled by Earth’s gravitational field.
 
 So let's go back to our examples of inertial reference frames — none of them were even remotely inertial because we're all in Earth’s gravitational field.
@@ -177,17 +193,25 @@ So actually, for the rest of this course, we'll pretend that we're out in the va
 ## Einstein’s postulates
 
 1. The laws of physics take the same form in all inertial frames of reference.
-1. The speed of light in free space has the same value $c$ in all inertial frames of reference.
+1. The speed of light in free space has the same value $c=299,\!792,\!458\,\textrm{m/s}$ in all inertial frames of reference.
 
 ::: {.notes}
-What is the experimental basis of these two points, especially point 2?
+What is the experimental basis of point 2?
+
+_Highlight just how weird it is that #2 holds — it seems to violate a law of velocity addition._
+
+Example: you're on a train traveling at 30mph (relative to the ground) and you throw a ball forwards at 10mph, relative to you. According to someone on the ground looking through the window of the train, how fast is the ball moving?
+
+Now on the same train, you shine a flashlight forwards. The light appears to travel at speed $c$ relative to you. According to someone on the ground looking through the window of the train, how fast is the light moving?
+
+Weird — light seems to violate the usual laws of velocity addition.
 :::
 
 ## The importance of the postulates
 
 1. No “privileged” frame — we can all claim to be perfectly capable scientists, and all of our observations are as valid as anyone else’s, regardless of our relative motion.
 
-    * In particular, no two observers can disagree on whether two events $A$ and $B$ are identical. [They may disagree on the coordinates, but not that they're equal: if $(t_A,x_A)=(t_B,x_B)$, then $(t_A',x_A')=(t_B',x_B')$.]{.fragment}
+    * In particular, no two observers can disagree on whether two events $A$ and $B$ are identical. [They may disagree on the coordinates, but not that they're equal: $(t_A,x_A)=(t_B,x_B)$ if and only if $(t_A',x_A')=(t_B',x_B')$.]{.fragment}
 
 1. We can use the speed of light as a “measuring stick” with which to perform our experiments.
 
@@ -208,6 +232,10 @@ If a photon strikes a detector in one frame, it strikes the detector in all fram
 :::: {.fragment}
 <iframe src="/_astro/lesson-1/light-clocks/Basic" width="500" height="500" frameborder="true" ></iframe>
 ::::
+:::
+
+::: {.notes}
+_Bottom = play/reset. Top = pause_
 :::
 
 ## Light clocks
@@ -243,7 +271,7 @@ Time seems discrete but is of course continuous — we can make arbitrarily prec
 :::
 
 ::: {.notes}
-Instructions: start off slowly, 0.1. Gradually increase.
+Instructions: start off at 0.0. Then go slowly, 0.1. Gradually increase.
 
 Top pane top mirror resets, bottom pane bottom mirror starts, top pane bottom mirror shifts top
 
