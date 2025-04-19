@@ -1,0 +1,186 @@
+---
+title: "Lesson 3: The Lorentz Transform"
+format: revealjs
+title-slide-attributes:
+  data-notes: ""
+---
+
+# Recap
+
+## Effects of relativity
+
+* Time dilation: [a clock in motion appears to tick slower by a factor of $\gamma$]{.fragment}
+* Length contraction: [an object in motion appears contracted along its direction of motion by a factor of $\gamma$]{.fragment}
+* Relativity of simultaneity: [if two clocks are synchronized in their own frame, and separated by a distance $L$ in the direction of their motion, the front clock appears to lag behind the rear clock by $\frac{Lv}{c^2}$ (“leading clocks lag”)]{.fragment}
+
+# The Lorentz transform
+
+## Computational difficulties
+
+* We've seen some exercises that required a lot of:
+	* Thought
+	* Care
+	* Calculation
+* This is annoying.
+* Can we do better?
+
+## A unified framework
+
+* Wouldn't it be nice... [if we had some simple equations that let us “plug and chug”]{.fragment}
+* The goal:
+	* Given $x$ and $t$, find $x'$ and $t'$ [(I say it happened when/where — what do they say?)]{.fragment}
+	* Given $x'$ and $t'$, find $x$ and $t$ [(They say it happened when/where — what do I say?)]{.fragment}
+* In other words: a rote, mindless way to transform between coordinate systems in relative motion.
+
+## The setup
+
+* We have reference frames $F$ and $F'$.
+* We will consider $F$ stationary.
+* $F'$ has (relative) velocity $v$ in the $+x$ direction.
+* $F$ and $F'$ have a common origin: at the moment where $x=0$ and $x'=0$ coincide, $t=t'=0$.
+* $F'$ observes an event at $(x', t')$.
+* What coordinates $(x,t)$ does $F$ ascribe to that event?
+
+## The position component
+
+* At $t=t'=0$, $F$ observes the point $x'$ located at $x=\frac{x'}{\gamma}$.
+* At arbitrary time $t$, it has moved $vt$: $x=vt+\frac{x'}{\gamma}\Rightarrow x'=\gamma(x-vt)$.
+* At $t=t'=0$, $F'$ observes the point $x$ located at $x'=\frac{x}{\gamma}$.
+* At arbitrary time $t'$, it has moved $-vt$: $x'=-vt'+\frac{x}{\gamma}\Rightarrow x=\gamma(x'+vt')$.
+* Note: as we'd hope, the equations are the symmetric in unprimed and primed variables, with $v$ inverted.
+
+## The time component
+
+$$
+\begin{align*}
+x'&\class{fragment}{{}=-vt'+\frac{x}{\gamma}}\\
+\class{fragment}{x'}&\class{fragment}{{}=\gamma(x-vt)}\label{(1)}\\
+\class{fragment}{\gamma(x-vt)}&\class{fragment}{{}=-vt'+\frac{x}{\gamma}}\\
+\class{fragment}{vt'}&\class{fragment}{{}=\frac{x}{\gamma}-\gamma(x-vt)}\\
+\class{fragment}{t'}&\class{fragment}{{}=\left(\frac{1-\gamma^2}{\gamma v}\right)x+\gamma t}
+\end{align*}
+$$
+
+## The time component
+
+$$
+\begin{align*}
+t'&=\left(\frac{1-\gamma^2}{\gamma v}\right)x+\gamma t\\
+&\class{fragment}{{}=\left(\frac{1-\frac{1}{1-(v/c)^2}}{\gamma v}\right)x+\gamma t}\\
+&\class{fragment}{{}=\left(\frac{-(v/c)^2}{\gamma v (1-(v/c)^2)}\right)x+\gamma t}\\
+&\class{fragment}{{}=\left(\frac{-(v/c)^2}{\gamma v} \gamma^2\right)x+\gamma t}\\
+\end{align*}
+$$
+
+## The time component
+
+$$
+\begin{align*}
+t'&=\left(\frac{-(v/c)^2}{\gamma v} \gamma^2\right)x+\gamma t\\
+&\class{fragment}{{}=\gamma\left(t-\frac{vx}{c^2}\right)}
+\end{align*}
+$$
+
+## The time component
+
+* By similar (not particularly interesting) logic, $t=\gamma\left(t'+\frac{vx'}{c^2}\right)$.
+	* If you're interested, try to derive this on your own.
+
+## The Lorentz transform
+
+$$
+\begin{align*}
+x'&=\gamma(x-vt)\\
+t'&=\gamma\left(t-\frac{vx}{c^2}\right)\\
+\\
+x&=\gamma(x'+vt')\\
+t&=\gamma\left(t'+\frac{vx'}{c^2}\right)
+\end{align*}
+$$
+
+## A more elegant formulation:
+
+* Let $\beta=\frac{v}{c}$.
+* Use $ct$ and $ct'$ instead of $t$ and $t'$.
+
+## A more elegant formulation:
+
+::: {.fragment}
+$$
+\begin{align*}
+x'&=\gamma(x-\beta ct)\\
+ct'&=\gamma(ct-\beta x)\\
+\\
+x&=\gamma(x'+\beta ct')\\
+ct&=\gamma(ct'+\beta x')
+\end{align*}
+$$
+:::
+
+* Not only are they symmetric in $v$, they're now symmetric in $x$ and $ct$.
+* “The primed variable equals $\gamma$ times the same unprimed variable minus $\beta$ times the other one.”
+
+# Using the Lorentz transform
+
+## Deriving “leading clocks lag”
+
+* In the primed frame, two (synchronized) clocks read $t'=0$. One is at $x'=0$, the other at $x'=L$.
+* At $t=0$ in the unprimed frame, we don't (yet) know the time $t'$ on a clock at $x'=L$.
+* But using $x'=\gamma(x-\beta ct)$, we get $x=\frac{L}{\gamma}$ (good).
+* Then $t'=\gamma\left(t-\frac{v(L/\gamma)}{c^2}\right)=-\frac{vL}{c^2}$.
+* Great! The leading clock does indeed lag behind the origin by $\frac{vL}{c^2}$.
+
+## Io (5 min)
+
+* A space probe will be sent to Io to record some data.
+* The probe travels from Earth at a constant speed of $\frac{4}{5}c$. According to a clock on the probe, at this speed it takes ten hours to travel from Earth to Io.
+* When the probe arrives at Io, it sends a single photon back to Earth to let us know it arrived safely.
+* Q: According to us on Earth, how many hours after the probe leaves Earth should we expect the photon to arrive?
+* A: $30\,\textrm{hrs}$.
+
+::: {.notes}
+Use the Lorentz transform!
+:::
+
+## Solution
+
+* $\gamma=\frac{5}{3}$&nbsp;
+* To the probe (primed frame):
+	* Io reaches the origin of the primed frame at $t'=10\,\textrm{hrs}$.
+	* The position of Io at that time is $x'=0$.
+* Remember: in any given frame, the frame itself is stationary!
+
+## Solution
+
+* To the Earth:
+	* The position of Io is $x=\gamma(x'+vt')=\frac{5}{3}(0+\frac{4}{5}c\cdot 10\,\textrm{hrs})=\frac{40}{3}c\,\textrm{hrs}$.
+		* Technically this is only the position of Io when the probe arrives — but why is it _always_ the position of Io?
+	* The probe arrives at $t=\gamma(t'+\frac{vx'}{c^2})=\frac{5}{3}(10\,\textrm{hrs}+0)=\frac{50}{3}\,\textrm{hrs}$.
+
+## Solution
+
+* The time it takes the photon to reach Earth from Io is $\frac{x}{c}=\frac{40}{3}\,\textrm{hrs}$.
+* Just add: $t_{\textrm{total}}=\left(\frac{40}{3}+\frac{50}{3}\right)\,\textrm{hrs}=30\,\textrm{hrs}$.
+
+
+## The speed of light
+
+* Let's now just confirm that the Lorentz transform preserves the speed of light.
+* In the unprimed frame, a photon is sent at $t=0$ in the $+x$ direction and strikes a receptor at $t=t_0$, position $x=ct_0$.
+* In the primed frame:
+	* $x'=\gamma(x-vt)=\gamma(ct_0-vt_0)=\gamma (c-v) t_0$.
+	* $t'=\gamma(t-\frac{vx}{c^2})=\gamma(t_0-\frac{vt_0}{c})=\gamma (1-(v/c)) t_0$.
+
+## The speed of light
+
+In the primed frame:
+
+$$
+\begin{align*}
+c&=\frac{x'}{t'}\\
+&\class{fragment}{{}=\frac{\gamma (c-v) t_0}{\gamma (1-(v/c)) t_0}}\\
+&\class{fragment}{{}=\frac{(c-v) }{1-(v/c)}}\\
+&\class{fragment}{{}=\frac{c(1-(v/c)) }{1-(v/c)}}\\
+&\class{fragment}{{}=c}\\
+\end{align*}
+$$
