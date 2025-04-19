@@ -1,5 +1,5 @@
 ---
-title: "Lesson 3: The Lorentz Transform"
+title: "Lesson 4: The Lorentz Transform"
 format: revealjs
 title-slide-attributes:
   data-notes: ""

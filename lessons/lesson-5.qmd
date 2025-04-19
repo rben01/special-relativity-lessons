@@ -1,0 +1,188 @@
+---
+title: "Lesson 5: Velocity Addition"
+format: revealjs
+title-slide-attributes:
+  data-notes: ""
+---
+
+# Recap
+
+## The Lorentz transform
+
+$$
+\begin{align*}
+x'&=\gamma(x-vt)\\
+t'&=\gamma\left(t-\frac{vx}{c^2}\right)\\
+\\
+x&=\gamma(x'+vt')\\
+t&=\gamma\left(t'+\frac{vx'}{c^2}\right)
+\end{align*}
+$$
+
+## The Lorentz transform
+
+Or, with $\beta=\frac{v}{c}$ and using $ct,ct'$ instead of $t,t'$:
+$$
+\begin{align*}
+x'&=\gamma(x-\beta ct)\\
+ct'&=\gamma(ct-\beta x)\\
+\\
+x&=\gamma(x'+\beta ct')\\
+ct&=\gamma(ct'+\beta x')
+\end{align*}
+$$
+
+# Velocity addition
+
+## Non-relativistic velocity addition
+
+* Velocities of non-light objects “just add normally”: [add the velocity of the frame and the velocity of the object in the frame.]{.fragment}
+* The velocity of light is constant and universal: [it's $c$ in every frame.]{.fragment}
+* This is weird, and bad, (and wrong).
+
+## Relativistic velocity addition
+
+* What we'd hope for:
+* Velocities of non-light objects add in a specific way, $v_\textrm{net}=f(v_\textrm{frame}, v_\textrm{object}')$.
+* The velocity of light adds in _the same_ way, $c=f(v_\textrm{frame}, c)$.
+* Note: now we have three frames: [our unprimed “stationary” frame,]{.fragment} [the primed “moving” frame,]{.fragment} [and the frame of the object moving in the primed frame!]{.fragment}
+
+## Setup
+
+* Primed frame $F'$ with origin $O'$ is moving in $F$ with velocity $v$.
+* “Double-primed” frame $F''$ with origin $O''$ is moving in $F'$ with velocity $u'$.
+* Q: What is the apparent velocity $u$ of $F''$ in $F$?
+
+## Setup
+
+* Put a flashlight at $O''$.
+* The flashlight emits a photon every $\Delta t''$ in its own frame (it's connected to a light clock with period $\Delta t''$).
+
+## Part 1
+
+* With what period do photons arrive at $O'$, according to $F'$?
+	* If the flashlight were stationary, the period would just be $\Delta t''$.
+	* But it's moving, so
+
+	   1. It is time dilated — to $F'$, it emits a photon every $\gamma_u \Delta t''$.
+      1. Each photon is emitted a distance $u'\gamma_u \Delta t''$ from the previous one.
+
+## Part 1
+
+* Each photon has to travel for an additional time $\frac{u'\gamma_{u'} \Delta t''}{c}=\gamma_{u'}\beta_{u'} \Delta t''$ than the previous to arrive at $O'$ (or less time if $u'<0$).
+* Each photon arrives at $O'$ a time $\Delta t_\textrm{arr}'=\gamma_{u'}\Delta t''+ \gamma_{u'}\beta_{u'} \Delta t''=\gamma_{u'}\Delta t''(1+\beta_{u'})$ after the previous.
+
+## Part 1
+
+* The _period shift_ — the received period divided by the emitted period — is:
+
+::: {.fragment}
+$$
+\begin{align*}
+D(\beta_{u'})=\frac{\Delta t_\textrm{arr}'}{\Delta t''}&\class{fragment}{{}=\gamma_{u'}(1+\beta_{u'})}\\
+&\class{fragment}{{}=\frac{(1+\beta_{u'})}{\sqrt{1-\beta_{u'}^2}}}
+\end{align*}
+$$
+:::
+
+## Part 1
+
+$$
+\begin{align*}
+D(\beta_{u'})&=\frac{1+\beta_{u'}}{\sqrt{1-\beta_{u'}^2}}\\
+&\class{fragment}{{}=\frac{(1+\beta_{u'})}{\sqrt{(1-\beta_{u'})(1+\beta_{u'})}}}\\
+&\class{fragment}{{}=\frac{\sqrt{1+\beta_{u'}}}{\sqrt{1-\beta_{u'}}}}\\
+&\class{fragment}{{}=\sqrt{\frac{1+\beta_{u'}}{1-\beta_{u'}}}}
+\end{align*}
+$$
+
+::: {.notes}
+As expected, this is greater than 1 if beta>0. It's also less than 1 if beta<0, although this isn't as obvious from the outset.
+:::
+
+## Part 2
+
+* Suppose that $F'$ emits a photon towards $O$ whenever a photon arrives at $O'$. [$O'$ is now effectively the same kind of flashlight in $F$ as the actual flashlight was in $F'$.]{.fragment}
+* If $F'$ emits flashes with period $\Delta t'$ in its frame, then $F$ perceives them arrive with period $\Delta t_\textrm{arr}=\Delta t'\sqrt{\frac{1-\beta_v}{1+\beta_v}}$.
+* But we know that in fact $\Delta t'=\Delta t'_\textrm{arr}=\Delta t''\sqrt{\frac{1+\beta_{u'}}{1-\beta_{u'}}}$
+* Result: the flashes arrive at $O$ with period $\Delta t_\textrm{arr}=\Delta t''\sqrt{\frac{1+\beta_{u'}}{1-\beta_{u'}}}\sqrt{\frac{1+\beta_v}{1-\beta_v}}$.
+
+## Part 3
+
+* Key point: [$F'$ emitting a photon whenever it receives one is _identical_ to the original photon just passing through $O'$!]{.fragment}
+* That is, $O$ receives flashes _from the flashlight_ with period $\Delta t_\textrm{arr}=\Delta t''\sqrt{\frac{1+\beta_{u'}}{1-\beta_{u'}}}\sqrt{\frac{1+\beta_v}{1-\beta_v}}$.
+* But the flashlight is also moving in $F$, and we know the period shift of moving flashlights based on their velocity...
+	* It's $D(\beta)=\sqrt{\frac{1+\beta}{1-\beta}}$.
+
+## Part 3
+
+* The speed $u$ of the flashlight in $F$ must be such that: $\sqrt{\frac{1+\beta_u}{1-\beta_u}}=\sqrt{\frac{1+\beta_{u'}}{1-\beta_{u'}}}\sqrt{\frac{1+\beta_v}{1-\beta_v}}$!
+* We have an equation relating $u$ to $v$ and $u'$. If we solve for $u$, we're done!
+
+## Part 4
+
+* Square both sides and multiply the top and bottom of every fraction by $c$:
+* $\frac{c+u}{c-u}=\frac{c+u'}{c-u'}\frac{c+v}{c-v}$.
+* Let's solve for $u$.
+
+## Part 4
+
+$$
+\begin{align*}
+\frac{c+u}{c-u}&=\frac{c+u'}{c-u'}\frac{c+v}{c-v}\\
+\class{fragment}{(c+u)(c-u')(c-v)}&\class{fragment}{{}=(c-u)(c+u')(c+v)}\\
+\end{align*}
+$$
+
+$$
+\begin{align*}
+&\class{fragment}{u((c-u')(c-v)+(c+u')(c+v))}\\&\class{fragment}{{}=c((c+u')(c+v)-(c-u')(c-v))}
+\end{align*}
+$$
+
+## Part 4
+
+* Now:
+
+$$
+\begin{align*}
+\class{fragment}{(c+u')(c+v)}&\class{fragment}{{}=c^2+c(u'+v)+u'v}\\
+\class{fragment}{(c-u')(c-v)}&\class{fragment}{{}=c^2-c(u'+v)+u'v}\\
+\class{fragment}{{}(c+u')(c+v)+(c+u')(c-v)}&\class{fragment}{{}=2(c^2+u'v)}\\
+\class{fragment}{{}(c+u')(c+v)-(c+u')(c-v)}&\class{fragment}{{}=2c(u'+v)}\\
+\end{align*}
+$$
+
+## Part 4
+
+$$
+\begin{align*}
+\class{fragment}{u(2(c^2+u'v))}&\class{fragment}{{}=c(2c(u'+v))}\\
+\class{fragment}{u}&\class{fragment}{{}=\frac{c^2(u'+v)}{c^2+u'v}}\\
+&\class{fragment}{{}=\frac{u'+v}{1+\frac{u'v}{c^2}}}
+\end{align*}
+$$
+
+## Result
+
+* If $F'$ has velocity $v$ relative to $F$ and $F''$ has velocity $u'$ relative to $F'$, then the velocity of $F''$ relative to $F$ is $u=\frac{u'+v}{1+\frac{u'v}{c^2}}$.
+
+## Observations
+
+* $F'$ is traveling at $v=0.9c$ relative to $F$. $F''$ is traveling at $u'=0.9c$ relative to $F'$. [What is the speed $u$ of $F''$ relative to $F$?]{.fragment}
+* Naively: $u=v+u'=1.8c>c$ — bad!
+* Actually: $u=\frac{u'+v}{1+\frac{u'v}{c^2}}=\frac{1.8c}{1+0.81}=0.994c<c$ — good!
+
+## Observations
+
+* $F'$ emits a photon in the $+x$ direction. What is its speed $u$ relative to $F$?
+	* Now, $u'=c$
+* $u=\frac{c+v}{1+\frac{cv}{c^2}}=\frac{c^2(c+v)}{c^2+cv}=\frac{c^2(c+v)}{c(c+v)}=c$.&nbsp;
+	* Phew!
+
+## Observations
+
+* $F'$ emits a photon in the $-x$ direction. What is its speed $u$ relative to $F$?
+	* Now, $u'=-c$
+* $u=\frac{-c+v}{1+\frac{-cv}{c^2}}=\frac{c^2(-c+v)}{c^2-cv}=\frac{c^2(-c+v)}{c(c-v)}=-c$.&nbsp;
+	* Phew!
