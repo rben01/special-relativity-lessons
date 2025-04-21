@@ -1,0 +1,173 @@
+---
+title: "Lesson 6: Paradoxes"
+format: revealjs
+title-slide-attributes:
+  data-notes: ""
+---
+
+# Recap
+
+## Basic findings
+
+* $\gamma=\frac{1}{\sqrt{1-(v/c)^2}}$.
+* Moving clocks run slow by a factor of $\gamma$.
+* Moving objects are contracted by a factor of $\gamma$.
+* Leading clocks lag by $\frac{Lv}{c^2}$.
+
+## The Lorentz transform
+
+* This can be encapsulated in the Lorentz transform (with $\beta=\frac{v}{c}$).
+
+::: {.fragment}
+$$
+\begin{align*}
+x'&=\gamma(x-\beta ct)\\
+ct'&=\gamma(ct-\beta x)\\
+\\
+x&=\gamma(x'+\beta ct')\\
+ct&=\gamma(ct'+\beta x')
+\end{align*}
+$$
+:::
+
+# Paradoxes
+
+## The “pole in barn paradox”
+
+* A pole of rest length $L$ is moving to the right, along its length, at speed $v$.
+* A barn of rest length $\frac{L}{\gamma}$ has its front door open and the back door closed.
+	* The barn thinks the pole has length $\frac{L}{\gamma}$ too.
+* The pole enters the barn through the front door.
+* As soon as the barn thinks the pole is entirely inside the barn, the front door closes and the back door opens, and the pole continues on.
+
+## The paradox
+
+* According to the barn, the pole perfectly fits and flies through the barn with neither door being smashed by the pole.
+* According to the pole, the barn _is too short for it to fit_:
+	* The barn has length $\frac{L}{\gamma^2}<L$.
+* How do we resolve this? [Does the pole fit or not?]{.fragment}
+
+## The resolution
+
+* This is a nonsensical question.
+* The pole “fitting” is a question of events at _different locations_: [whether both ends of the pole are inside of the barn _at the same time_ depends on whose clocks you're consulting!]{.fragment}
+	* Remember, simultaneity is relative.
+* But reference frames are only required to agree about events at _the same location_.
+
+## The resolution
+
+* The correct questions to ask:
+	* Does the front of the pole just glance the back door of the barn?
+	* Does the front door of the barn just glance the back of the pole?
+	* Or, do the pole and doors smash into each other?
+	* Or, do the doors open/close so early/late that they don't even touch the pole?
+* The barn says no. Why does the pole also say no?
+
+## The resolution (barn perspective)
+
+* The barn says that at $t=0$:
+	* A clock at the back of the pole reads $t'=0$.
+	* The barn closes the front door (at $x=0$).
+	* The barn opens the back door (at $x=\frac{L}{\gamma}$).
+
+## The resolution (pole perspective)
+
+* The pole says that:
+	* Leading clocks lag!
+	* To the pole, the front door of the barn is leading.
+	* Therefore it closes after the back door opens.
+
+## The resolution (quantitative)
+
+* Supposing the back of the pole is at $x'=0$ and the front at $x'=L$, then it observes:
+	* The back door opens at $t'=\gamma(t-\frac{vx}{c^2})=-\frac{vL}{c^2}$.
+	* The front door closes at $t'=0$ — some time later.
+
+## The resolution (quantitative)
+
+* And the position of the pole’s ends at those times is:
+	* At $t'=0$, the back is at $x'=0$ (because the barn said so).
+	* At $t'=-\frac{vL}{c^2}$, the front is at $x'=L+vt'=L(1-\frac{v^2}{c^2})=\frac{L}{\gamma^2}$ — exactly the length of the barn (according to the pole)!
+
+## The resolution
+
+* While the pole does not believe it fits, that's fine.
+* It only needs to fit if the doors open/close simultaneously — [but to the pole, they don't!]{.fragment}
+* It agrees that its front end just kissed the back door of the barn, and its back end was just kissed by the front door of the barn.
+* The barn says these happened at the same time — the pole fits — but the pole doesn't.
+* And that's ok — they agree on the _individual events_ at the front and back of the barn.
+
+## The twin paradox
+
+* Two twins are on Earth. They are (obviously) the same age.
+* One twin heads off into space. They travel at high speed in one direction, turn around after a while, and return to Earth.
+* Who is older: the Earth-bound twin (Ernie) or the astronaut twin (Alice)?
+
+## The paradox
+
+* Ernie has been observing Alice age more slowly for her whole trip.
+* Alice has been observing Ernie age more slowly for her whole trip.
+* When they reunite, they're in the same place at the same time — [and they cannot each think they are older than the other.]{.fragment}
+* They must actually be in agreement about their ages.
+
+## The paradox (resolution, kinda)
+
+* 🚨⚠️The key word is “changes direction”.⚠️🚨
+* Changing direction is acceleration. [And special relativity cannot model acceleration!]{.fragment}
+* So we cannot analyze this situation precisely and cannot make any predictions about it.
+* Or can we...
+
+## The paradox (resolution)
+
+* Let's take this as far as special relativity will let us.
+* Let $P$ be Alice’s turnaround point, at location $x=L$ in the Earth’s frame (the Earth itself is at $x=0$).
+* Suppose Alice travels towards $P$ with velocity $+v$, then turns around instantly and heads back towards Earth with velocity $-v$.
+* What happens at $P$?
+
+## The paradox (resolution)
+
+* While traveling towards $P$, Earth is the leading clock, and so its clock lags behind $P$.
+* Since Alice was in sync with Earth when she left, she must perceive $P$’s clock reading far into the future.
+* She arrives at $P$ and _instantly_ turns around.
+	* This is the one part of this we cannot actually model.
+	* Not only is instant turnaround (infinite acceleration) impossible, but special relativity cannot handle any acceleration at all.
+
+## The paradox (resolution)
+
+* As she instantly turns around at $P$, no time passes on her clock or $P$’s clock.
+* But now $P$ is at the front — so its clock lags behind Earth’s!
+* Before the turnaround, Alice saw the time at $P$ as $\frac{Lv}{c^2}$ _ahead_ of Earth.
+* After the turnaround, Alice sees the time at $P$ as $\frac{Lv}{c^2}$ _behind_ of Earth.
+* And $P$’s clock didn't advance at all.
+* In that moment, time on Earth advanced by $\frac{2Lv}{c^2}$!
+
+## The paradox (quantitative)
+
+* To Ernie, Alice’s whole trip took her $\frac{2L}{v}$.
+* So Earnie thinks he ages $\frac{2L}{v}$ during her trip.
+* Her time is dilated to him, so he sees her age $\frac{2L}{\gamma v}$.
+	* As does she, as from her perspective her trip has length $\frac{2L}{\gamma}$ and her speed is $v$.
+* The only remaining piece: [When she gets back, how much does she think he has aged?]{.fragment}
+	* It had better be $\frac{2L}{v}$! (And not $\frac{2L}{\gamma^2 v}$.)
+
+## The paradox (quantitative)
+
+* On each leg of her trip, Alice says she traveled for $\frac{2L}{\gamma v}$.
+* Meanwhile, Ernie’s clock is dilated, so on each leg of her trip she sees him age $\frac{2L}{\gamma^2 v}$.
+* And at the turnaround, he ages an additional $\frac{2Lv}{c^2}$.
+* So in total she observes him age $\frac{2L}{\gamma^2 v}+\frac{2Lv}{c^2}=\frac{2L}{v}(\frac{1}{\gamma^2}+\frac{v^2}{c^2})$.
+
+## The paradox (quantitative)
+
+$$
+\begin{align*}
+\frac{v^2}{c^2}&=1-(1-(v/c)^2)\\
+&=1-\frac{1}{\gamma^2}\\
+\frac{1}{\gamma^2}+\frac{v^2}{c^2}&=1!
+\end{align*}
+$$
+
+## The paradox (quantitative)
+
+* And so indeed, Alice sees Ernie age $\frac{2L}{v}$, just as she should.
+* No paradox — she is younger, he is older.
