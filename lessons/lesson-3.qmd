@@ -10,13 +10,13 @@ title-slide-attributes:
 
 ## The Lorentz factor, $\gamma$
 
-* A clock in motion appears to... run slow by a factor of $\gamma$.
-* An object in motion appears... contracted along the direction of its length by a factor of $\gamma$.
+* A clock in motion appears to... [run slow by a factor of $\gamma$.]{.fragment}
+* An object in motion appears... [contracted along the direction of its length by a factor of $\gamma$.]{.fragment}
 * Where $\gamma=\class{fragment}{\frac{1}{\sqrt{1-(v/c)^2}}.}$
 
 ## Synchronization
 
-* What is the challenge of having observers are different locations discuss their findings?
+* What is the challenge of having observers at different locations discuss their findings?
 
 # The relativity of simultaneity
 
@@ -47,13 +47,15 @@ title-slide-attributes:
   * When Frank receives a photon at the front of the train, he stops his clock.
   * When Beth receives a photon at the back of the train, she stops her clock.
 
-* They all agree: the photons each travel $\frac{L}{2}$, and so Frank’s and Beth’s clocks both read $\frac{L/2}{c}$.
+## The train perspective
+
+* They all agree: the photons each travel $\frac{L}{2}$, and so Frank’s and Beth’s clocks both read $\frac{L}{2c}$.
 
 ## The platform perspective
 
 * Remember: all inertial frames agree on events, regardless of their relative motion.
-	* A platform observer right next to Frank when he stops his clock will see it read $\frac{L/2}{c}$.
-	* A separate platform observer right next to Beth when she stops her clock will see it read $\frac{L/2}{c}$.
+	* A platform observer right next to Frank when he stops his clock will see it read $\frac{L}{2c}$.
+	* A separate platform observer right next to Beth when she stops her clock will see it read $\frac{L}{2c}$.
 * The “issue”: those two observers won't agree that Frank and Beth stop their clocks at the same time!
 * Why not?
 
@@ -67,57 +69,63 @@ title-slide-attributes:
 
 ## The platform perspective
 
-* But if Frank’s and Beth’s clocks are ticking at the same rate,
+* But if Frank’s and Beth’s clocks are ticking at the same rate (to the platform observer),
 * and they both read the same value when they stop,
 * and they stop at different times,
 * they must not have been in sync to begin with!
 * Takeaway 2: Clocks synchronized in one frame are not synchronized in other frames! [Whose clock is ahead?]{.fragment}
 
+::: {.notes}
+Beth’s, because the photon reached her first
+:::
+
 ## Calculating the time difference
 
 * The train has rest length $L$ and speed $v$.
 * From the platform’s perspective, Frank and Beth are $\frac{L}{\gamma}$ apart.
+* Larry (and the lightbulb) are located at $x=0$.
 
 ## Calculating the time difference
 
-* Frank:
-	* Has initial position $+\frac{L}{2\gamma}$.
-	* Is traveling with speed $+v$.
-* Beth:
-	* Has initial position $-\frac{L}{2\gamma}$.
-	* Is traveling with speed $+v$.
-* The photons:
-	* Have initial position $0$.
-	* Are traveling at speed $\pm c$.
+|         | Init. pos.     | Velocity |
+|---------|:--------------:|:--------:|
+| Frank   | $+\frac{L}{2}$ | $v$      |
+| Beth    | $-\frac{L}{2}$ | $v$      |
+| Frank’s photon | $0$            | $c$  |
+| Beth’s photon | $0$            | $-c$  |
+
+* We want to find the times $t_F,t_B$ when the photons reach Frank and Beth.
 
 ## Calculating the time difference
 
 * Supposing we're on the platform, right next to Larry when he turns on the lightbulb, then:
-* The time when Frank and his photon meet is given by [$0+ct_F=+\frac{L}{2\gamma}+vt_F \to t_F=\frac{L}{2\gamma(c-v)}$.]{.fragment}
-* The time when Beth and her photon meet is given by [$0-ct_B=-\frac{L}{2\gamma}+vt_B \to t_B=\frac{L}{2\gamma(c+v)}$.]{.fragment}
+* The time when Frank and his photon meet is given by [$0+ct_F=+\frac{L}{2\gamma}+vt_F$]{.fragment} [$\Rightarrow t_F=\frac{L}{2\gamma(c-v)}$.]{.fragment}
+* The time when Beth and her photon meet is given by [$0-ct_B=-\frac{L}{2\gamma}+vt_B$]{.fragment} [$\Rightarrow t_B=\frac{L}{2\gamma(c+v)}$.]{.fragment}
+
+::: {.notes}
+Good, since c+v > c-v, Beth’s time is smaller than Frank’s which matches our prediction that she would stop her clock first from our perspective.
+:::
 
 ## Calculating the time difference
 
 * The amount of time that the platform observes elapse between Beth stopping her clock and Frank stopping his clock is:
 
 ::: {.fragment}
-
 $$
 \begin{align*}
 t_F-t_B&\class{fragment}{{}=\frac{L}{2\gamma(c-v)}-\frac{L}{2\gamma(c+v)}}\\
 &\class{fragment}{{}=\frac{L}{2\gamma}\left(\frac{1}{c-v}-\frac{1}{c+v}\right)}\\
-&\class{fragment}{{}=\frac{L}{2\gamma}\left(\frac{(c+v)-(c-v)}{(c-v)(c+v)}\right)}\\
-&\class{fragment}{{}=\frac{L}{2\gamma}\left(\frac{2v}{c^2-v^2}\right)}\\
+&\class{fragment}{{}=\frac{L}{2\gamma}\left(\frac{(c+v)-(c-v)}{(c-v)(c+v)}\right)}
 \end{align*}
 $$
-
 :::
 
 ## Calculating the time difference
 
 $$
 \begin{align*}
-t_F-t_B&=\frac{L}{2\gamma}\left(\frac{2v}{c^2-v^2}\right)\\
+t_F-t_B&=\frac{L}{2\gamma}\left(\frac{(c+v)-(c-v)}{(c-v)(c+v)}\right)\\
+&\class{fragment}{{}=\frac{L}{2\gamma}\left(\frac{2v}{c^2-v^2}\right)}\\
 &\class{fragment}{{}=\frac{L}{\gamma c^2}\left(\frac{v}{1-(v/c)^2}\right)}\\
 &\class{fragment}{{}=\frac{L}{\gamma c^2}\left(v\gamma^2\right)}\\
 &\class{fragment}{{}=\frac{Lv\gamma}{c^2}}
@@ -133,14 +141,114 @@ t_F-t_B&=\frac{Lv\gamma}{c^2}
 \end{align*}
 $$
 
-
 * This is how much time elapsed _according to us (on the platform)_.
 * Frank and Beth are in motion, so their clocks are running slow by a factor of $\gamma$.
 * So if $\frac{Lv\gamma}{c^2}$ time passes on _our_ clocks between Beth and Frank stopping their clocks...
 * Then $\frac{Lv}{c^2}$ time passes on Frank’s clock.
-* But remember — both clocks show the same time ($\frac{L}{2c}$) when the photon arrives!
 
 ## Conclusion
 
+* But remember — both clocks show the same time ($\frac{L}{2c}$) when the photon arrives!
 * Frank’s clock must have started out $\frac{Lv}{c^2}$ _behind_ Beth’s clock!
 * Clocks separated by a distance $L$ and traveling at speed $v$, [and synchronized in their own frame,]{.fragment} [appear to differ by $\frac{Lv}{c^2}$,]{.fragment} [with the clock in front lagging behind the clock in the back — “leading clocks lag”.]{.fragment}
+
+## Where we stand
+
+* When an object is in motion relative to us...
+* Its clocks run slow.
+* Its length is shorter (in the direction of motion).
+* Clocks at the front lag behind clocks at the rear.
+
+## Exercise (5–10 min)
+
+* A rocket ship of (rest) length $L$ is traveling at speed $v$.
+* At $t=0$, its rear clock is next to us (at $x=0$), also reading $t'_\textrm{rear}=0$.
+* When its front clock reads $t'_\textrm{front}=0$, it sends us a photon.
+* When will the photon arrive?
+* Answer: $L\gamma(\frac{v+c}{c^2})$ (but you have to prove it!)
+
+## Solution 1 (our perspective)
+
+* At our $t=0$, the front clock reads $-\frac{Lv}{c^2}$.
+* It will read time $t'=0$ at our time $t_\textrm{emit}=L\gamma\frac{v}{c^2}$ (remember, its time is dilated).
+* At that moment, it will have traveled $L\gamma\frac{v^2}{c^2}$.
+* The front’s initial position in our frame was $\frac{L}{\gamma}$, so its position when it emits the photon is $x_\textrm{emit}=\frac{L}{\gamma}+L\gamma\frac{v^2}{c^2}$.
+* Let's simplify:
+
+## Solution 1 (our perspective)
+
+$$
+\begin{align*}
+\frac{L}{\gamma}+L\gamma\frac{v^2}{c^2}&\class{fragment}{{}=\frac{L}{\gamma}\left(1+\frac{\gamma^2 v^2}{c^2}\right)}\\
+&\class{fragment}{{}=\frac{L}{\gamma}\left(1+\frac{v^2}{c^2(1-(v/c)^2)}\right)}\\
+&\class{fragment}{{}=\frac{L}{\gamma}\left(1+\frac{v^2}{c^2-v^2}\right)}\\
+&\class{fragment}{{}=\frac{L}{\gamma}\left(\frac{(c^2-v^2)+v^2}{c^2-v^2}\right)}\\
+\end{align*}
+$$
+
+## Solution 1 (our perspective)
+
+$$
+\begin{align*}
+\frac{L}{\gamma}+L\gamma\frac{v^2}{c^2}&=\frac{L}{\gamma}\left(\frac{(c^2-v^2)+v^2}{c^2-v^2}\right)\\
+&\class{fragment}{{}=\frac{L}{\gamma}\left(\frac{c^2}{c^2-v^2}\right)}\\
+&\class{fragment}{{}=\frac{L}{\gamma}\left(\frac{1}{1-(v/c)^2}\right)}\\
+&\class{fragment}{{}=\frac{L}{\gamma}\gamma^2}\\
+&\class{fragment}{{}=L\gamma}\\
+\end{align*}
+$$
+
+## Solution 1 (our perspective)
+
+* The photon will traverse this distance in time $t_\textrm{photon}=\frac{x_\textrm{emit}}{c}=\frac{L\gamma}{c}$.
+* The total time is
+
+::: {.fragment}
+$$
+\begin{align*}
+t_\textrm{emit}+t_\textrm{photon}&=\frac{L\gamma v}{c^2}+\frac{L\gamma}{c}\\
+&=L\gamma\left(\frac{v+c}{c^2}\right)
+\end{align*}
+$$
+:::
+
+## Solution 2 (ship perspective)
+
+* Now the ship’s clocks are in sync, both reading $0$. It sends the photon immediately!
+
+::: {.fragment}
+|         | Init. pos.     | Velocity |
+|---------|:--------------:|:--------:|
+| Photon   | $L$ | $-c$      |
+| Us    | $0$ | $-v$      |
+
+:::
+
+* $L-ct=0-vt\Rightarrow t=\frac{L}{c-v}$
+
+## Solution 2 (ship perspective)
+
+* And since our time appears dilated to those on the ship, our clock will read $t'=\frac{t}{\gamma}=\frac{L}{\gamma(c-v)}$.
+* (Note how we've become the primed frame.)
+* Does this match what we got above?
+
+## Solution 2 (ship perspective)
+
+$$
+\begin{align*}
+\frac{L}{\gamma(c-v)}&\class{fragment}{{}=\frac{L\sqrt{1-(v/c)^2}}{(c-v)}}\\
+&\class{fragment}{{}=\frac{L\sqrt{(1-v/c)(1+v/c)}}{c(1-v/c)}}\\
+&\class{fragment}{{}=\frac{L\sqrt{1+v/c}}{c\sqrt{1-v/c}}}\\
+&\class{fragment}{{}=\frac{L(1+v/c)}{c\sqrt{1-(v/c)^2}}}\class{fragment}{{}=L\gamma\left(\frac{v+c}{c^2}\right)}
+\end{align*}
+$$
+
+## Final notes
+
+* Unsurprisingly, we got the same result both ways.
+* Because even though different frames disagree on measurements of space and time, [the question was about an event: the time on our clock when the photon reached us.]{.fragment}
+* And everyone always agrees on events!
+
+## Next up
+
+* A way to make this easier — plug and chug.

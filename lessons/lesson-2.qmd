@@ -75,7 +75,7 @@ Because the front of the train has traveled a distance of L when the back of the
 
 # Synchronization
 
-## Events that happen somewhere else
+## Events that happen elsewhere
 
 * We need a way to talk about events that don't happen where we're located.
 * Solution:
@@ -83,7 +83,10 @@ Because the front of the train has traveled a distance of L when the back of the
   * Make sure the observers are stationary relative to each other (i.e. are in the same frame).
   * Have them record the coordinates of their respective events.
   * Afterwards, they reconvene and discuss their findings.
-* New problem: they need to agree on a common coordinate system to make sense of their findings.
+
+## Events that happen elsewhere
+
+* New problem: [they need to agree on a common coordinate system to make sense of their findings.]{.fragment}
 
 ## Synchronizing clocks
 
@@ -104,11 +107,12 @@ Because the front of the train has traveled a distance of L when the back of the
 
 ## One bad procedure
 
-* Alice starts with Clock A.
-* She walks it over to Bob, who's holding Clock B.
-* Bob sets B’s time to A’s.
-* Alice walks A back to its starting position.
-* Now Clocks A and B are at different positions and are in sync.
+1. Alice starts with Clock A.
+1. She walks it over to Bob, who's holding Clock B.
+1. Bob sets B’s time to A’s.
+1. Alice walks A back to its starting position.
+1. Now Clocks A and B are at different positions and are in sync.
+
 * _Why doesn't this work?_
 
 ::: {.notes}
@@ -117,9 +121,10 @@ An alternative to this is that maybe Alice and Bob meet in the middle, synchroni
 
 ## Another bad procedure
 
-* Alice starts with Clock A.
-* She uses wifi (or radio or bluetooth or...) to transmit A’s current time to Bob.
-* Bob sets Clock B to the time given in the signal.
+1. Alice starts with Clock A.
+1. She uses wifi (or radio or bluetooth or...) to transmit A’s current time to Bob.
+1. Bob sets Clock B to the time given in the signal.
+
 * _Why doesn't this work?_
 
 ::: {.notes}
@@ -134,14 +139,16 @@ Bob’s clock will be behind by the time it took the light to travel. So we have
 1. Alice emits a photon towards Bob, and at the same time starts her clock.
 1. When Bob receives the photon, he starts his clock.
 
-   * Bob’s clock will read $L/c$ (that's what he'd set it to...)
-   * And it will take $L/c$ for the photon to arrive at Bob, so Alice’s clock will read $L/c$ as well.
-
-1. And so the two clocks are synchronized! [(And because they're in the same frame, they remain synchronized.)]{.fragment}
-
 ::: {.notes}
 Importantly, this could be verified by a third party in the same frame and equidistant from the two clocks — they'd see the same time on both clocks.
 :::
+
+## The procedure
+
+* Bob’s clock will read $L/c$ (that's what he'd set it to...)
+* And it will take $L/c$ for the photon to arrive at Bob, so Alice’s clock will read $L/c$ as well.
+* And so the two clocks are synchronized! [(And because they're in the same frame, they remain synchronized.)]{.fragment}
+
 
 ## Scaling up
 
@@ -161,10 +168,9 @@ If you remember this diagram from Lesson 1, it may not have even occurred to you
 
 ## Time of travel
 
-* FAQ: when we record the time of a distant event, are we referring to when it “actually” happened or when we saw it happen?
-  * The latter incurs a delay due to the time it takes light to reach us from the event.
+* FAQ: when we record the time of a distant event, are we referring to when it “actually” happened or when we saw it happen? [The latter incurs a delay due to the time it takes light to reach us from the event.]{.fragment}
 * Answer: when it “actually” happened. [We know how far away it is, so we know how long it took the light to reach us.]{.fragment}
-* So whenever we talk about the time of an event, we're always talking about the time a clock located there would have read when the event occurred.
+* So whenever we talk about the time of an event, we're always talking about the time a stationary clock located there (and synced with us) would have read when the event occurred.
 
 ::: {.notes}
 Let's say an event happens one light second away from me, and I observe its light reach me at t=5s. Then I know the event took place at t=4s.
@@ -183,14 +189,14 @@ Let's say an event happens one light second away from me, and I observe its ligh
 
 * Afterwards, Frank and Beth reconvene. [What is the difference they observe between when I pass by Frank and when I pass by Beth?]{.fragment}
 * To those on the train, it takes $\Delta t'=\frac{L}{v}$ for me to move from the front of the train to the back, so that's what the time difference is on _their_ two clocks.
-* But they think my time is dilated! [So the difference between Frank’s reading of my clock and Beth’s reading of my clock will be $\Delta t=\frac{\Delta t'}{\gamma}=\frac{L}{\gamma v}$.]{.fragment}
+* But they think my clock runs slow by a factor of $\gamma$! [So the difference between Frank’s reading of my clock and Beth’s reading of my clock will be $\Delta t=\frac{\Delta t'}{\gamma}=\frac{L}{\gamma v}$.]{.fragment}
 
 ## My time measurement
 
 * Key point: [Frank and Beth were at the same place and time as me when they saw my clock...]{.fragment} [so that's _also what I'll read on my clock_.]{.fragment}
   * Remember — no privileged reference frames. If two observers are in the same spot at the same time, they agree on the state of things there and then.
   * More precisely, if one observer says two events are the same, all observers agree.
-  * Beth says that when she passed me, my clock had advanced $\frac{L}{\gamma v}$ from when Frank saw my clock, [and therefore I must agree!]{.fragment}
+  * Beth says that when she passes me, my clock reads $\frac{L}{\gamma v}$, [and therefore I must agree!]{.fragment}
 
 ## My length measurement
 
@@ -214,9 +220,12 @@ Let's say an event happens one light second away from me, and I observe its ligh
 * Supposing that objects in motion appeared contracted in all three dimensions...
 * Suppose a train were traveling towards a tunnel exactly big enough for the train to fit when both are at rest relative to each other.
 * Set the train in motion.
-  * From the train’s perspective, the tunnel shrinks and is now too small for it to fit.
-  * From the tunnel’s perspective, the train shrinks and can now fit with room to spare.
-  * What happens when the train reaches the tunnel: [does it crash or fly through?]{.fragment}
+
+## Contracted lengthwise
+
+* From the train’s perspective, the tunnel shrinks and is now too small for the train to fit.
+* From the tunnel’s perspective, the train shrinks and can now fit with room to spare.
+* What happens when the train reaches the tunnel: [does it crash or fly through?]{.fragment}
 * The tunnel and train must agree, but they don't — contradiction!
 
 ## Exercise (5–10 minutes)
@@ -236,9 +245,7 @@ Also, as stated, the space probe is launched, but if it makes you feel better yo
 
 * The probe travels for $t'=10\,\textrm{hrs}$ at $v=\frac{4}{5}c$, so it perceives the distance between Earth and Io to be $l'=t'v=10\,\textrm{hrs}\cdot \frac{4}{5}c$.
 * But the probe perceives the distance between Earth and Io (which are moving relative to it) as length-contracted.
-  * Earth observers would see that same distance as $l=l'\gamma=10\,\textrm{hrs}\cdot \frac{4}{5}c\cdot \gamma$.
-  * $\gamma=\frac{1}{\sqrt{1-(4/5)^2}}=\frac{1}{\sqrt{1-\frac{16}{25}}}=\frac{1}{\sqrt{\frac{9}{25}}}=\frac{5}{3}$.
-  * So the rest distance between Earth and Io is $l=10\,\textrm{hrs}\cdot \frac{4}{5}c\cdot \frac{5}{3}=\frac{40}{3}\,\textrm{hrs}\cdot c$.
+  * Earth observers would see that same distance as $l=l'\gamma=10\,\textrm{hrs}\cdot \frac{4}{5}c\cdot \frac{5}{3}=\frac{40}{3}\,\textrm{hrs}\cdot c$.
 
 ## Solution
 
@@ -248,7 +255,7 @@ Also, as stated, the space probe is launched, but if it makes you feel better yo
 
 ## Special topic: muons
 
-* Subatomic particle similar to the electron except 200x more massive. When observed in the lab, their average lifetime is about $2.2\upmu\textrm{s}$.
+* Subatomic particle similar to the electron except 200x more massive. When observed in the lab, their average lifespan is about $2.2\upmu\textrm{s}$.
 * _Secondary muons_ are generated by cosmic rays hitting the upper atmosphere (roughly $15\,\textrm{km}$ up).
 * They travel at roughly $0.999c$ and can be detected even underground.
 * At this speed, it takes muons roughly $50\upmu\textrm{s}$ to travel through the whole atmosphere.
