@@ -165,12 +165,20 @@ $$
 
 ## Result
 
-* If $F'$ has velocity $v$ relative to $F$ and $F''$ has velocity $u'$ relative to $F'$, then the velocity of $F''$ relative to $F$ is $u=\frac{u'+v}{1+\frac{u'v}{c^2}}$.
+::: {.columns}
+:::: {.column}
+* If $F'$ has velocity $v$ relative to $F$, and $F''$ has velocity $u'$ relative to $F'$, then the velocity of $F''$ relative to $F$ is $u=\frac{u'+v}{1+\frac{u'v}{c^2}}$.
+::::
+
+:::: {.column .fragment}
+![Velocity Addition (source: me)](/images/5/velocity_addition.svg)
+::::
+:::
 
 ## Observations
 
 * $F'$ is traveling at $v=0.9c$ relative to $F$. $F''$ is traveling at $u'=0.9c$ relative to $F'$. [What is the speed $u$ of $F''$ relative to $F$?]{.fragment}
-* Naively: $u=v+u'=1.8c>c$ — bad!
+* Naively: $u=u'+v=1.8c>c$ — bad!
 * Actually: $u=\frac{u'+v}{1+\frac{u'v}{c^2}}=\frac{1.8c}{1+0.81}=0.994c<c$ — good!
 
 ## Observations
@@ -178,11 +186,17 @@ $$
 * $F'$ emits a photon in the $+x$ direction. What is its speed $u$ relative to $F$?
 	* Now, $u'=c$
 * $u=\frac{c+v}{1+\frac{cv}{c^2}}=\frac{c^2(c+v)}{c^2+cv}=\frac{c^2(c+v)}{c(c+v)}=c$.&nbsp;
-	* Phew!
+	* Phew! (It didn't matter what $v$ was.)
 
 ## Observations
 
 * $F'$ emits a photon in the $-x$ direction. What is its speed $u$ relative to $F$?
 	* Now, $u'=-c$
 * $u=\frac{-c+v}{1+\frac{-cv}{c^2}}=\frac{c^2(-c+v)}{c^2-cv}=\frac{c^2(-c+v)}{c(c-v)}=-c$.&nbsp;
-	* Phew!
+	* Phew! (It didn't matter what $v$ was.)
+
+## Conclusion
+
+* We can now deal with three (and, by repeating this process, arbitrarily many) frames in relative motion.
+* The velocity addition formula handles both massive objects and photons equivalently.
+* No amount of velocity addition can get something to appear to travel faster than light.
