@@ -32,7 +32,7 @@ $$
 
 # Paradoxes
 
-## The “pole in barn paradox”
+## The “pole in barn” paradox
 
 * A pole of rest length $L$ is moving to the right, along its length, at speed $v$.
 * A barn of rest length $\frac{L}{\gamma}$ has its front door open and the back door closed.
@@ -59,12 +59,12 @@ $$
 * The correct questions to ask:
 	* Does the front of the pole just glance the back door of the barn?
 	* Does the front door of the barn just glance the back of the pole?
-	* Or, do the pole and doors smash into each other?
-	* Or, do the doors open/close so early/late that they don't even touch the pole?
-* The barn says no. Why does the pole also say no?
+	* Or, does the **back** door **open** so **late** that it collides with the pole? (Front/close/early.)
+	* Or, does the **back** door **open** so **early** that it misses the pole entirely? (Front/close/late.)
 
 ## The resolution (barn perspective)
 
+* The barn says no. Why does the pole also say no?
 * The barn says that at $t=0$:
 	* A clock at the back of the pole reads $t'=0$.
 	* The barn closes the front door (at $x=0$).
@@ -127,7 +127,7 @@ $$
 ## The paradox (resolution)
 
 * While traveling towards $P$, Earth is the leading clock, and so its clock lags behind $P$.
-* Since Alice was in sync with Earth when she left, she must perceive $P$’s clock reading far into the future.
+* Since Alice was in sync with Earth when she left, she must perceive $P$’s clock reading far into the future (by $\frac{Lv}{c^2}$).
 * She arrives at $P$ and _instantly_ turns around.
 	* This is the one part of this we cannot actually model.
 	* Not only is instant turnaround (infinite acceleration) impossible, but special relativity cannot handle any acceleration at all.
@@ -154,18 +154,8 @@ $$
 
 * On each leg of her trip, Alice says she traveled for $\frac{2L}{\gamma v}$.
 * Meanwhile, Ernie’s clock is dilated, so on each leg of her trip she sees him age $\frac{2L}{\gamma^2 v}$.
-* And at the turnaround, he ages an additional $\frac{2Lv}{c^2}$.
-* So in total she observes him age $\frac{2L}{\gamma^2 v}+\frac{2Lv}{c^2}=\frac{2L}{v}(\frac{1}{\gamma^2}+\frac{v^2}{c^2})$.
-
-## The paradox (quantitative)
-
-$$
-\begin{align*}
-\frac{v^2}{c^2}&=1-(1-(v/c)^2)\\
-&=1-\frac{1}{\gamma^2}\\
-\frac{1}{\gamma^2}+\frac{v^2}{c^2}&=1!
-\end{align*}
-$$
+* And at the turnaround, she sees him age an additional $\frac{2Lv}{c^2}$.
+* So in total she observes him age $\frac{2L}{\gamma^2 v}+\frac{2Lv}{c^2}=\frac{2L}{v}(\frac{1}{\gamma^2}+\frac{v^2}{c^2})=\frac{2L}{v}$!
 
 ## The paradox (quantitative)
 
