@@ -47,6 +47,8 @@ title-slide-attributes:
   * When Frank receives a photon at the front of the train, he stops his clock.
   * When Beth receives a photon at the back of the train, she stops her clock.
 
+## The train perspective
+
 * They all agree: the photons each travel $\frac{L}{2}$, and so Frank’s and Beth’s clocks both read $\frac{L}{2c}$.
 
 ## The platform perspective
@@ -89,7 +91,8 @@ Beth’s, because the photon reached her first
 |---------|:--------------:|:--------:|
 | Frank   | $+\frac{L}{2}$ | $v$      |
 | Beth    | $-\frac{L}{2}$ | $v$      |
-| Photons | $0$            | $\pm c$  |
+| Frank’s photon | $0$            | $c$  |
+| Beth’s photon | $0$            | $-c$  |
 
 * We want to find the times $t_F,t_B$ when the photons reach Frank and Beth.
 
@@ -108,23 +111,21 @@ Good, since c+v > c-v, Beth’s time is smaller than Frank’s which matches our
 * The amount of time that the platform observes elapse between Beth stopping her clock and Frank stopping his clock is:
 
 ::: {.fragment}
-
 $$
 \begin{align*}
 t_F-t_B&\class{fragment}{{}=\frac{L}{2\gamma(c-v)}-\frac{L}{2\gamma(c+v)}}\\
 &\class{fragment}{{}=\frac{L}{2\gamma}\left(\frac{1}{c-v}-\frac{1}{c+v}\right)}\\
-&\class{fragment}{{}=\frac{L}{2\gamma}\left(\frac{(c+v)-(c-v)}{(c-v)(c+v)}\right)}\\
-&\class{fragment}{{}=\frac{L}{2\gamma}\left(\frac{2v}{c^2-v^2}\right)}\\
+&\class{fragment}{{}=\frac{L}{2\gamma}\left(\frac{(c+v)-(c-v)}{(c-v)(c+v)}\right)}
 \end{align*}
 $$
-
 :::
 
 ## Calculating the time difference
 
 $$
 \begin{align*}
-t_F-t_B&=\frac{L}{2\gamma}\left(\frac{2v}{c^2-v^2}\right)\\
+t_F-t_B&=\frac{L}{2\gamma}\left(\frac{(c+v)-(c-v)}{(c-v)(c+v)}\right)\\
+&\class{fragment}{{}=\frac{L}{2\gamma}\left(\frac{2v}{c^2-v^2}\right)}\\
 &\class{fragment}{{}=\frac{L}{\gamma c^2}\left(\frac{v}{1-(v/c)^2}\right)}\\
 &\class{fragment}{{}=\frac{L}{\gamma c^2}\left(v\gamma^2\right)}\\
 &\class{fragment}{{}=\frac{Lv\gamma}{c^2}}
@@ -144,10 +145,10 @@ $$
 * Frank and Beth are in motion, so their clocks are running slow by a factor of $\gamma$.
 * So if $\frac{Lv\gamma}{c^2}$ time passes on _our_ clocks between Beth and Frank stopping their clocks...
 * Then $\frac{Lv}{c^2}$ time passes on Frank’s clock.
-* But remember — both clocks show the same time ($\frac{L}{2c}$) when the photon arrives!
 
 ## Conclusion
 
+* But remember — both clocks show the same time ($\frac{L}{2c}$) when the photon arrives!
 * Frank’s clock must have started out $\frac{Lv}{c^2}$ _behind_ Beth’s clock!
 * Clocks separated by a distance $L$ and traveling at speed $v$, [and synchronized in their own frame,]{.fragment} [appear to differ by $\frac{Lv}{c^2}$,]{.fragment} [with the clock in front lagging behind the clock in the back — “leading clocks lag”.]{.fragment}
 
@@ -164,10 +165,11 @@ $$
 * At $t=0$, its rear clock is next to us (at $x=0$), also reading $t'_\textrm{rear}=0$.
 * When its front clock reads $t'_\textrm{front}=0$, it sends us a photon.
 * When will the photon arrive?
+* Answer: $L\gamma(\frac{v+c}{c^2})$ (but you have to prove it!)
 
 ## Solution 1 (our perspective)
 
-* At our $t=0$, the front clock reads $-L\frac{v}{c^2}$.
+* At our $t=0$, the front clock reads $-\frac{Lv}{c^2}$.
 * It will read time $t'=0$ at our time $t_\textrm{emit}=L\gamma\frac{v}{c^2}$ (remember, its time is dilated).
 * At that moment, it will have traveled $L\gamma\frac{v^2}{c^2}$.
 * The front’s initial position in our frame was $\frac{L}{\gamma}$, so its position when it emits the photon is $x_\textrm{emit}=\frac{L}{\gamma}+L\gamma\frac{v^2}{c^2}$.
@@ -178,8 +180,8 @@ $$
 $$
 \begin{align*}
 \frac{L}{\gamma}+L\gamma\frac{v^2}{c^2}&\class{fragment}{{}=\frac{L}{\gamma}\left(1+\frac{\gamma^2 v^2}{c^2}\right)}\\
-&\class{fragment}{{}=\frac{L}{\gamma}\left(1+\frac{v^2}{c^2-v^2}\right)}\\
 &\class{fragment}{{}=\frac{L}{\gamma}\left(1+\frac{v^2}{c^2(1-(v/c)^2)}\right)}\\
+&\class{fragment}{{}=\frac{L}{\gamma}\left(1+\frac{v^2}{c^2-v^2}\right)}\\
 &\class{fragment}{{}=\frac{L}{\gamma}\left(\frac{(c^2-v^2)+v^2}{c^2-v^2}\right)}\\
 \end{align*}
 $$
@@ -189,7 +191,7 @@ $$
 $$
 \begin{align*}
 \frac{L}{\gamma}+L\gamma\frac{v^2}{c^2}&=\frac{L}{\gamma}\left(\frac{(c^2-v^2)+v^2}{c^2-v^2}\right)\\
-&\class{fragment}{{}=\frac{L}{\gamma}\left(1+\frac{v^2}{c^2(1-(v/c)^2)}\right)}\\
+&\class{fragment}{{}=\frac{L}{\gamma}\left(\frac{c^2}{c^2-v^2}\right)}\\
 &\class{fragment}{{}=\frac{L}{\gamma}\left(\frac{1}{1-(v/c)^2}\right)}\\
 &\class{fragment}{{}=\frac{L}{\gamma}\gamma^2}\\
 &\class{fragment}{{}=L\gamma}\\
@@ -223,6 +225,9 @@ $$
 :::
 
 * $L-ct=0-vt\Rightarrow t=\frac{L}{c-v}$
+
+## Solution 2 (ship perspective)
+
 * And since our time appears dilated to those on the ship, our clock will read $t'=\frac{t}{\gamma}=\frac{L}{\gamma(c-v)}$.
 * (Note how we've become the primed frame.)
 * Does this match what we got above?
@@ -234,8 +239,7 @@ $$
 \frac{L}{\gamma(c-v)}&\class{fragment}{{}=\frac{L\sqrt{1-(v/c)^2}}{(c-v)}}\\
 &\class{fragment}{{}=\frac{L\sqrt{(1-v/c)(1+v/c)}}{c(1-v/c)}}\\
 &\class{fragment}{{}=\frac{L\sqrt{1+v/c}}{c\sqrt{1-v/c}}}\\
-&\class{fragment}{{}=\frac{L(1+v/c)}{c\sqrt{1-(v/c)^2}}}\\
-&\class{fragment}{{}=L\gamma\left(\frac{v+c}{c^2}\right)}
+&\class{fragment}{{}=\frac{L(1+v/c)}{c\sqrt{1-(v/c)^2}}}\class{fragment}{{}=L\gamma\left(\frac{v+c}{c^2}\right)}
 \end{align*}
 $$
 
