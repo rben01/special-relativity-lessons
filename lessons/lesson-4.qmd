@@ -177,10 +177,22 @@ In the primed frame:
 
 $$
 \begin{align*}
-c&=\frac{x'}{t'}\\
-&\class{fragment}{{}=\frac{\gamma (c-v) t_0}{\gamma (1-(v/c)) t_0}}\\
+\frac{x'}{t'}&\class{fragment}{{}=\frac{\gamma (c-v) t_0}{\gamma (1-(v/c)) t_0}}\\
 &\class{fragment}{{}=\frac{(c-v) }{1-(v/c)}}\\
 &\class{fragment}{{}=\frac{c(1-(v/c)) }{1-(v/c)}}\\
 &\class{fragment}{{}=c}\\
 \end{align*}
 $$
+
+## Conclusion
+
+* We now have a rote, mindless way to convert between different frames’ coordinates.
+* Furthermore, the Lorentz transform is “just” a pair of linear equations, of the form $x'=Ax+Bt$ and $t'=Cx+Dt$.
+
+## Conclusion
+
+* Challenge:
+* We can plot events on a graph with $x$ on the horizontal axis and $ct$ on the vertical axis. Ponder:
+	* What path do photons trace out on this graph?
+   * In a given frame, simultaneous events lie on a horizontal line. What do those same events look like in a frame with relative velocity $v$?
+	* In a given frame, co-located events lie on a vertical line. What do those same events look like in a frame with relative velocity $v$?
