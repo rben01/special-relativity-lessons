@@ -11,37 +11,30 @@ permissions:
   id-token: write
 
 jobs:
-  setup:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-
-      - run: npm install
-
-  build:
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
-      - name: Build Quarto docs
-        run: quarto render
-
-      - name: Build Astro
-        run: npm run build
-
-  deploy:
-    needs: build
+  build-deploy:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "23"
+
+      - run: npm install
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - run: quarto render
+
+      - name: Build Astro
+        run: npm run build
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
