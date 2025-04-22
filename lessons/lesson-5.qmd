@@ -37,8 +37,9 @@ $$
 ## Non-relativistic velocity addition
 
 * Velocities of non-light objects “just add normally”: [add the velocity of the frame and the velocity of the object in the frame.]{.fragment}
-* The velocity of light is constant and universal: [it's $c$ in every frame.]{.fragment}
-* This is weird, and bad, (and wrong).
+	* If $A$ is traveling at $0.9c$ relative to $B$, and $A$ launches something forwards at $0.9c$ relative to $A$, $B$ would observe the speed of the object as $1.8c>c$.
+* Yet the velocity of light is constant and universal: [it's $c$ in every frame.]{.fragment}
+* This is weird, and bad, and wrong.
 
 ## Relativistic velocity addition
 
@@ -79,7 +80,7 @@ $$
 ::: {.fragment}
 $$
 \begin{align*}
-D(\beta_{u'})=\frac{\Delta t_\textrm{arr}'}{\Delta t''}&\class{fragment}{{}=\gamma_{u'}(1+\beta_{u'})}\\
+\frac{\Delta t_\textrm{arr}'}{\Delta t''}&\class{fragment}{{}=\gamma_{u'}(1+\beta_{u'})}\\
 &\class{fragment}{{}=\frac{(1+\beta_{u'})}{\sqrt{1-\beta_{u'}^2}}}
 \end{align*}
 $$
@@ -112,7 +113,7 @@ As expected, this is greater than 1 if beta>0. It's also less than 1 if beta<0, 
 * Key point: [$F'$ emitting a photon whenever it receives one is _identical_ to the original photon just passing through $O'$!]{.fragment}
 * That is, $O$ receives flashes _from the flashlight_ with period $\Delta t_\textrm{arr}=\Delta t''\sqrt{\frac{1+\beta_{u'}}{1-\beta_{u'}}}\sqrt{\frac{1+\beta_v}{1-\beta_v}}$.
 * But the flashlight is also moving in $F$, and we know the period shift of moving flashlights based on their velocity...
-	* It's $D(\beta)=\sqrt{\frac{1+\beta}{1-\beta}}$.
+	* It's $\sqrt{\frac{1+\beta}{1-\beta}}$.
 
 ## Part 3
 
@@ -165,14 +166,24 @@ $$
 
 ## Result
 
-::: {.columns}
-:::: {.column}
 * If $F'$ has velocity $v$ relative to $F$, and $F''$ has velocity $u'$ relative to $F'$, then the velocity of $F''$ relative to $F$ is $u=\frac{u'+v}{1+\frac{u'v}{c^2}}$.
+* Equivalently, $\beta_u=\frac{\beta_{u'}+\beta_v}{1+\beta_{u'}\beta_v}$.
+
+## Result
+
+::: {.columns}
+:::: {.column .fragment}
+
+![Velocity Addition, Naive (source: me)](/images/5/velocity_addition_bad.png)
+
 ::::
 
 :::: {.column .fragment}
-![Velocity Addition (source: me)](/images/5/velocity_addition.svg)
+
+![Velocity Addition, Actual (source: me)](/images/5/velocity_addition.png)
+
 ::::
+
 :::
 
 ## Observations
@@ -180,6 +191,13 @@ $$
 * $F'$ is traveling at $v=0.9c$ relative to $F$. $F''$ is traveling at $u'=0.9c$ relative to $F'$. [What is the speed $u$ of $F''$ relative to $F$?]{.fragment}
 * Naively: $u=u'+v=1.8c>c$ — bad!
 * Actually: $u=\frac{u'+v}{1+\frac{u'v}{c^2}}=\frac{1.8c}{1+0.81}=0.994c<c$ — good!
+
+## Observations
+
+* $F'$ is traveling at $v=100\,\textrm{m/s}$ relative to $F$. $F''$ is traveling at $u'=100\,\textrm{m/s}$ relative to $F'$. [What is the speed $u$ of $F''$ relative to $F$?]{.fragment}
+* Naively: $u=u'+v=200\,\textrm{m/s}$.
+* Actually: $u=\frac{u'+v}{1+\frac{u'v}{c^2}}=200\,\textrm{m/s}\class{fragment}{{}-2.225\times 10^{-11}\,\textrm{m/s}.}$
+
 
 ## Observations
 
