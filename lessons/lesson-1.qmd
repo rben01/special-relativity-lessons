@@ -230,7 +230,7 @@ If a photon strikes a detector in one frame, it strikes the detector in all fram
 
 ::: {.r-stack}
 :::: {.fragment}
-<iframe src="/special-relativity-lessons/lesson-1/light-clocks/Basic" width="500" height="500" frameborder="true" ></iframe>
+<iframe src="../special-relativity-lessons/lesson-1/light-clocks/Basic" width="500" height="500" frameborder="true" ></iframe>
 ::::
 :::
 
@@ -267,7 +267,7 @@ Time seems discrete but is of course continuous — we can make arbitrarily prec
 ## Light clocks in motion
 
 ::: {}
-<iframe src="/special-relativity-lessons/lesson-1/light-clocks/InMotion" width="1600" height="500" frameborder="true" ></iframe>
+<iframe src="../special-relativity-lessons/lesson-1/light-clocks/InMotion" width="1600" height="500" frameborder="true" ></iframe>
 :::
 
 ::: {.notes}
@@ -293,7 +293,7 @@ Again, how do we know that the photon in the bottom frame is traveling partially
 
 ## Diagram
 
-<iframe src="/special-relativity-lessons/lesson-1/ComputationOfGamma" width="1600" height="800" frameborder="true" ></iframe>
+<iframe src="../special-relativity-lessons/lesson-1/ComputationOfGamma" width="1600" height="800" frameborder="true" ></iframe>
 
 ::: {.notes}
 Just click a bunch of times to advance
