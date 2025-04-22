@@ -1,0 +1,9 @@
+---
+title: "Special relativity"
+format: html
+---
+
+## Index
+
+* [Lesson 0: Why Relativity?](lessons/lesson-0.html)
+* [Lesson 1: The Basics of Relativity](lessons/lesson-1.html)

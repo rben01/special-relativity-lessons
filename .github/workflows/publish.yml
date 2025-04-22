@@ -11,7 +11,7 @@ permissions:
   id-token: write
 
 jobs:
-  build:
+  setup:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -20,18 +20,28 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Install, build, and upload your site
-        uses: withastro/action@v3
+      - name: Setup Node
+        uses: actions/setup-node@v4
+
+      - run: npm install
+
+  build:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Quarto docs
+        run: quarto render
+
+      - name: Build Astro
+        run: npm run build
 
   deploy:
+    needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Render and Publish
-        uses: quarto-dev/quarto-actions/publish@v2
-        with:
-          target: gh-pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
