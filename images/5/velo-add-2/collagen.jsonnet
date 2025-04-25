@@ -1,0 +1,196 @@
+local w = 150;
+local h = 100;
+local margin = 5;
+local fg = 'white';
+local photonColor = '#F6D800';
+local accent = '#4cf';
+local rectBorder = 4.5 * margin;
+
+local innerRectNetPadding = 6 * margin;
+
+
+local xScale(t) = (1 - t) * margin + t * (w - margin);
+local yScale(t) = (1 - t) * margin + t * (h - margin);
+local xDist(t) = xScale(t) - xScale(0);
+local yDist(t) = yScale(t) - yScale(0);
+
+local math = {
+  f: '𝐹',
+  o: '𝑂',
+  v: '𝑣',
+  u: '𝑢',
+  deltaT: 'Δ𝑡',
+  prime: '′',
+  doublePrime: '″',
+};
+
+
+local origin = {
+  tag: 'circle',
+  attrs: {
+    cy: yScale(0) + yDist(1) * 2 / 3,
+    fill: accent,
+    stroke: fg,
+    'stroke-width': 0.75,
+    r: 2,
+  },
+};
+
+local text = {
+  tag: 'text',
+  attrs: {
+    'font-family': 'Times',
+    'font-size': 8,
+    'text-anchor': 'start',
+    'dominant-baseline': 'hanging',
+    fill: fg,
+  },
+};
+
+local originLabel = text { attrs+: { y: origin.attrs.cy - 3.5, 'dominant-baseline': 'auto' } };
+
+local deltaTLabel = text { attrs+: { y: origin.attrs.cy + 3.5, 'dominant-baseline': 'hanging' } };
+
+local velocityArrow = {
+  tag: 'line',
+  attrs: {
+    fill: 'none',
+    stroke: fg,
+    'stroke-width': 0.8,
+    'marker-end': 'url(#arrow-white)',
+  },
+};
+
+local velocityArrowOffset = xDist(0.1);
+local velocityArrowLength = xDist(0.15);
+
+local x0 = xScale(0);
+local x1 = xScale(0) + rectBorder;
+local x2 = xScale(0.7);
+
+local textX0 = x0 + margin / 2;
+local textX1 = x1 + margin / 2;
+local textX2 = x2 + margin / 2;
+
+{
+  attrs: { viewBox: '0 0 %(w)g %(h)g' % { w: w, h: h } },
+  children: [
+    {
+      tag: 'defs',
+      children:
+        {
+          tag: 'marker',
+          attrs: {
+            id: 'arrow-' + o.name,
+            viewBox: '0 0 10 10',
+            refX: 5,
+            refY: 5,
+            markerWidth: 6,
+            markerHeight: 6,
+            orient: 'auto-start-reverse',
+          },
+          children:
+            {
+              tag: 'path',
+              attrs: {
+                d: 'M 0 0 L 10 5 L 0 10 z',
+                fill: o.color,
+              },
+            },
+        },
+    }
+    for o in [{ name: 'white', color: fg }, { name: 'photon', color: photonColor }]
+  ] + [
+    {
+      tag: 'path',
+      attrs: {
+        transform: (
+          local w = 30;
+          local h = 10;
+          'translate(%(tx)g, %(ty)g) translate(%(w2)g, %(h2)g) scale(1, -1) translate(-%(w2)g, -%(h2)g)' % {
+            tx: x2 - w,
+            ty: origin.attrs.cy - h / 2,
+            w2: w / 2,
+            h2: h / 2,
+          }
+        ),
+        fill: 'none',
+        stroke: photonColor,
+        'marker-end': 'url(#arrow-photon)',
+        'stroke-width': velocityArrow.attrs['stroke-width'],
+        d: 'M30,5C29.923,5.212,29.847,5.423,29.77,5.633C29.694,5.843,29.617,6.051,29.54,6.256C29.464,6.461,29.387,6.662,29.31,6.858C29.234,7.055,29.157,7.246,29.081,7.431C29.004,7.616,28.927,7.794,28.851,7.965C28.774,8.135,28.697,8.297,28.621,8.45C28.544,8.604,28.468,8.747,28.391,8.881C28.314,9.014,28.238,9.137,28.161,9.249C28.084,9.36,28.008,9.46,27.931,9.548C27.855,9.636,27.778,9.712,27.701,9.775C27.625,9.837,27.548,9.887,27.472,9.924C27.395,9.961,27.318,9.984,27.242,9.994C27.165,10.004,27.088,10.001,27.012,9.984C26.935,9.968,26.859,9.937,26.782,9.894C26.705,9.851,26.629,9.794,26.552,9.725C26.475,9.656,26.399,9.574,26.322,9.48C26.246,9.386,26.169,9.28,26.092,9.163C26.016,9.046,25.939,8.917,25.862,8.779C25.786,8.64,25.709,8.492,25.633,8.334C25.556,8.176,25.479,8.01,25.403,7.835C25.326,7.661,25.25,7.479,25.173,7.291C25.096,7.103,25.02,6.909,24.943,6.71C24.866,6.511,24.79,6.308,24.713,6.102C24.637,5.895,24.56,5.686,24.483,5.475C24.407,5.265,24.33,5.053,24.253,4.841C24.177,4.63,24.1,4.419,24.024,4.21C23.947,4.001,23.87,3.794,23.794,3.591C23.717,3.388,23.64,3.189,23.564,2.995C23.487,2.802,23.411,2.613,23.334,2.432C23.257,2.25,23.181,2.075,23.104,1.909C23.027,1.743,22.951,1.585,22.874,1.437C22.798,1.288,22.721,1.149,22.644,1.021C22.568,0.893,22.491,0.776,22.415,0.67C22.338,0.564,22.261,0.47,22.185,0.388C22.108,0.306,22.031,0.237,21.955,0.181C21.878,0.124,21.802,0.081,21.725,0.051C21.648,0.021,21.572,0.004,21.495,0.001C21.418,-0.003,21.342,0.007,21.265,0.031C21.189,0.054,21.112,0.091,21.035,0.141C20.959,0.191,20.882,0.254,20.805,0.329C20.729,0.405,20.652,0.493,20.576,0.593C20.499,0.693,20.422,0.804,20.346,0.927C20.269,1.05,20.193,1.183,20.116,1.327C20.039,1.471,19.963,1.624,19.886,1.786C19.809,1.948,19.733,2.119,19.656,2.297C19.58,2.475,19.503,2.66,19.426,2.851C19.35,3.042,19.273,3.239,19.196,3.44C19.12,3.641,19.043,3.846,18.967,4.054C18.89,4.261,18.813,4.472,18.737,4.683C18.66,4.894,18.583,5.106,18.507,5.317C18.43,5.528,18.354,5.739,18.277,5.946C18.2,6.154,18.124,6.359,18.047,6.56C17.971,6.761,17.894,6.958,17.817,7.149C17.741,7.34,17.664,7.525,17.587,7.703C17.511,7.881,17.434,8.052,17.358,8.214C17.281,8.376,17.204,8.529,17.128,8.673C17.051,8.817,16.974,8.95,16.898,9.073C16.821,9.196,16.745,9.307,16.668,9.407C16.591,9.507,16.515,9.595,16.438,9.671C16.361,9.746,16.285,9.809,16.208,9.859C16.132,9.909,16.055,9.946,15.978,9.969C15.902,9.993,15.825,10.003,15.749,9.999C15.672,9.996,15.595,9.979,15.519,9.949C15.442,9.919,15.365,9.876,15.289,9.819C15.212,9.763,15.136,9.694,15.059,9.612C14.982,9.53,14.906,9.436,14.829,9.33C14.752,9.224,14.676,9.107,14.599,8.979C14.523,8.851,14.446,8.712,14.369,8.563C14.293,8.415,14.216,8.257,14.139,8.091C14.063,7.925,13.986,7.75,13.91,7.568C13.833,7.387,13.756,7.198,13.68,7.005C13.603,6.811,13.527,6.612,13.45,6.409C13.373,6.206,13.297,5.999,13.22,5.79C13.143,5.581,13.067,5.37,12.99,5.159C12.914,4.947,12.837,4.735,12.76,4.525C12.684,4.314,12.607,4.105,12.53,3.898C12.454,3.692,12.377,3.489,12.301,3.29C12.224,3.091,12.147,2.897,12.071,2.709C11.994,2.521,11.917,2.339,11.841,2.165C11.764,1.99,11.688,1.824,11.611,1.666C11.534,1.508,11.458,1.36,11.381,1.221C11.304,1.083,11.228,0.954,11.151,0.837C11.075,0.72,10.998,0.614,10.921,0.52C10.845,0.426,10.768,0.344,10.692,0.275C10.615,0.206,10.538,0.149,10.462,0.106C10.385,0.063,10.308,0.032,10.232,0.016C10.155,-0.001,10.079,-0.004,10.002,0.006C9.925,0.016,9.849,0.039,9.772,0.076C9.695,0.113,9.619,0.163,9.542,0.225C9.466,0.288,9.389,0.364,9.312,0.452C9.236,0.54,9.159,0.64,9.082,0.751C9.006,0.863,8.929,0.986,8.853,1.119C8.776,1.253,8.699,1.396,8.623,1.55C8.546,1.703,8.47,1.865,8.393,2.035C8.316,2.206,8.24,2.384,8.163,2.569C8.086,2.754,8.01,2.945,7.933,3.142C7.857,3.338,7.78,3.539,7.703,3.744C7.627,3.949,7.55,4.157,7.473,4.367C7.397,4.577,7.32,4.788,7.244,5L1.810897552539179 5',
+      },
+    },
+
+    {
+      tag: 'rect',
+      attrs: {
+        x: x0,
+        y: yScale(0),
+        width: xDist(1),
+        height: yDist(1),
+        fill: 'none',
+        stroke: fg,
+        'stroke-width': 1,
+      },
+    },
+    {
+      tag: 'rect',
+      attrs: {
+        x: x1,
+        y: yScale(0) + rectBorder,
+        width: xDist(1) - innerRectNetPadding,
+        height: yDist(1) - innerRectNetPadding,
+        fill: 'none',
+        stroke: fg,
+        'stroke-width': 1,
+      },
+    },
+    origin { attrs+: { cx: x0 } },
+    origin { attrs+: { cx: x1 } },
+    origin { attrs+: { cx: x2 } },
+
+    text { children: math.f, attrs+: { x: textX0, y: yScale(0) + margin / 2 } },
+    text { children: math.f + math.prime, attrs+: { x: textX1, y: yScale(0) + rectBorder + margin / 2 } },
+
+    originLabel { children: math.o, attrs+: { x: textX0 } },
+    originLabel { children: math.o + math.prime, attrs+: { x: textX1 } },
+    originLabel { children: math.o + math.doublePrime, attrs+: { x: textX2 } },
+
+    deltaTLabel { children: math.deltaT, attrs+: {
+      x: textX0,
+    } },
+    deltaTLabel { children: math.deltaT + math.prime, attrs+: {
+      x: textX1,
+    } },
+    deltaTLabel { children: math.deltaT + math.doublePrime, attrs+: {
+      x: textX2 - 8,
+    } },
+
+    text { children: math.v, attrs+: {
+      x: x1 + velocityArrowOffset + velocityArrowLength + 2,
+      y: yScale(0) + rectBorder + margin / 2 + 3,
+    } },
+    velocityArrow { attrs+: {
+      local y = yScale(0) + rectBorder + margin / 2 + 3,
+      x1: x1 + velocityArrowOffset,
+      x2: x1 + velocityArrowOffset + velocityArrowLength,
+      y1: y,
+      y2: y,
+    } },
+
+    text { children: math.u + math.prime, attrs+: {
+      x: x2 + origin.attrs.r + velocityArrowLength + 2,
+      y: origin.attrs.cy,
+    } },
+    velocityArrow { attrs+: {
+      local y = origin.attrs.cy,
+      x1: x2 + origin.attrs.r,
+      x2: x2 + origin.attrs.r + velocityArrowLength,
+      y1: y,
+      y2: y,
+    } },
+
+
+  ],
+}
