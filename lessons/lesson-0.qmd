@@ -169,7 +169,7 @@ _Walk them through it._
 And if you do the math, that oscillation looks like this:
 :::
 
-## {background-video="/images/0/electromagnetic-waves.mp4" background-video-loop="true"}
+## {background-video="../images/0/electromagnetic-waves.mp4" background-video-loop="true"}
 
 ## The speed of electromagnetic waves {auto-animate="true"}
 
