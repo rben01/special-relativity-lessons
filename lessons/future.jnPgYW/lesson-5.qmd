@@ -62,7 +62,7 @@ $$
 
 * We'll put a flashlight at $O''$.
 * The flashlight emits a photon every $\Delta t''$ in its own frame (it's connected to a light clock with period $\Delta t''$).
-* We will determine the period of photons arriving at $O'$ and then $O$.
+* We will determine the period of photons arriving at $O'$ ($\Delta t'$) and then $O$ ($\Delta t$) in their own frames of reference.
 
 ## Setup
 
@@ -70,7 +70,7 @@ $$
 
 ## Part 1: Rates of arrival
 
-* In general (forget this particular setup): [If a blinking flashlight has period $T'$ and velocity $v$, then the period of photons arriving at us from the flashlight will be $f(v)T'$ for some $f$ that we need to find.]{.fragment}
+* In general, I claim: [If a blinking flashlight has period $T'$ and velocity $v$, then the period of photons arriving at us from the flashlight will be $f(v)T'$ for some $f$ that we need to find.]{.fragment}
 * So the period of photons arriving at $O'$ will be $\Delta t'=f(u')\Delta t''$.
 
 ## Part 1: Rates of arrival
@@ -78,15 +78,14 @@ $$
 * Now consider the period of photons arriving at $O$.
 	* On the one hand, $O''$ has apparent velocity $u'$, so the period will be $\Delta t=f(u)\Delta t''$.
 	* On the other hand, the photons also pass through $O'$, which has speed $v$ and “emits” the photons with period $\Delta t'=f(u')\Delta t''$.
-	* So $\Delta t=f(v)\Delta t''=f(v)f(u')\Delta t''$
+	* So $\Delta t=f(v)\Delta t'=f(v)f(u')\Delta t''$
 	* And	therefore $f(u)=f(v)f(u')$!
 
 * We have a relation between $u$, $v$, and $u'$. [Find $f$ and we're done(ish).]{.fragment}
 
 ## Part 2: Finding $f$
 
-* Consider our blinking flashlight with velocity $v$ and period $T'$.
-* With what period do we receive photons?
+* Consider our blinking flashlight with velocity $v$ and period $T'$. [With what period do we receive photons (in our frame of reference)?]{.fragment}
 	* If the flashlight were stationary, the period would just be $T'$.
 	* But it's moving, so
 
@@ -96,8 +95,8 @@ $$
 ## Part 2: Finding $f$
 
 * Each photon has to travel for an additional time $\frac{v\gamma T'}{c}=\gamma\beta T'$ than the previous to arrive at us (or less time if $v<0$).
-* Each photon arrives at us a time $T=\gamma T'+ \gamma\beta T'=\gamma_{u'}(1+\beta_{u'})\Delta t''$ after the previous.
-* Therefore, $f(v)=\gamma_v(1+\beta_v)$.
+* Each photon arrives at us a time $T=\gamma T'+ \gamma\beta T'=\gamma(1+\beta)T'$ after the previous.
+* Therefore, $f(v)=\gamma(1+\beta)$.
 
 ## Part 2: Finding $f$
 
@@ -106,8 +105,8 @@ $$
 ::: {.fragment}
 $$
 \begin{align*}
-f(v)&\class{fragment}{{}=\gamma_{v}(1+\beta_{v})}\\
-&\class{fragment}{{}=\frac{(1+\beta_{v})}{\sqrt{1-\beta_{v}^2}}}
+f(v)&\class{fragment}{{}=\gamma(1+\beta)}\\
+&\class{fragment}{{}=\frac{(1+\beta)}{\sqrt{1-\beta^2}}}
 \end{align*}
 $$
 :::
@@ -116,10 +115,10 @@ $$
 
 $$
 \begin{align*}
-f(v)&=\frac{1+\beta_{v}}{\sqrt{1-\beta_{v}^2}}\\
-&\class{fragment}{{}=\frac{(1+\beta_{v})}{\sqrt{(1-\beta_{v})(1+\beta_{v})}}}\\
-&\class{fragment}{{}=\frac{\sqrt{1+\beta_{v}}}{\sqrt{1-\beta_{v}}}}\\
-&\class{fragment}{{}=\sqrt{\frac{1+\beta_{v}}{1-\beta_{v}}}}
+f(v)&=\frac{1+\beta}{\sqrt{1-\beta^2}}\\
+&\class{fragment}{{}=\frac{(1+\beta)}{\sqrt{(1-\beta)(1+\beta)}}}\\
+&\class{fragment}{{}=\frac{\sqrt{1+\beta}}{\sqrt{1-\beta}}}\\
+&\class{fragment}{{}=\sqrt{\frac{1+\beta}{1-\beta}}}
 \end{align*}
 $$
 
@@ -127,27 +126,10 @@ $$
 As expected, this is greater than 1 if beta>0. It's also less than 1 if beta<0, although this isn't as obvious from the outset.
 :::
 
-## Part 2
-
-* Now, consider the photons as they reach $O$.
-	* They were emitted by $F''$, so they arrive with period $f(u)\Delta t''$
-	* And they passed
-
-* Suppose that $F'$ emits a photon towards $O$ whenever a photon arrives at $O'$. [$O'$ is now effectively the same kind of flashlight in $F$ as the actual flashlight was in $F'$.]{.fragment}
-* If $F'$ emits flashes with period $\Delta t'$ in its frame, then $F$ perceives them arrive with period $\Delta t_\textrm{arr}=\Delta t'\sqrt{\frac{1-\beta_v}{1+\beta_v}}$.
-* But we know that in fact $\Delta t'=\Delta t'_\textrm{arr}=\Delta t''\sqrt{\frac{1+\beta_{u'}}{1-\beta_{u'}}}$
-* Result: the flashes arrive at $O$ with period $\Delta t_\textrm{arr}=\Delta t''\sqrt{\frac{1+\beta_{u'}}{1-\beta_{u'}}}\sqrt{\frac{1+\beta_v}{1-\beta_v}}$.
-
 ## Part 3
 
-* Key point: [$F'$ emitting a photon whenever it receives one is _identical_ to the original photon just passing through $O'$!]{.fragment}
-* That is, $O$ receives flashes _from the flashlight_ with period $\Delta t_\textrm{arr}=\Delta t''\sqrt{\frac{1+\beta_{u'}}{1-\beta_{u'}}}\sqrt{\frac{1+\beta_v}{1-\beta_v}}$.
-* But the flashlight is also moving in $F$, and we know the period shift of moving flashlights based on their velocity...
-	* It's $\sqrt{\frac{1+\beta}{1-\beta}}$.
-
-## Part 3
-
-* The speed $u$ of the flashlight in $F$ must be such that: $\sqrt{\frac{1+\beta_u}{1-\beta_u}}=\sqrt{\frac{1+\beta_{u'}}{1-\beta_{u'}}}\sqrt{\frac{1+\beta_v}{1-\beta_v}}$!
+* Remember, $f(u)=f(v)f(u')$.
+* So the speed $u$ of the flashlight in $F$ is such that: $\sqrt{\frac{1+\beta_u}{1-\beta_u}}=\sqrt{\frac{1+\beta_{u'}}{1-\beta_{u'}}}\sqrt{\frac{1+\beta_v}{1-\beta_v}}$!
 * We have an equation relating $u$ to $v$ and $u'$. If we solve for $u$, we're done!
 
 ## Part 4
