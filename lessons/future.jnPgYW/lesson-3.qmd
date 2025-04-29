@@ -12,7 +12,7 @@ title-slide-attributes:
 
 * A clock in motion appears to... [run slow by a factor of $\gamma$.]{.fragment}
 * An object in motion appears... [contracted along the direction of its length by a factor of $\gamma$.]{.fragment}
-* Where $\gamma=\class{fragment}{\frac{1}{\sqrt{1-(v/c)^2}}.}$
+* Where $\gamma=\class{fragment}{\frac{1}{\sqrt{1-(\frac{v}{c})^2}}.}$
 
 ## Synchronization
 
