@@ -19,7 +19,7 @@ local math = {
   o: '𝑂',
   v: '𝑣',
   u: '𝑢',
-  deltaT: 'Δ𝑡',
+  deltaT: 'T',
   prime: '′',
   doublePrime: '″',
 };
@@ -48,8 +48,6 @@ local text = {
 };
 
 local originLabel = text { attrs+: { y: origin.attrs.cy - 3.5, 'dominant-baseline': 'auto' } };
-
-local deltaTLabel = text { attrs+: { y: origin.attrs.cy + 3.5, 'dominant-baseline': 'hanging' } };
 
 local velocityArrow = {
   tag: 'line',

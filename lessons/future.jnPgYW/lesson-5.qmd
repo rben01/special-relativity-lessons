@@ -45,7 +45,7 @@ $$
 
 * What we'd hope for:
 * Velocities of non-light objects add in a specific way, $v_\textrm{net}=f(v_\textrm{frame}, v_\textrm{object}')$.
-* The velocity of light adds in _the same_ way, $c=f(v_\textrm{frame}, c)$.
+* The velocity of light adds in _the same way_, $c=f(v_\textrm{frame}, c)$.
 * Note: now we have three frames: [our unprimed “stationary” frame,]{.fragment} [the primed “moving” frame,]{.fragment} [and the frame of the object moving in the primed frame!]{.fragment}
 
 ## Setup
@@ -58,87 +58,73 @@ $$
 
 ![](/images/5/velo-add-1.svg){fig-align="center"}
 
-## Setup
+## Part 1: The strategy
 
-* We'll put a flashlight at $O''$.
-* The flashlight emits a photon every $\Delta t''$ in its own frame (it's connected to a light clock with period $\Delta t''$).
-* We will determine the period of photons arriving at $O'$ ($\Delta t'$) and then $O$ ($\Delta t$) in their own frames of reference.
+* Place a flashlight at $O''$ that sends photons towards $O$ and $O'$ with period $T''$, according to $F''$.
+* Find the apparent period $T'$ of photons arriving at $O'$ (a function of $u'$ and $T''$).
+* Find the apparent period of photons $T$ arriving at $O$ (a function of $u$ and $T''$).
+	* But also a function of $v$ and $T'$ — and $T'$ is a function of $u'$ and $T''$!
+* We have a relation between $u$, $v$, and $u'$, which is exactly what we're after.
 
-## Setup
+## Part 1: The strategy
 
 ![](/images/5/velo-add-2.svg){fig-align="center"}
 
-## Part 1: Rates of arrival
 
-* In general, I claim: [If a blinking flashlight has period $T'$ and velocity $v$, then the period of photons arriving at us from the flashlight will be $f(v)T'$ for some $f$ that we need to find.]{.fragment}
-* So the period of photons arriving at $O'$ will be $\Delta t'=f(u')\Delta t''$.
+## Part 2: The period of flashes
 
-## Part 1: Rates of arrival
+* $F$ says that $O''$ has speed $u$. [According to $F$, how much time elapses between photons arriving at $O$?]{.fragment}
+* Due to time dilation, each flash is emitted $\gamma_u T''$ after the previous one.
+* The flashlight travels $u \gamma_u T''$ in this time.
+* So each photon must travel $u \gamma_u T''$ farther than the previous, which means it travels $\frac{u}{c} \gamma_u T''$ longer.
+* So the period between photons arriving at $O$ is $T=u \gamma_u T''+\frac{u}{c} \gamma_u T''=(1+\frac{u}{c})\gamma_u T''$.
 
-* Now consider the period of photons arriving at $O$.
-	* On the one hand, $O''$ has apparent velocity $u'$, so the period will be $\Delta t=f(u)\Delta t''$.
-	* On the other hand, the photons also pass through $O'$, which has speed $v$ and “emits” the photons with period $\Delta t'=f(u')\Delta t''$.
-	* So $\Delta t=f(v)\Delta t'=f(v)f(u')\Delta t''$
-	* And	therefore $f(u)=f(v)f(u')$!
+## Part 3: Applying to other frames
 
-* We have a relation between $u$, $v$, and $u'$. [Find $f$ and we're done(ish).]{.fragment}
+* The takeway: [if a flashlight emitting photons with period $T''$ is moving with speed $u$ relative to frame $F$, then $F$ receives photons with period $(1+\frac{u}{c})\gamma_u T''$.]{.fragment}
+* But this very same flashlight is moving with speed $u'$ relative to $F'$, so $F'$ perceives photons arriving at $O'$ with period $T'=(1+\frac{u'}{c})\gamma_{u'} T''$.
+* And those photons are passing through $O'$, which has speed $v$ relative to $F$, so $F$ receives those same photons with period $T=(1+\frac{v}{c})\gamma_v T'=(1+\frac{u'}{c})\gamma_{u'}(1+\frac{v}{c})\gamma_v T''$.
 
-## Part 2: Finding $f$
+## Part 4: The key equation
 
-* Consider our blinking flashlight with velocity $v$ and period $T'$. [With what period do we receive photons (in our frame of reference)?]{.fragment}
-	* If the flashlight were stationary, the period would just be $T'$.
-	* But it's moving, so
+* And so $(1+\frac{u}{c})\gamma_u T''=T=(1+\frac{u'}{c})\gamma_{u'}(1+\frac{v}{c}) \gamma_v T''$.
+* So $(1+\frac{u}{c})\gamma_u=(1+\frac{u'}{c})\gamma_{u'}(1+\frac{v}{c}) \gamma_v$!
+* We're done(ish).
+* Let's simplify a bit.
 
-	   1. It is time dilated — to us, it emits a photon every $\gamma T'$.
-      1. Each photon is emitted a distance $v\gamma T'$ from the previous one.
+## Part 5: Math
 
-## Part 2: Finding $f$
+$$
+\begin{align*}
+(1+\tfrac{v}{c})\gamma_v&\class{fragment}{{}=\frac{1+\tfrac{v}{c}}{\sqrt{1-(\tfrac{v}{c})^2}}}\\
+&\class{fragment}{{}=\frac{\left(\sqrt{1+\frac{v}{c}}\right)^2}{\sqrt{(1-\tfrac{v}{c})(1+\tfrac{v}{c})}}}\\
+&\class{fragment}{{}=\frac{\sqrt{1+\tfrac{v}{c}}}{\sqrt{1-\tfrac{v}{c}}}}
+\end{align*}
+$$
 
-* Each photon has to travel for an additional time $\frac{v\gamma T'}{c}=\gamma\beta T'$ than the previous to arrive at us (or less time if $v<0$).
-* Each photon arrives at us a time $T=\gamma T'+ \gamma\beta T'=\gamma(1+\beta)T'$ after the previous.
-* Therefore, $f(v)=\gamma(1+\beta)$.
+## Part 6: More math
 
-## Part 2: Finding $f$
-
-* Let's simplify:
+* Recalling $(1+\frac{u}{c})\gamma_u=(1+\frac{u'}{c})\gamma_{u'}(1+\frac{v}{c})\gamma_v$, we have:
 
 ::: {.fragment}
 $$
-\begin{align*}
-f(v)&\class{fragment}{{}=\gamma(1+\beta)}\\
-&\class{fragment}{{}=\frac{(1+\beta)}{\sqrt{1-\beta^2}}}
-\end{align*}
+\frac{\sqrt{1+\tfrac{u}{c}}}{\sqrt{1-\tfrac{u}{c}}}=\frac{\sqrt{1+\tfrac{u'}{c}}}{\sqrt{1-\tfrac{u'}{c}}}\frac{\sqrt{1+\tfrac{v}{c}}}{\sqrt{1-\tfrac{v}{c}}}
 $$
 :::
 
-## Part 2: Finding $f$
+## Part 6: More math
 
-$$
-\begin{align*}
-f(v)&=\frac{1+\beta}{\sqrt{1-\beta^2}}\\
-&\class{fragment}{{}=\frac{(1+\beta)}{\sqrt{(1-\beta)(1+\beta)}}}\\
-&\class{fragment}{{}=\frac{\sqrt{1+\beta}}{\sqrt{1-\beta}}}\\
-&\class{fragment}{{}=\sqrt{\frac{1+\beta}{1-\beta}}}
-\end{align*}
-$$
+* Square both sides, multiply tops and bottoms of all fractions by $c$:
 
-::: {.notes}
-As expected, this is greater than 1 if beta>0. It's also less than 1 if beta<0, although this isn't as obvious from the outset.
+::: {.fragment}
+$$
+\frac{c+u}{c-u}=\frac{c+u'}{c-u'}\frac{c+v}{c-v}
+$$
 :::
 
-## Part 3
-
-* Remember, $f(u)=f(v)f(u')$.
-* So the speed $u$ of the flashlight in $F$ is such that: $\sqrt{\frac{1+\beta_u}{1-\beta_u}}=\sqrt{\frac{1+\beta_{u'}}{1-\beta_{u'}}}\sqrt{\frac{1+\beta_v}{1-\beta_v}}$!
-* We have an equation relating $u$ to $v$ and $u'$. If we solve for $u$, we're done!
-
-## Part 4
-
-* Square both sides and multiply the top and bottom of every fraction by $c$:
-* $\frac{c+u}{c-u}=\frac{c+u'}{c-u'}\frac{c+v}{c-v}$.
 * Let's solve for $u$.
 
-## Part 4
+## Part 6: More math
 
 $$
 \begin{align*}
@@ -153,20 +139,20 @@ $$
 \end{align*}
 $$
 
-## Part 4
+## Part 6: More math
 
 * Now:
 
 $$
 \begin{align*}
 \class{fragment}{(c+u')(c+v)}&\class{fragment}{{}=c^2+c(u'+v)+u'v}\\
-\class{fragment}{(c-u')(c-v)}&\class{fragment}{{}=c^2-c(u'+v)+u'v}\\
+\class{fragment}{(c-u')(c-v)}&\class{fragment}{{}=c^2-c(u'+v)+u'v}\\\\
 \class{fragment}{{}(c+u')(c+v)+(c+u')(c-v)}&\class{fragment}{{}=2(c^2+u'v)}\\
 \class{fragment}{{}(c+u')(c+v)-(c+u')(c-v)}&\class{fragment}{{}=2c(u'+v)}\\
 \end{align*}
 $$
 
-## Part 4
+## Part 6: More math
 
 $$
 \begin{align*}
@@ -179,7 +165,6 @@ $$
 ## Result
 
 * If $F'$ has velocity $v$ relative to $F$, and $F''$ has velocity $u'$ relative to $F'$, then the velocity of $F''$ relative to $F$ is $u=\frac{u'+v}{1+\frac{u'v}{c^2}}$.
-* Equivalently, $\beta_u=\frac{\beta_{u'}+\beta_v}{1+\beta_{u'}\beta_v}$.
 
 ## Result
 

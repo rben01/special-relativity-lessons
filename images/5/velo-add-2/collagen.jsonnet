@@ -19,7 +19,7 @@ local math = {
   o: '𝑂',
   v: '𝑣',
   u: '𝑢',
-  deltaT: 'Δ𝑡',
+  deltaT: '𝑇',
   prime: '′',
   doublePrime: '″',
 };
