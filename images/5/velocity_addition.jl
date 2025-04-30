@@ -12,7 +12,7 @@ function plot_it(xs, ys, zs; filename, colormap, v_max, contour_label_cmap, leve
     tick_label_size = 32
     axis_label_size = tick_label_size * 1.5
     label_padding = 0
-    ax_ticks = (0:v_max, [L"0", L"c", (L"%$(n)c" for n in 2:v_max)...])
+    ax_ticks = (0:1, [L"0", L"c"])
 
     fig = Figure(; size=(800, 600), backgroundcolor=(:black, 0))
     ax = Axis(
@@ -49,7 +49,7 @@ function plot_it(xs, ys, zs; filename, colormap, v_max, contour_label_cmap, leve
         labelrotation=0,
         labelsize=axis_label_size,
         labelpadding=0,
-        ticks=ax_ticks,
+        ticks=(ax_ticks[1], [ax_ticks[2]..., (L"%$(n)c" for _ in 2:v_max)...]),
         ticklabelsize=tick_label_size,
     )
     tightlimits!(ax)

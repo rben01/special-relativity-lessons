@@ -17,12 +17,11 @@ format:
           <script>
           window.MathJax = {
               options: {
-                menuOptions: { settings: { assistiveMml: false } },
+                menuOptions: { settings: { assistiveMml: false, renderer: 'SVG' } },
                 enableEnrichment: false,
                 enableExplorer: false,
                 enableAssistiveMml: false,
                 assistiveMml: false,
-                renderer: 'SVG'
               }
             };
           </script>

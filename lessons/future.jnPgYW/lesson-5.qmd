@@ -97,8 +97,8 @@ $$
 $$
 \begin{align*}
 (1+\tfrac{v}{c})\gamma_v&\class{fragment}{{}=\frac{1+\tfrac{v}{c}}{\sqrt{1-(\tfrac{v}{c})^2}}}\\
-&\class{fragment}{{}=\frac{\left(\sqrt{1+\frac{v}{c}}\right)^2}{\sqrt{(1-\tfrac{v}{c})(1+\tfrac{v}{c})}}}\\
-&\class{fragment}{{}=\frac{\sqrt{1+\tfrac{v}{c}}}{\sqrt{1-\tfrac{v}{c}}}}
+&\class{fragment}{{}=\sqrt{\frac{(1+\tfrac{v}{c})^2}{(1-\tfrac{v}{c})(1+\tfrac{v}{c})}}}\\
+&\class{fragment}{{}=\sqrt{\frac{1+\tfrac{v}{c}}{1-\tfrac{v}{c}}}}
 \end{align*}
 $$
 
@@ -108,7 +108,7 @@ $$
 
 ::: {.fragment}
 $$
-\frac{\sqrt{1+\tfrac{u}{c}}}{\sqrt{1-\tfrac{u}{c}}}=\frac{\sqrt{1+\tfrac{u'}{c}}}{\sqrt{1-\tfrac{u'}{c}}}\frac{\sqrt{1+\tfrac{v}{c}}}{\sqrt{1-\tfrac{v}{c}}}
+\sqrt{\frac{1+\tfrac{u}{c}}{1-\tfrac{u}{c}}}=\sqrt{\frac{1+\tfrac{u'}{c}}{1-\tfrac{u'}{c}}}\sqrt{\frac{1+\tfrac{v}{c}}{1-\tfrac{v}{c}}}
 $$
 :::
 
@@ -171,13 +171,13 @@ $$
 ::: {.columns}
 :::: {.column .fragment}
 
-![Velocity Addition, Naive (source: me)](/images/5/velocity_addition_bad.png)
+![Velocity Addition, Naive](/images/5/velocity_addition_bad.png)
 
 ::::
 
 :::: {.column .fragment}
 
-![Velocity Addition, Actual (source: me)](/images/5/velocity_addition.png)
+![Velocity Addition, Actual](/images/5/velocity_addition.png)
 
 ::::
 
@@ -215,3 +215,4 @@ $$
 * We can now deal with three (and, by repeating this process, arbitrarily many) frames in relative motion.
 * The velocity addition formula handles both massive objects and photons equivalently.
 * No amount of velocity addition can get something to appear to travel faster than light.
+	* Challenge: show that $\frac{u'+v}{1+\tfrac{u'v}{c^2}}$ is indeed at most $c$ for all $0\le u',v\le c$.
