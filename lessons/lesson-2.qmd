@@ -30,7 +30,7 @@ For the speed of light to remain constant (with respect to a given frame), eithe
 ## Challenges
 
 * Maybe I want to measure the train by running alongside it with a ruler or tape measure... [why wouldn't this work?]{.fragment}
-* Your turn: how can we measure the length of a train in motion?
+* Your turn: devise an experiment _whose outcome we can already predict_ that would yield the length of the train according to the platform observer.
 
 
 ::: {.notes}
