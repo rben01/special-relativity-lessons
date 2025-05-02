@@ -13,3 +13,4 @@ Slides are built using [Reveal.js](https://revealjs.com). To view a slideshow’
 * [Lesson 1: The Basics of Relativity](lessons/lesson-1.html)
 	* This lesson was covered over two classes and talked about both the axioms of relativity and time dilation.
 * [Lesson 2: Length Contraction](lessons/lesson-2.html)
+* [Lesson 3: Simultaneity](lessons/lesson-3.html)
