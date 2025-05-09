@@ -1,0 +1,98 @@
+---
+import NumericValue from "./NumericValue.astro";
+
+interface Props {
+	id?: string;
+	class?: string;
+	label?: string;
+	value?: number;
+	min: number;
+	max: number;
+	step?: number;
+}
+const { id, class: class_, label, value, min, max, step } = Astro.props;
+---
+
+<label for={id} class:list={[class_, "slider-label"]}>
+	<NumericValue {label} value={value ?? min} />
+</label>
+<input
+	{id}
+	class:list={[class_, "slider"]}
+	value={value ?? min}
+	type="range"
+	inputmode="decimal"
+	min={min ?? 0}
+	max={max ?? 1}
+	step={step ?? 0.01}
+/>
+
+<style>
+	input {
+		display: block;
+		position: relative;
+		width: 3.5em;
+		font-size: 1.3rem;
+		padding: 0.25em;
+		background-color: #222;
+		color: white;
+		border: 1px solid white;
+		border-radius: 5px;
+	}
+
+	input.below {
+		margin-top: 0.5rem;
+	}
+
+	label {
+		position: relative;
+		top: 0.15em;
+		margin-right: 1em;
+	}
+
+	input {
+		-webkit-appearance: none; /* Remove default styling */
+		width: 300px;
+		height: 0; /* Slider height */
+		background: #444; /* Track color */
+	}
+
+	input::-webkit-slider-thumb {
+		-webkit-appearance: none; /* Remove default styling */
+		appearance: none;
+		width: 25px; /* Thumb width */
+		height: 25px; /* Thumb height */
+		border-radius: 50%; /* Circular thumb */
+		background: #ffffff; /* Thumb color */
+		cursor: pointer; /* Pointer cursor */
+	}
+
+	input::-moz-range-thumb {
+		width: 25px; /* Thumb width */
+		height: 25px; /* Thumb height */
+		border-radius: 50%; /* Circular thumb */
+		background: #ffffff; /* Thumb color */
+		cursor: pointer; /* Pointer cursor */
+	}
+
+	input::-ms-thumb {
+		width: 25px; /* Thumb width */
+		height: 25px; /* Thumb height */
+		border-radius: 50%; /* Circular thumb */
+		background: #ffffff; /* Thumb color */
+		cursor: pointer; /* Pointer cursor */
+	}
+</style>
+
+<script>
+	const sliders = document.querySelectorAll(
+		"input.slider",
+	) as NodeListOf<HTMLInputElement>;
+	sliders.forEach(slider => {
+		slider.addEventListener("input", event => {
+			document.querySelector(
+				`label[for="${slider.id}"] .slider-label-value`,
+			)!.textContent = slider.value;
+		});
+	});
+</script>

@@ -1,9 +1,6 @@
 ---
 title: "Lesson 3: Simultaneity"
 format: revealjs
-title-slide-attributes:
-  data-notes: |
-    Hi everyone. It's good to see you all again! I'll quickly recap what we covered last time and then dive right into this lesson. Last time, we discussed the axioms of relativity and time dilation. Can someone remind me what the two axioms of relativity were? (All inertial reference frames equivalent, and the speed of light is constant.) And can someone remind me of what time dilation is and what the equation for time dilation is?
 ---
 
 # Recap

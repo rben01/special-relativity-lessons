@@ -1,0 +1,37 @@
+---
+interface Props {
+	id?: string;
+	class?: string;
+	label?: string;
+	value?: number;
+}
+
+const { id, class: class_, label, value } = Astro.props;
+---
+
+<div {id} class={class_}>
+	<span class="slider-label-name">{label}: </span><span class="slider-label-value"
+		>{value}</span
+	>
+</div>
+
+<style>
+	div {
+		display: inline-block;
+	}
+
+	span {
+		color: white;
+		font-family: sans-serif;
+		font-size: 1.3rem;
+	}
+	.slider-label-name {
+		display: inline-block;
+		min-width: 1.5em;
+	}
+
+	.slider-label-value {
+		margin-left: 0.5em;
+		display: inline-block;
+	}
+</style>

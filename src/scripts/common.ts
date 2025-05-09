@@ -30,14 +30,26 @@ const textAttrs = {
 	"font-size": 16,
 };
 
+function arrowheadPathString(width: number, height?: number) {
+	height ??= width;
+	const points = [
+		[0.15, 0.2],
+		[0.75, 0.5],
+		[0.15, 0.8],
+		[0.225, 0.5],
+	];
+	return "M" + points.map(([x, y]) => `${x * width} ${y * height}`).join("L") + "Z";
+}
+
 export {
+	arrowheadPathString,
 	dist,
 	getGamma,
 	invLinterp,
 	linterp,
 	mirrorAttrs,
 	photonAttrs,
-	photonPeriodSec,
 	photonPeriodMs,
+	photonPeriodSec,
 	textAttrs,
 };

@@ -1,8 +1,6 @@
 ---
 title: "Lesson 4: The Lorentz Transform"
 format: revealjs
-title-slide-attributes:
-  data-notes: ""
 ---
 
 # Recap
@@ -37,31 +35,41 @@ title-slide-attributes:
 * We have reference frames $F$ and $F'$.
 * We will consider $F$ stationary.
 * $F'$ has (relative) velocity $v$ in the $+x$ direction.
-* $F$ and $F'$ have a common origin: at the moment where $x=0$ and $x'=0$ coincide, $t=t'=0$.
+* $F$ and $F'$ have a common origin: at $t=t'=0$, their origins $O$ and $O'$ coincide ($x=x'=0$).
 * $F'$ observes an event at $(x', t')$.
 * What coordinates $(x,t)$ does $F$ ascribe to that event?
 
-## The position component
+## The primed position component
 
-* At $t=t'=0$, $F$ observes the point $x'$ located at $x=\frac{x'}{\gamma}$.
-* At arbitrary time $t$, it has moved $vt$: $x=vt+\frac{x'}{\gamma}\Rightarrow x'=\gamma(x-vt)$.
-* At $t=t'=0$, $F'$ observes the point $x$ located at $x'=\frac{x}{\gamma}$.
-* At arbitrary time $t'$, it has moved $-vt$: $x'=-vt'+\frac{x}{\gamma}\Rightarrow x=\gamma(x'+vt')$.
-* Note: as we'd hope, the equations are the symmetric in unprimed and primed variables, with $v$ inverted.
+1. Length contraction: $F$ observes the distance between $O'$ and $x'$ to be $\frac{x'}{\gamma}$.
+1. At time $t$, $O'$ is at position $vt$.
+1. So at time $t$, $F$ observes $x'$ at $x=vt+\frac{x'}{\gamma}$.
+1. Solve for $x'$: [$x'=\gamma(x-vt)$.]{.fragment}
 
-## The time component
+## The unprimed position component
+
+1. Length contraction: $F'$ observes the distance between $O$ and $x$ to be $\frac{x}{\gamma}$.
+1. At time $t'$, $O$ is at position $-vt$.
+
+	* Negative! — because $F$ is, relatively, moving in the opposite direction.
+
+1. So at time $t'$, $F'$ observes $x$ at $x'=-vt'+\frac{x}{\gamma}$.
+1. Solve for $x$: [$x=\gamma(x'+vt)$.]{.fragment}
+1. Note: as we'd hope, the equations are the symmetric in unprimed and primed variables, with $v$ inverted.
+
+## The primed time component
 
 $$
 \begin{align*}
-x'&\class{fragment}{{}=-vt'+\frac{x}{\gamma}}\\
-\class{fragment}{x'}&\class{fragment}{{}=\gamma(x-vt)}\label{(1)}\\
+x'&=-vt'+\frac{x}{\gamma}\\
+x'&=\gamma(x-vt)\\
 \class{fragment}{\gamma(x-vt)}&\class{fragment}{{}=-vt'+\frac{x}{\gamma}}\\
 \class{fragment}{vt'}&\class{fragment}{{}=\frac{x}{\gamma}-\gamma(x-vt)}\\
 \class{fragment}{t'}&\class{fragment}{{}=\left(\frac{1-\gamma^2}{\gamma v}\right)x+\gamma t}
 \end{align*}
 $$
 
-## The time component
+## The primed time component
 
 $$
 \begin{align*}
@@ -72,7 +80,7 @@ t'&=\left(\frac{1-\gamma^2}{\gamma v}\right)x+\gamma t\\
 \end{align*}
 $$
 
-## The time component
+## The primed time component
 
 $$
 \begin{align*}
@@ -81,10 +89,13 @@ t'&=\left(\frac{-(v/c)^2}{\gamma v} \gamma^2\right)x+\gamma t\\
 \end{align*}
 $$
 
-## The time component
+## The unprimed time component
 
-* By similar (not particularly interesting) logic, $t=\gamma\left(t'+\frac{vx'}{c^2}\right)$.
+* By identical logic, $t=\gamma\left(t'+\frac{vx'}{c^2}\right)$.
 	* If you're interested, try to derive this on your own.
+	* It's literally the same math, but starting with two expressions for $x$ instead of two expressions for $x'$.
+* Key point: it's identical, with the primed and unprimed variables swapped, and $v$ negated.
+* This is good: “no privileged reference frames” means we need all observers to agree on how to transform between coordinate systems.
 
 ## The Lorentz transform
 
@@ -118,7 +129,25 @@ $$
 :::
 
 * Not only are they symmetric in $v$, they're now symmetric in $x$ and $ct$.
-* “The primed variable equals $\gamma$ times the same unprimed variable minus $\beta$ times the other one.”
+* “The primed variable equals the unprimed variable minus $\beta$ times the other one, all times $\gamma$.”
+
+# Interpreting the Lorentz transform
+
+## Transformations are just lines
+
+* Earlier, we alluded to how special relativity is “stunted”: [it can only deal with inertial reference frames (no acceleration, no gravity).]{.fragment}
+* Now we see the manifestation of that: the Lorentz transform is a _linear transformation_ between coordinate systems.
+* $x'$ and $t'$ are linear functions of $x$ and $t$.
+* In other words, spacetime has to be “flat” (as opposed to curved) for special relativity to apply.
+
+## Spacetime diagrams
+
+::: {.r-stack}
+
+<iframe src="../special-relativity-lessons/lesson-4/SpacetimeDiagram" width="1400" height="600" frameborder="true" ></iframe>
+
+:::
+
 
 # Using the Lorentz transform
 
@@ -191,8 +220,15 @@ $$
 
 ## Conclusion
 
-* Challenge:
 * We can plot events on a graph with $x$ on the horizontal axis and $ct$ on the vertical axis. Ponder:
 	* What path do photons trace out on this graph?
    * In a given frame, simultaneous events lie on a horizontal line. What do those same events look like in a frame with relative velocity $v$?
 	* In a given frame, co-located events lie on a vertical line. What do those same events look like in a frame with relative velocity $v$?
+
+## Conclusion
+
+::: {.r-stack}
+
+<iframe src="../special-relativity-lessons/lesson-4/SpacetimeDiagram" width="1400" height="600" frameborder="true" ></iframe>
+
+:::
