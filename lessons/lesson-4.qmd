@@ -49,7 +49,7 @@ format: revealjs
 ## The unprimed position component
 
 1. Length contraction: $F'$ observes the distance between $O$ and $x$ to be $\frac{x}{\gamma}$.
-1. At time $t'$, $O$ is at position $-vt$.
+1. At time $t'$, $O$ is at position $-vt'$.
 
 	* Negative! — because $F$ is, relatively, moving in the opposite direction.
 
@@ -183,7 +183,7 @@ Use the Lorentz transform!
 
 * To the Earth:
 	* The position of Io is $x=\gamma(x'+vt')=\frac{5}{3}(0+\frac{4}{5}c\cdot 10\,\textrm{hrs})=\frac{40}{3}c\,\textrm{hrs}$.
-		* Technically this is only the position of Io when the probe arrives — but why is it _always_ the position of Io?
+		* Technically this is only the position of Io when the probe arrives — why is it _always_ the position of Io?
 	* The probe arrives at $t=\gamma(t'+\frac{vx'}{c^2})=\frac{5}{3}(10\,\textrm{hrs}+0)=\frac{50}{3}\,\textrm{hrs}$.
 
 ## Solution
@@ -221,7 +221,7 @@ $$
 ## Conclusion
 
 * We can plot events on a graph with $x$ on the horizontal axis and $ct$ on the vertical axis. Ponder:
-	* What path do photons trace out on this graph?
+	* What path do photons trace out on this graph? How does the path of a photon change from frame to frame? (Hint: it shouldn't change speed!)
    * In a given frame, simultaneous events lie on a horizontal line. What do those same events look like in a frame with relative velocity $v$?
 	* In a given frame, co-located events lie on a vertical line. What do those same events look like in a frame with relative velocity $v$?
 
