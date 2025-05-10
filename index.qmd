@@ -14,3 +14,4 @@ Slides are built using [Reveal.js](https://revealjs.com). To view a slideshow’
 	* This lesson was covered over two classes and talked about both the axioms of relativity and time dilation.
 * [Lesson 2: Length Contraction](lessons/lesson-2.html)
 * [Lesson 3: Simultaneity](lessons/lesson-3.html)
+* [Lesson 4: The Lorentz Transform](lessons/lesson-4.html)
