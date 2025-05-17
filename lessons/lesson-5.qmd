@@ -62,7 +62,7 @@ $$
 
 * Place a flashlight at $O''$ that sends photons towards $O$ and $O'$ with period $T''$, according to $F''$.
 * Find the apparent period $T'$ of photons arriving at $O'$ (a function of $u'$ and $T''$).
-* Find the apparent period of photons $T$ arriving at $O$ (a function of $u$ and $T''$).
+* Find the apparent period $T$ of photons arriving at $O$ (a function of $u$ and $T''$).
 	* But also a function of $v$ and $T'$ — and $T'$ is a function of $u'$ and $T''$!
 * We have a relation between $u$, $v$, and $u'$, which is exactly what we're after.
 
