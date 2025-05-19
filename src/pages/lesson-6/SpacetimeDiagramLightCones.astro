@@ -1,0 +1,280 @@
+---
+import NumericValue from "../../components/NumericValue.astro";
+import Slider from "../../components/Slider.astro";
+import Svg from "../../components/Svg.astro";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout>
+	<Svg id="drawing" width={500} height={500} />
+	<div>
+		<Slider
+			id="beta"
+			class="below"
+			value={0}
+			min={-0.95}
+			max={0.95}
+			label="\\(\\beta\\)"
+		/>
+		<Slider id="x" class="below" value={0} min={-5} max={5} label="\\(x\\)" />
+		<Slider id="ct" class="below" value={0} min={-5} max={5} label="\\(ct\\)" />
+		<span style="display:inline-block;height:10px"></span><span></span>
+		<NumericValue id="xp" value={0} label="\\(x'\\)" /><span></span>
+		<NumericValue id="ctp" value={0} label="\\(ct'\\)" />
+	</div>
+</Layout>
+
+<script>
+	import { Element, G, Path, SVG, Svg } from "@svgdotjs/svg.js";
+	import { linterp, invLinterp, arrowheadPathString } from "../../scripts/common";
+
+	const w = 500;
+	const h = w;
+
+	const margin = 24;
+
+	const X_MAX = 10;
+	const X_MIN = (-X_MAX * w) / h;
+	const Y_MIN = -10;
+	const Y_MAX = 10;
+
+	function xScale(x: number) {
+		return linterp(invLinterp(x, X_MIN, X_MAX), margin, w - margin);
+	}
+
+	function yScale(y: number) {
+		return linterp(invLinterp(y, Y_MIN, Y_MAX), h - margin, margin);
+	}
+
+	const draw = SVG("#drawing", false) as Svg;
+	draw.viewbox(0, 0, w, h);
+
+	const fgColor = "white";
+	const primeColor = "#3df";
+	const eventColor = "#fc3";
+
+	const baseDashLength = xScale(1) - xScale(0);
+	const axisStroke = {
+		color: fgColor,
+		width: 4,
+		dasharray: `${baseDashLength},${baseDashLength}`,
+		dashoffset: 0,
+	};
+	const axisLabelFont = { fill: fgColor, size: 24, anchor: "middle" };
+
+	const arrowheadMain = draw.marker(10, 10, add =>
+		add.path(arrowheadPathString(10)).fill(fgColor),
+	);
+	const arrowheadSecondary = draw.marker(10, 10, add =>
+		add.path(arrowheadPathString(10)).fill(primeColor),
+	);
+
+	draw
+		.line(xScale(X_MIN), yScale(0), xScale(X_MAX), yScale(0))
+		.stroke(axisStroke)
+		.marker("end", arrowheadMain);
+
+	draw
+		.line(xScale(0), yScale(Y_MIN), xScale(0), yScale(Y_MAX))
+		.stroke(axisStroke)
+		.marker("end", arrowheadMain);
+
+	draw
+		.text("𝑥")
+		.font(axisLabelFont)
+		.ax(`${xScale(0.9 * X_MAX)}`)
+		.ay(`${yScale(-0.1 * X_MAX)}`);
+	draw
+		.text("𝑐𝑡")
+		.font(axisLabelFont)
+		.ax(`${xScale(-0.075 * X_MAX)}`)
+		.ay(`${yScale(0.875 * X_MAX)}`);
+
+	for (const line of [
+		[
+			[-1, 1],
+			[1, -1],
+		],
+		[
+			[-1, -1],
+			[1, 1],
+		],
+	] as [[number, number], [number, number]][]) {
+		const [[x1, y1], [x2, y2]] = line.map(([x, y]) => [
+			xScale(x * X_MAX),
+			yScale(y * Y_MAX),
+		]);
+		draw.line(x1, y1, x2, y2).stroke({ color: "#4fc", width: 2, dasharray: "2 2" });
+	}
+
+	const primeAxisScale = 0.7 * X_MAX;
+
+	const xPrimeAxis = draw.line(0, 0, 0, 0);
+	xPrimeAxis
+		.stroke({ ...axisStroke, color: primeColor })
+		.marker("end", arrowheadSecondary);
+
+	const yPrimeAxis = draw.line(0, 0, 0, 0);
+	yPrimeAxis
+		.stroke({ ...axisStroke, color: primeColor })
+		.marker("end", arrowheadSecondary);
+
+	const xPrimeLabel = draw.text("𝑥′").font({ ...axisLabelFont, fill: primeColor });
+	const yPrimeLabel = draw.text("𝑐𝑡′").font({ ...axisLabelFont, fill: primeColor });
+
+	const [spaceSlice, timeSlice] = [0, 1].map(() =>
+		draw.line(0, 0, 0, 0).stroke({ width: 2, color: eventColor, opacity: 0.9 }),
+	);
+	const mainPoint = draw
+		.circle(10)
+		.fill(eventColor)
+		.stroke({ width: 2, color: fgColor });
+
+	function updateBeta() {
+		const beta = +(document.getElementById("beta")! as HTMLInputElement).value;
+		const gamma = 1 / Math.sqrt(1 - beta ** 2);
+
+		// points (1, beta) and (beta, 1) are sqrt(1+beta^2) from the origin
+		const axisLengthScale = gamma * (1 + beta ** 2) ** 0.5;
+		const dashLength = (xScale(1) - xScale(0)) * axisLengthScale;
+		const dashOffset = dashLength / 2;
+
+		for (const { axis, points } of [
+			{
+				axis: xPrimeAxis,
+				points: [
+					[-gamma, -gamma * beta],
+					[gamma, gamma * beta],
+				],
+			},
+			{
+				axis: yPrimeAxis,
+				points: [
+					[-gamma * beta, -gamma],
+					[gamma * beta, gamma],
+				],
+			},
+		]) {
+			axis
+				.plot(
+					points.map(([x, y]) => {
+						x = xScale(x * primeAxisScale);
+						y = yScale(y * primeAxisScale);
+						return [x, y] as [number, number];
+					}),
+				)
+				.stroke({
+					dasharray: `${dashLength},${dashLength}`,
+					dashoffset: 0,
+				});
+		}
+
+		const xPrimeAngle = Math.atan2(1, beta);
+		const yPrimeAngle = Math.atan2(beta, 1);
+
+		const labelOffset = 30;
+
+		for (const { label, x, y, angle } of [
+			{
+				label: xPrimeLabel,
+				x: gamma,
+				y: gamma * beta,
+				angle: xPrimeAngle,
+			},
+			{
+				label: yPrimeLabel,
+				x: gamma * beta,
+				y: gamma,
+				angle: yPrimeAngle,
+			},
+		]) {
+			label
+				.ax(`${xScale(x * primeAxisScale) + Math.cos(angle) * labelOffset}`)
+				.ay(`${yScale(y * primeAxisScale) + Math.sin(angle) * labelOffset}`);
+		}
+	}
+
+	function updateEvent() {
+		const beta = +(document.getElementById("beta")! as HTMLInputElement).value;
+
+		const x = +(document.getElementById("x")! as HTMLInputElement).value;
+		const ct = +(document.getElementById("ct")! as HTMLInputElement).value;
+
+		mainPoint.cx(xScale(x)).cy(yScale(ct));
+
+		spaceSlice.plot([
+			[xScale(x), yScale(ct)],
+			[
+				xScale((beta * (beta * x - ct)) / (beta ** 2 - 1)),
+				yScale((beta * x - ct) / (beta ** 2 - 1)),
+			],
+		]);
+
+		timeSlice.plot([
+			[xScale(x), yScale(ct)],
+			[
+				xScale((beta * ct - x) / (beta ** 2 - 1)),
+				yScale((beta * (beta * ct - x)) / (beta ** 2 - 1)),
+			],
+		]);
+	}
+
+	function updatePrimedVars() {
+		const beta = +(document.getElementById("beta")! as HTMLInputElement).value;
+		const x = +(document.getElementById("x")! as HTMLInputElement).value;
+		const ct = +(document.getElementById("ct")! as HTMLInputElement).value;
+
+		const gamma = 1 / Math.sqrt(1 - beta ** 2);
+		const xPrime = (x - beta * ct) * gamma;
+		const ctPrime = (ct - beta * x) * gamma;
+
+		document.querySelector("#xp .slider-label-value")!.textContent = xPrime.toFixed(2);
+		document.querySelector("#ctp .slider-label-value")!.textContent =
+			ctPrime.toFixed(2);
+	}
+
+	updateBeta();
+	updateEvent();
+	updatePrimedVars();
+
+	document.getElementById("beta")!.addEventListener("input", () => {
+		updateBeta();
+		updateEvent();
+		updatePrimedVars();
+	});
+
+	["x", "ct"].forEach(id => {
+		document.getElementById(id)!.addEventListener("input", () => {
+			updateEvent();
+			updatePrimedVars();
+		});
+	});
+</script>
+
+<style>
+	body {
+		margin-left: 20px;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+
+	div {
+		display: inline-grid;
+		grid-template-columns: 1.5fr 4fr;
+		row-gap: 10px;
+		width: 500px;
+	}
+
+	#primed-vars {
+		display: block;
+		color: white;
+	}
+</style>
+
+<style is:inline>
+	svg text {
+		font-family: sans-serif;
+		dominant-baseline: middle;
+	}
+</style>
