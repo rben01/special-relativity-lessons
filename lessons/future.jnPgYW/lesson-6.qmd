@@ -1,5 +1,5 @@
 ---
-title: "Lesson 7: Causality"
+title: "Lesson 6: Invariants and Causality"
 format: revealjs
 title-slide-attributes:
   data-notes: ""
@@ -95,14 +95,14 @@ You might find the name “spacetime interval” funny because this has units of
 
 ## Spacetime intervals
 
-* Now, we will actually prove the claim.
-* The goal: to show that $(c\Delta t')^2-(\Delta x')^2=(c\Delta t)^2-(\Delta x)^2$ for arbitrary inertial frames.
+* Now, we will actually prove the claim that the spacetime interval between two events is an invariant: something all observers can agree on.
+* The goal: to show that $(\Delta s')^2=(\Delta s)^2$, i.e. $(c\Delta t')^2-(\Delta x')^2=(c\Delta t)^2-(\Delta x)^2$, for arbitrary inertial frames.
 
 ## The Lorentz transform
 
 * Suppose we have two events, recorded as $(x_1,t_1)$ and $(x_2,t_2)$ in the unprimed frame and as $(x_1',t_1')$ and $(x_2',t_2)$ in the primed frame.
 * Then $\Delta x=x_2-x_1$, $\Delta t=t_2-t_1$, $\Delta x'=x_2'-x_1'$, $\Delta t'=t_2'-t_1'$.
-* Recall (Lorentz): $t'=\gamma(t-vx/c^2)$ and $x'=\gamma(x-vt)$
+* Recall (Lorentz): $t'=\gamma(t-\tfrac{vx}{c^2})$ and $x'=\gamma(x-vt)$
 
 ## Boring math
 
@@ -163,9 +163,9 @@ $$
 
 ## When can one event _influence_ another?
 
-* True or false: [If event $A$ happens before event $B$, then it's definitely _possible_ that $A$ might have caused $B$ to happen.]{.fragment}
+* True or false: [If event $A$ happens before event $B$ (according to some observer), then it's definitely _possible_ that $A$ might have caused $B$ to happen.]{.fragment}
 * False! [Ex: If $B$ happens one second after $A$, but $A$ and $B$ are two light-seconds apart, then $A$ could not have influenced $B$, as a photon emitted from $A$ would have arrived at the location of $B$ after $B$ had happened.]{.fragment}
-* Conclusion: Some events cannot be the cause of other events.
+* Conclusion: Not everything that happens before an event $E$ can influence $E$ — it needs to have happened sufficiently close to $E$.
 
 ## Is causality relative?
 
@@ -177,7 +177,7 @@ $$
 ## No!
 
 * Let's frame this in terms of spacetime intervals.
-* For one event to (maybe) have caused another, the spacetime interval must be... [nonnegative.]{.fragment}
+* For one event to (maybe) have caused/influenced another, the spacetime interval must be... [nonnegative.]{.fragment}
 	* Because $(\Delta s)^2=(c\Delta t)^2-(\Delta x)^2$.
 	* Photons always traverse an interval of $(\Delta s)^2=0$.
 	* Massive objects travel at $v<c$, which means $\Delta x<c\Delta t$, which means $(\Delta s)^2>0$.
@@ -193,7 +193,7 @@ $$
 * We can classify spacetime intervals as follows:
 
 ::: {.fragment}
-|  $(\Delta s)^2$  | Causal connection             | Separation terminology |
+|       Sign       | Causal connection             | Separation terminology |
 | :--------------: | ----------------------------- | ---------------------- |
 | $(\Delta s)^2>0$ | Connected by a massive object | Timelike               |
 | $(\Delta s)^2=0$ | Connected by a photon         | Lightlike              |
@@ -206,7 +206,8 @@ Rationale: timelike = separated more by time than by space (close enough for cau
 
 ## Spacetime diagrams
 
-* Note: causality is a stronger condition than happens-before. [Just because something happens in the future does not mean it happens in the _causal_ future.]{.fragment} [Just because $A$ occurs before $B$ does not mean $A$ may have caused $B$.]{.fragment}
+* Note: causality is a stronger condition than happens-before. [Just because something happens in the future does not mean it happens in the _causal_ future.]{.fragment}
+* Just because $A$ occurs before $B$ does not mean $A$ may have caused $B$.
 * How does this appear on our good friend, the spacetime diagram?
 
 ## Light cones
@@ -253,10 +254,35 @@ Rationale: timelike = separated more by time than by space (close enough for cau
 
 :::
 
+## Special topic: causality and gravity
+
+* Suppose that the Sun simply vanished. [How long would it take for the Earth to notice?]{.fragment}
+* Newton’s equation for the force of gravity between two objects with masses $m_1$ and $m_2$, separated by a distance $r$:
+
+  ::: {.fragment}
+  $$
+  F=G\frac{m_1m_2}{r^2}
+  $$
+  :::
+
+* Meaning: the force is proportional to each mass in question and inversely proportional to the square of the distance between them.
+
+## Special topic: causality and gravity
+
+* Once the Sun is plucked out of the sky, the spot where it used to be will have zero mass.
+* And so (according to Newton) the gravitational force on the Earth would drop to zero _immediately_.
+* This is less time than it takes the Sun’s light to reach us (roughly eight minutes), violating causality — [we would have been informed of the Sun’s disappearance before its photons reached us.]{.fragment}
+* In particular, as the spacetime interval is spacelike, an observer might see us careen off into space _before_ they see the Sun disappear — impossible!
+
+## Special topic: causality and gravity
+
+* Einstein realized that this was a significant flaw in Newton’s theory of gravity, and developed general relativity in part to fix it.
+	* While Newton would have been aware that the speed of light is finite, he probably saw no reason that the speed of light should be a universal speed limit.
+* In GR, changes to the gravitational field propagate (as gravitational waves) at the speed of light, preserving causality.
 
 ## Conclusion
 
 * All observers agree on the spacetime interval between two events.
 * _Therefore causality is not relative_: if one observer says one event (might have) caused another, then all observers agree.
-* If two events are causally related, then all observers agree that the cause occurred before the effect.
-* If two events are causally unrelated, then it's possible to observe any chronological ordering of those events.
+* Two events are causally related if and only if all observers agree that the cause occurred before the effect.
+* Two events are causally unrelated if and only if it's possible to observe any chronological ordering of those events.
