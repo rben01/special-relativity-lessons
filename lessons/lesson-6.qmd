@@ -38,11 +38,12 @@ $$
 * Space
 * Time
 * Simultaneity
-	* Including a “happens-before” relationship — given two clocks $A$ and $B$ separated by some distance, a person traveling from $A$ to $B$ says $B$ is behind $A$, while a person traveling from $B$ to $A$ says $A$ is behind $B$.
+	* Including a “happens-before” relationship — given two clocks $A$ and $B$ separated by some distance, a person traveling from $A$ to $B$ says $A$ lags behind $B$, while a person traveling from $B$ to $A$ says $B$ lags behind $A$.
 
 ## Things we do agree on?
 
 * Obviously, the speed of light.
+* And whether two events are the same.
 * Anything else?
 
 ## Intervals
@@ -100,7 +101,7 @@ You might find the name “spacetime interval” funny because this has units of
 
 ## The Lorentz transform
 
-* Suppose we have two events, recorded as $(x_1,t_1)$ and $(x_2,t_2)$ in the unprimed frame and as $(x_1',t_1')$ and $(x_2',t_2)$ in the primed frame.
+* Suppose we have two events, recorded as $(x_1,t_1)$ and $(x_2,t_2)$ in the unprimed frame and as $(x_1',t_1')$ and $(x_2',t_2')$ in the primed frame.
 * Then $\Delta x=x_2-x_1$, $\Delta t=t_2-t_1$, $\Delta x'=x_2'-x_1'$, $\Delta t'=t_2'-t_1'$.
 * Recall (Lorentz): $t'=\gamma(t-\tfrac{vx}{c^2})$ and $x'=\gamma(x-vt)$
 
@@ -131,7 +132,7 @@ $$
 $$
 \begin{align*}
 (c\Delta t')^2&\class{fragment}{{}=c^2\left(\gamma(\Delta t-\tfrac{v\Delta x}{c^2})\right)^2}\\
-&\class{fragment}{{}=\gamma^2\left((c\Delta t-\tfrac{v\Delta x}{c})\right)^2}\\
+&\class{fragment}{{}=\gamma^2\left(c\Delta t-\tfrac{v\Delta x}{c}\right)^2}\\
 &\class{fragment}{{}=\gamma^2(c^2(\Delta t)^2-2 v(\Delta t)(\Delta x)+\tfrac{v^2(\Delta x)^2}{c^2})}\\
 \class{fragment}{(\Delta x')^2}&\class{fragment}{{}=\left(\gamma(\Delta x-v\Delta t)\right)^2}\\
 &\class{fragment}{{}=\gamma^2((\Delta x)^2-2v(\Delta x)(\Delta t)+v^2(\Delta t)^2)}\\
@@ -250,7 +251,7 @@ Rationale: timelike = separated more by time than by space (close enough for cau
 
 ::: {.r-stack}
 
-<iframe src="../../special-relativity-lessons/lesson-6/SpacetimeDiagramLightCones" width="1400" height="600" frameborder="true" ></iframe>
+<iframe src="../special-relativity-lessons/lesson-6/SpacetimeDiagramLightCones" width="1400" height="600" frameborder="true" ></iframe>
 
 :::
 
