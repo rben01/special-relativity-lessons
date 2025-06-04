@@ -101,7 +101,7 @@ $$
 
 * Two twins are on Earth. They are (obviously) the same age.
 * One twin heads off into space. They travel at high speed in one direction, turn around after a while, and return to Earth.
-* Who is older: the Earth-bound twin (Ernie) or the astronaut twin (Alice)?
+* When they return, who is older: the Earth-bound twin (Ernie) or the astronaut twin (Alice)?
 
 ## The paradox
 
@@ -152,12 +152,18 @@ $$
 
 ## The paradox (quantitative)
 
-* On each leg of her trip, Alice says she traveled for $\frac{2L}{\gamma v}$.
-* Meanwhile, Ernie’s clock is dilated, so on each leg of her trip she sees him age $\frac{2L}{\gamma^2 v}$.
+* On each leg of her trip, Alice says she traveled for $\frac{L}{\gamma v}$.
+* Meanwhile, Ernie’s clock is dilated, so on each leg of her trip she sees him age $\frac{L}{\gamma^2 v}$.
 * And at the turnaround, she sees him age an additional $\frac{2Lv}{c^2}$.
-* So in total she observes him age $\frac{2L}{\gamma^2 v}+\frac{2Lv}{c^2}=\frac{2L}{v}(\frac{1}{\gamma^2}+\frac{v^2}{c^2})=\frac{2L}{v}$!
+* So in total she observes him age $2\frac{L}{\gamma^2 v}+\frac{2Lv}{c^2}=\frac{2L}{v}(\frac{1}{\gamma^2}+\frac{v^2}{c^2})=\frac{2L}{v}$!
 
 ## The paradox (quantitative)
 
 * And so indeed, Alice sees Ernie age $\frac{2L}{v}$, just as she should.
 * No paradox — she is younger, he is older.
+
+## Conclusion
+
+* “Paradoxes” simply are not possible within the theory of relativity.
+* If something looks paradoxical, it's probably because you're asking a non-relativistic question to begin with.
+* While two observers need not see the same thing, everyone agrees on what everyone else sees.

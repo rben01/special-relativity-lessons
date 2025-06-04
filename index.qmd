@@ -17,3 +17,4 @@ Slides are built using [Reveal.js](https://revealjs.com). To view a slideshow’
 * [Lesson 4: The Lorentz Transform](lessons/lesson-4.html)
 * [Lesson 5: Velocity Addition](lessons/lesson-5.html)
 * [Lesson 6: Invariants and Causality](lessons/lesson-6.html)
+* [Lesson 7: Paradoxes](lessons/lesson-7.html)
