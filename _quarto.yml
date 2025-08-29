@@ -4,6 +4,9 @@ project:
   output-dir: _output
   resources:
     - images
+  render:
+    - "*.qmd"
+    - "!CLAUDE.md"
 
 format:
   revealjs:
