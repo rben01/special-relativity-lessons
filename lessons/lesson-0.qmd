@@ -34,7 +34,7 @@ So, let's get started. First we need to talk about light, and one its most funda
 * The first experiment, performed by Galileo, was inconclusive.
 
 ::: {.fragment .absolute left="30%" top="60%"}
-![](/images/0/lanternanim.gif){width="600px"}
+[![https://physics.uwb.edu.pl/main/ptf/fizyka2000/waves_particles/lightspeed_evidence.html](/images/0/lanternanim.gif){width="600px"}](https://physics.uwb.edu.pl/main/ptf/fizyka2000/waves_particles/lightspeed_evidence.html)
 :::
 
 ::: {.notes}
@@ -55,7 +55,7 @@ _Talk about Galileo experiment — issue is they were only mile apart, round tri
 :::
 
 ::: {.column .fragment fragment-index=2 width="18%"}
-![](/images/0/Illustration_from_1676_article_on_Ole_R%C3%B8mer's_measurement_of_the_speed_of_light.jpg){fig-align="center"}
+[![Ole Rømer, Public domain, via Wikimedia Commons](/images/0/Illustration_from_1676_article_on_Ole_R%C3%B8mer's_measurement_of_the_speed_of_light.jpg){fig-align="center"}](https://commons.wikimedia.org/wiki/File:Illustration_from_1676_article_on_Ole_R%C3%B8mer%27s_measurement_of_the_speed_of_light.jpg)
 :::
 
 ::: {.notes}
@@ -65,7 +65,7 @@ _Explain diagram. Ask what they think this experiment shows._ Astronomers had al
 ## Estimates of the speed of light
 
 * This provided an estimate: light was observed to take 22 minutes to traverse the diameter of Earth's orbit around the Sun, which would give a speed of 226,663 km/s.
-* In 1849, this was refined to 315,000 km/s, and in 1862 to 298,000 km/s.
+* In 1849, more precise astronomical methods refined this to 315,000 km/s, and in 1862 to 298,000 km/s.
 
 
 # The nature of light: what _is_ it?
@@ -86,7 +86,7 @@ $$
 ::::
 
 :::: {.column width="45%"}
-![](/images/0/Coulomb's%20Law.svg)
+[![User:Dna-Dennis, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons](/images/0/Coulomb's%20Law.svg)](https://commons.wikimedia.org/wiki/File:CoulombsLaw.svg)
 ::::
 :::
 
@@ -109,7 +109,7 @@ $$
 ::::
 
 :::: {.column width="55%"}
-![](/images/0/ampere.png)
+[![MikeRun, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons](/images/0/ampere.png)](https://commons.wikimedia.org/wiki/File:Wires-antiparallel-and-parallel-with-magnetic-field.svg)
 ::::
 :::
 
@@ -170,6 +170,10 @@ And if you do the math, that oscillation looks like this:
 :::
 
 ## {background-video="../images/0/electromagnetic-waves.mp4" background-video-loop="true"}
+
+::: {style="position:absolute;right:-10vw;bottom:-5vh;max-width:30vw;"}
+<https://www.youtube.com/watch?v=XFBHmG6gtIU>
+:::
 
 ## The speed of electromagnetic waves {auto-animate="true"}
 
@@ -277,9 +281,9 @@ Can we apply these examples to detect the luminiferous aether?
 
 ::: {.column .fragment .align-right width="38%"}
 :::: {style="text-align:center;"}
-![](/images/0/Michelson1881c.png){style="height:200px;--r-block-margin: 2px;"}
-![](/images/0/Michelson_morley_experiment_1887.jpg){style="height:140px;--r-block-margin: 2px;"}
-![](/images/0/On_the_Relative_Motion_of_the_Earth_and_the_Luminiferous_Ether_-_Fig_4.png){style="height:180px;--r-block-margin: 2px;"}
+[![w:Albert Abraham Michelson, Public domain, via Wikimedia Commons](/images/0/Michelson1881c.png){style="height:200px;--r-block-margin: 2px;"}](https://commons.wikimedia.org/wiki/File:Michelson1881c.png)
+[![Case Western Reserve University, Public domain, via Wikimedia Commons](/images/0/Michelson_morley_experiment_1887.jpg){style="height:140px;--r-block-margin: 2px;"}](https://commons.wikimedia.org/wiki/File:Michelson_morley_experiment_1887.jpg)
+[![Albert Abraham Michelson (1852 – 1931) with Edward Morley (1838 - 1923), Public domain, via Wikimedia Commons](/images/0/On_the_Relative_Motion_of_the_Earth_and_the_Luminiferous_Ether_-_Fig_4.png){style="height:180px;--r-block-margin: 2px;"}](https://commons.wikimedia.org/wiki/File:On_the_Relative_Motion_of_the_Earth_and_the_Luminiferous_Ether_-_Fig_4.png)
 ::::
 :::
 
