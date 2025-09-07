@@ -1,11 +1,101 @@
 ---
-title: "Lesson 5: Velocity Addition"
+title: "Lesson 4: The Lorentz Transform"
 format: revealjs
-title-slide-attributes:
-  data-notes: ""
 ---
 
 # Recap
+
+## Effects of relativity
+
+* Time dilation: [a clock in motion appears to tick slower by a factor of $\gamma$]{.fragment}
+* Length contraction: [an object in motion appears contracted along its direction of motion by a factor of $\gamma$]{.fragment}
+* Relativity of simultaneity: [if two clocks are synchronized in their own frame, and separated by a distance $L$ in the direction of their motion, the front clock appears to lag behind the rear clock by $\frac{Lv}{c^2}$ (“leading clocks lag”)]{.fragment}
+
+# The Lorentz transform
+
+## Computational difficulties
+
+* We've seen some exercises that required a lot of:
+	* Thought
+	* Care
+	* Calculation
+* This is annoying.
+* Can we do better?
+
+## A unified framework
+
+* Wouldn't it be nice... [if we had some simple equations that let us “plug and chug”]{.fragment}
+* The goal:
+	* Given $x$ and $t$, find $x'$ and $t'$ [(I say it happened when/where — what do they say?)]{.fragment}
+	* Given $x'$ and $t'$, find $x$ and $t$ [(They say it happened when/where — what do I say?)]{.fragment}
+* In other words: a rote, mindless way to transform between coordinate systems in relative motion.
+
+## The setup
+
+* We have reference frames $F$ and $F'$.
+* We will consider $F$ stationary.
+* $F'$ has (relative) velocity $v$ in the $+x$ direction.
+* $F$ and $F'$ have a common origin: at $t=t'=0$, their origins $O$ and $O'$ coincide ($x=x'=0$).
+* $F'$ observes an event at $(x', t')$.
+* What coordinates $(x,t)$ does $F$ ascribe to that event?
+
+## The primed position component
+
+1. Length contraction: $F$ observes the distance between $O'$ and $x'$ to be $\frac{x'}{\gamma}$.
+1. At time $t$, $O'$ is at position $vt$.
+1. So at time $t$, $F$ observes $x'$ at $x=vt+\frac{x'}{\gamma}$.
+1. Solve for $x'$: [$x'=\gamma(x-vt)$.]{.fragment}
+
+## The unprimed position component
+
+1. Length contraction: $F'$ observes the distance between $O$ and $x$ to be $\frac{x}{\gamma}$.
+1. At time $t'$, $O$ is at position $-vt'$.
+
+	* Negative! — because $F$ is, relatively, moving in the opposite direction.
+
+1. So at time $t'$, $F'$ observes $x$ at $x'=-vt'+\frac{x}{\gamma}$.
+1. Solve for $x$: [$x=\gamma(x'+vt)$.]{.fragment}
+1. Note: as we'd hope, the equations are the symmetric in unprimed and primed variables, with $v$ inverted.
+
+## The primed time component
+
+$$
+\begin{align*}
+x'&=-vt'+\frac{x}{\gamma}\\
+x'&=\gamma(x-vt)\\
+\class{fragment}{\gamma(x-vt)}&\class{fragment}{{}=-vt'+\frac{x}{\gamma}}\\
+\class{fragment}{vt'}&\class{fragment}{{}=\frac{x}{\gamma}-\gamma(x-vt)}\\
+\class{fragment}{t'}&\class{fragment}{{}=\left(\frac{1-\gamma^2}{\gamma v}\right)x+\gamma t}
+\end{align*}
+$$
+
+## The primed time component
+
+$$
+\begin{align*}
+t'&=\left(\frac{1-\gamma^2}{\gamma v}\right)x+\gamma t\\
+&\class{fragment}{{}=\left(\frac{1-\frac{1}{1-(v/c)^2}}{\gamma v}\right)x+\gamma t}\\
+&\class{fragment}{{}=\left(\frac{-(v/c)^2}{\gamma v (1-(v/c)^2)}\right)x+\gamma t}\\
+&\class{fragment}{{}=\left(\frac{-(v/c)^2}{\gamma v} \gamma^2\right)x+\gamma t}\\
+\end{align*}
+$$
+
+## The primed time component
+
+$$
+\begin{align*}
+t'&=\left(\frac{-(v/c)^2}{\gamma v} \gamma^2\right)x+\gamma t\\
+&\class{fragment}{{}=\gamma\left(t-\frac{vx}{c^2}\right)}
+\end{align*}
+$$
+
+## The unprimed time component
+
+* By identical logic, $t=\gamma\left(t'+\frac{vx'}{c^2}\right)$.
+	* If you're interested, try to derive this on your own.
+	* It's literally the same math, but starting with two expressions for $x$ instead of two expressions for $x'$.
+* Key point: it's identical, with the primed and unprimed variables swapped, and $v$ negated.
+* This is good: “no privileged reference frames” means we need all observers to agree on how to transform between coordinate systems.
 
 ## The Lorentz transform
 
@@ -19,9 +109,14 @@ t&=\gamma\left(t'+\frac{vx'}{c^2}\right)
 \end{align*}
 $$
 
-## The Lorentz transform
+## A more elegant formulation:
 
-Or, with $\beta=\frac{v}{c}$ and using $ct,ct'$ instead of $t,t'$:
+* Let $\beta=\frac{v}{c}$.
+* Use $ct$ and $ct'$ instead of $t$ and $t'$.
+
+## A more elegant formulation:
+
+::: {.fragment}
 $$
 \begin{align*}
 x'&=\gamma(x-\beta ct)\\
@@ -31,188 +126,109 @@ x&=\gamma(x'+\beta ct')\\
 ct&=\gamma(ct'+\beta x')
 \end{align*}
 $$
-
-# Velocity addition
-
-## Non-relativistic velocity addition
-
-* Velocities of non-light objects “just add normally”: [add the velocity of the frame and the velocity of the object in the frame.]{.fragment}
-	* If $A$ is traveling at $0.9c$ relative to $B$, and $A$ launches something forwards at $0.9c$ relative to $A$, $B$ would observe the speed of the object as $1.8c>c$.
-* Yet the velocity of light is constant and universal: [it's $c$ in every frame.]{.fragment}
-* This is weird, and bad, and wrong.
-
-## Relativistic velocity addition
-
-* What we'd hope for:
-* Velocities of non-light objects add in a specific way, $v_\textrm{net}=f(v_\textrm{frame}, v_\textrm{object}')$.
-* The velocity of light adds in _the same way_, $c=f(v_\textrm{frame}, c)$.
-* Note: now we have three frames: [our unprimed “stationary” frame,]{.fragment} [the primed “moving” frame,]{.fragment} [and the frame of the object moving in the primed frame!]{.fragment}
-
-## Setup
-
-* Primed frame $F'$ with origin $O'$ is moving in $F$ with velocity $v$.
-* “Double-primed” frame $F''$ with origin $O''$ is moving in $F'$ with velocity $u'$.
-* Q: What is the apparent velocity $u$ of $F''$ in $F$?
-
-## Setup
-
-![](/images/5/velo-add-1.svg){fig-align="center"}
-
-## Part 1: The strategy
-
-* Place a flashlight at $O''$ that sends photons towards $O$ and $O'$ with period $T''$, according to $F''$.
-* Find the apparent period $T'$ of photons arriving at $O'$ (a function of $u'$ and $T''$).
-* Find the apparent period $T$ of photons arriving at $O$ (a function of $u$ and $T''$).
-	* But also a function of $v$ and $T'$ — and $T'$ is a function of $u'$ and $T''$!
-* We have a relation between $u$, $v$, and $u'$, which is exactly what we're after.
-
-## Part 1: The strategy
-
-![](/images/5/velo-add-2.svg){fig-align="center"}
-
-
-## Part 2: The period of flashes
-
-* $F$ says that $O''$ has speed $u$. [According to $F$, how much time elapses between photons arriving at $O$?]{.fragment}
-* Due to time dilation, each flash is emitted $\gamma_u T''$ after the previous one.
-* The flashlight travels $u \gamma_u T''$ in this time.
-* So each photon must travel $u \gamma_u T''$ farther than the previous, which means it travels $\frac{u}{c} \gamma_u T''$ longer.
-* So the period between photons arriving at $O$ is $T=u \gamma_u T''+\frac{u}{c} \gamma_u T''=(1+\frac{u}{c})\gamma_u T''$.
-
-## Part 3: Applying to other frames
-
-* The takeway: [if a flashlight emitting photons with period $T''$ is moving with speed $u$ relative to frame $F$, then $F$ receives photons with period $(1+\frac{u}{c})\gamma_u T''$.]{.fragment}
-* But this very same flashlight is moving with speed $u'$ relative to $F'$, so $F'$ perceives photons arriving at $O'$ with period $T'=(1+\frac{u'}{c})\gamma_{u'} T''$.
-* And those photons are passing through $O'$, which has speed $v$ relative to $F$, so $F$ receives those same photons with period $T=(1+\frac{v}{c})\gamma_v T'=(1+\frac{u'}{c})\gamma_{u'}(1+\frac{v}{c})\gamma_v T''$.
-
-## Part 4: The key equation
-
-* And so $(1+\frac{u}{c})\gamma_u T''=T=(1+\frac{u'}{c})\gamma_{u'}(1+\frac{v}{c}) \gamma_v T''$.
-* So $(1+\frac{u}{c})\gamma_u=(1+\frac{u'}{c})\gamma_{u'}(1+\frac{v}{c}) \gamma_v$!
-* We're done(ish).
-* Let's simplify a bit.
-
-## Part 5: Math
-
-$$
-\begin{align*}
-(1+\tfrac{v}{c})\gamma_v&\class{fragment}{{}=\frac{1+\tfrac{v}{c}}{\sqrt{1-(\tfrac{v}{c})^2}}}\\
-&\class{fragment}{{}=\sqrt{\frac{(1+\tfrac{v}{c})^2}{(1-\tfrac{v}{c})(1+\tfrac{v}{c})}}}\\
-&\class{fragment}{{}=\sqrt{\frac{1+\tfrac{v}{c}}{1-\tfrac{v}{c}}}}
-\end{align*}
-$$
-
-## Part 6: More math
-
-* Recalling $(1+\frac{u}{c})\gamma_u=(1+\frac{u'}{c})\gamma_{u'}(1+\frac{v}{c})\gamma_v$, we have:
-
-::: {.fragment}
-$$
-\sqrt{\frac{1+\tfrac{u}{c}}{1-\tfrac{u}{c}}}=\sqrt{\frac{1+\tfrac{u'}{c}}{1-\tfrac{u'}{c}}}\sqrt{\frac{1+\tfrac{v}{c}}{1-\tfrac{v}{c}}}
-$$
 :::
 
-## Part 6: More math
+* Not only are they symmetric in $v$, they're now symmetric in $x$ and $ct$.
+* “The primed variable equals the unprimed variable minus $\beta$ times the other one, all times $\gamma$.”
 
-* Square both sides, multiply tops and bottoms of all fractions by $c$:
+# Interpreting the Lorentz transform
 
-::: {.fragment}
-$$
-\frac{c+u}{c-u}=\frac{c+u'}{c-u'}\frac{c+v}{c-v}
-$$
-:::
+## Transformations are just lines
 
-* Let's solve for $u$.
+* Earlier, we alluded to how special relativity is “stunted”: [it can only deal with inertial reference frames (no acceleration, no gravity).]{.fragment}
+* Now we see the manifestation of that: the Lorentz transform is a _linear transformation_ between coordinate systems.
+* $x'$ and $t'$ are linear functions of $x$ and $t$.
+* In other words, spacetime has to be “flat” (as opposed to curved) for special relativity to apply.
 
-## Part 6: More math
+## Spacetime diagrams
 
-$$
-\begin{align*}
-\frac{c+u}{c-u}&=\frac{c+u'}{c-u'}\frac{c+v}{c-v}\\
-\class{fragment}{(c+u)(c-u')(c-v)}&\class{fragment}{{}=(c-u)(c+u')(c+v)}\\
-\end{align*}
-$$
+::: {.r-stack}
 
-$$
-\begin{align*}
-&\class{fragment}{u((c-u')(c-v)+(c+u')(c+v))}\\&\class{fragment}{{}=c((c+u')(c+v)-(c-u')(c-v))}
-\end{align*}
-$$
-
-## Part 6: More math
-
-* Now:
-
-$$
-\begin{align*}
-\class{fragment}{(c+u')(c+v)}&\class{fragment}{{}=c^2+c(u'+v)+u'v}\\
-\class{fragment}{(c-u')(c-v)}&\class{fragment}{{}=c^2-c(u'+v)+u'v}\\\\
-\class{fragment}{{}(c+u')(c+v)+(c+u')(c-v)}&\class{fragment}{{}=2(c^2+u'v)}\\
-\class{fragment}{{}(c+u')(c+v)-(c+u')(c-v)}&\class{fragment}{{}=2c(u'+v)}\\
-\end{align*}
-$$
-
-## Part 6: More math
-
-$$
-\begin{align*}
-\class{fragment}{u(2(c^2+u'v))}&\class{fragment}{{}=c(2c(u'+v))}\\
-\class{fragment}{u}&\class{fragment}{{}=\frac{c^2(u'+v)}{c^2+u'v}}\\
-&\class{fragment}{{}=\frac{u'+v}{1+\frac{u'v}{c^2}}}
-\end{align*}
-$$
-
-## Result
-
-* If $F'$ has velocity $v$ relative to $F$, and $F''$ has velocity $u'$ relative to $F'$, then the velocity of $F''$ relative to $F$ is $u=\frac{u'+v}{1+\frac{u'v}{c^2}}$.
-
-## Result
-
-::: {.columns}
-:::: {.column .fragment}
-
-![Velocity Addition, Naive](/images/5/velocity_addition_bad.png)
-
-::::
-
-:::: {.column .fragment}
-
-![Velocity Addition, Actual](/images/5/velocity_addition.png)
-
-::::
+<iframe src="../special-relativity-lessons/lesson-4/SpacetimeDiagram" width="1400" height="600" frameborder="true" ></iframe>
 
 :::
 
-## Observations
 
-* $F'$ is traveling at $v=0.9c$ relative to $F$. $F''$ is traveling at $u'=0.9c$ relative to $F'$. [What is the speed $u$ of $F''$ relative to $F$?]{.fragment}
-* Naively: $u=u'+v=1.8c>c$ — bad!
-* Actually: $u=\frac{u'+v}{1+\frac{u'v}{c^2}}=\frac{1.8c}{1+0.81}\approx 0.994c<c$ — good!
+# Using the Lorentz transform
 
-## Observations
+## Deriving “leading clocks lag”
 
-* $F'$ is traveling at $v=100\,\textrm{m/s}$ relative to $F$. $F''$ is traveling at $u'=100\,\textrm{m/s}$ relative to $F'$. [What is the speed $u$ of $F''$ relative to $F$?]{.fragment}
-* Naively: $u=u'+v=200\,\textrm{m/s}$.
-* Actually: $u=\frac{u'+v}{1+\frac{u'v}{c^2}}=200\,\textrm{m/s}\class{fragment}{{}-2.225\times 10^{-11}\,\textrm{m/s}.}$
+* In the primed frame, two (synchronized) clocks read $t'=0$. One is at $x'=0$, the other at $x'=L$.
+* At $t=0$ in the unprimed frame, we don't (yet) know the time $t'$ on a clock at $x'=L$.
+* But using $x'=\gamma(x-\beta ct)$, we get $x=\frac{L}{\gamma}$ (good).
+* Then $t'=\gamma\left(t-\frac{v(L/\gamma)}{c^2}\right)=-\frac{vL}{c^2}$.
+* Great! The leading clock does indeed lag behind the origin by $\frac{vL}{c^2}$.
+
+## Io (5 min)
+
+* A space probe will be sent to Io to record some data.
+* The probe travels from Earth at a constant speed of $\frac{4}{5}c$. According to a clock on the probe, at this speed it takes ten hours to travel from Earth to Io.
+* When the probe arrives at Io, it sends a single photon back to Earth to let us know it arrived safely.
+* Q: According to us on Earth, how many hours after the probe leaves Earth should we expect the photon to arrive?
+* A: $30\,\textrm{hrs}$.
+
+::: {.notes}
+Use the Lorentz transform!
+:::
+
+## Solution
+
+* $\gamma=\frac{5}{3}$&nbsp;
+* To the probe (primed frame):
+	* Io reaches the origin of the primed frame at $t'=10\,\textrm{hrs}$.
+	* The position of Io at that time is $x'=0$.
+* Remember: in any given frame, the frame itself is stationary!
+
+## Solution
+
+* To the Earth:
+	* The position of Io is $x=\gamma(x'+vt')=\frac{5}{3}(0+\frac{4}{5}c\cdot 10\,\textrm{hrs})=\frac{40}{3}c\,\textrm{hrs}$.
+		* Technically this is only the position of Io when the probe arrives — why is it _always_ the position of Io?
+	* The probe arrives at $t=\gamma(t'+\frac{vx'}{c^2})=\frac{5}{3}(10\,\textrm{hrs}+0)=\frac{50}{3}\,\textrm{hrs}$.
+
+## Solution
+
+* The time it takes the photon to reach Earth from Io is $\frac{x}{c}=\frac{40}{3}\,\textrm{hrs}$.
+* Just add: $t_{\textrm{total}}=\left(\frac{40}{3}+\frac{50}{3}\right)\,\textrm{hrs}=30\,\textrm{hrs}$.
 
 
-## Observations
+## The speed of light
 
-* $F'$ emits a photon in the $+x$ direction. What is its speed $u$ relative to $F$?
-	* Now, $u'=c$
-* $u=\frac{c+v}{1+\frac{cv}{c^2}}=\frac{c^2(c+v)}{c^2+cv}=\frac{c^2(c+v)}{c(c+v)}=c$.&nbsp;
-	* Phew! (It didn't matter what $v$ was.)
+* Let's now just confirm that the Lorentz transform preserves the speed of light.
+* In the unprimed frame, a photon is sent at $t=0$ in the $+x$ direction and strikes a receptor at $t=t_0$, position $x=ct_0$.
+* In the primed frame:
+	* $x'=\gamma(x-vt)=\gamma(ct_0-vt_0)=\gamma (c-v) t_0$.
+	* $t'=\gamma(t-\frac{vx}{c^2})=\gamma(t_0-\frac{vt_0}{c})=\gamma (1-(v/c)) t_0$.
 
-## Observations
+## The speed of light
 
-* $F'$ emits a photon in the $-x$ direction. What is its speed $u$ relative to $F$?
-	* Now, $u'=-c$
-* $u=\frac{-c+v}{1+\frac{-cv}{c^2}}=\frac{c^2(-c+v)}{c^2-cv}=\frac{c^2(-c+v)}{c(c-v)}=-c$.&nbsp;
-	* Phew! (It didn't matter what $v$ was.)
+In the primed frame:
+
+$$
+\begin{align*}
+\frac{x'}{t'}&\class{fragment}{{}=\frac{\gamma (c-v) t_0}{\gamma (1-(v/c)) t_0}}\\
+&\class{fragment}{{}=\frac{(c-v) }{1-(v/c)}}\\
+&\class{fragment}{{}=\frac{c(1-(v/c)) }{1-(v/c)}}\\
+&\class{fragment}{{}=c}\\
+\end{align*}
+$$
 
 ## Conclusion
 
-* We can now deal with three (and, by repeating this process, arbitrarily many) frames in relative motion.
-* The velocity addition formula handles both massive objects and photons equivalently.
-* No amount of velocity addition can get something to appear to travel faster than light.
-	* Challenge: show that $\frac{u'+v}{1+\tfrac{u'v}{c^2}}$ is indeed at most $c$ for all $0\le u',v\le c$.
+* We now have a rote, mindless way to convert between different frames’ coordinates.
+* Furthermore, the Lorentz transform is “just” a pair of linear equations, of the form $x'=Ax+Bt$ and $t'=Cx+Dt$.
+
+## Conclusion
+
+* We can plot events on a graph with $x$ on the horizontal axis and $ct$ on the vertical axis. Ponder:
+	* What path do photons trace out on this graph? How does the path of a photon change from frame to frame? (Hint: it shouldn't change speed!)
+   * In a given frame, simultaneous events lie on a horizontal line. What do those same events look like in a frame with relative velocity $v$?
+	* In a given frame, co-located events lie on a vertical line. What do those same events look like in a frame with relative velocity $v$?
+
+## Conclusion
+
+::: {.r-stack}
+
+<iframe src="../special-relativity-lessons/lesson-4/SpacetimeDiagram" width="1400" height="600" frameborder="true" ></iframe>
+
+:::

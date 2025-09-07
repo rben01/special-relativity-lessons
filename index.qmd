@@ -10,13 +10,14 @@ Slides are built using [Reveal.js](https://revealjs.com). To view a slideshow’
 ## Index
 
 * [Lesson 0: Why Relativity?](lessons/lesson-0.html)
+* [Lesson 1: The Basics of Relativity](lessons/lesson-1.html)
 
 
-[q]: # "\* [Lesson 1: The Basics of Relativity](lessons/lesson-1.html)"
+[q]: # "\* [Lesson 2: Time Dilation](lessons/lesson-2.html)"
 [w]: # "\* This lesson was covered over two classes and talked about both the axioms of relativity and time dilation."
-[e]: # "\* [Lesson 2: Length Contraction](lessons/lesson-2.html)"
-[r]: # "\* [Lesson 3: Simultaneity](lessons/lesson-3.html)"
-[t]: # "\* [Lesson 4: The Lorentz Transform](lessons/lesson-4.html)"
-[y]: # "\* [Lesson 5: Velocity Addition](lessons/lesson-5.html)"
-[u]: # "\* [Lesson 6: Invariants and Causality](lessons/lesson-6.html)"
-[i]: # "\* [Lesson 7: Paradoxes](lessons/lesson-7.html)"
+[e]: # "\* [Lesson 3: Length Contraction](lessons/lesson-3.html)"
+[r]: # "\* [Lesson 4: Simultaneity](lessons/lesson-4.html)"
+[t]: # "\* [Lesson 5: The Lorentz Transform](lessons/lesson-5.html)"
+[y]: # "\* [Lesson 6: Velocity Addition](lessons/lesson-6.html)"
+[u]: # "\* [Lesson 7: Invariants and Causality](lessons/lesson-7.html)"
+[i]: # "\* [Lesson 8: Paradoxes](lessons/lesson-8.html)"

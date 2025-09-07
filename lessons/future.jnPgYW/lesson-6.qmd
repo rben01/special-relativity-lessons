@@ -1,5 +1,5 @@
 ---
-title: "Lesson 6: Invariants and Causality"
+title: "Lesson 5: Velocity Addition"
 format: revealjs
 title-slide-attributes:
   data-notes: ""
@@ -7,19 +7,21 @@ title-slide-attributes:
 
 # Recap
 
-## Basic findings
+## The Lorentz transform
 
-* $\gamma=\frac{1}{\sqrt{1-(v/c)^2}}$.
-* Moving clocks run slow by a factor of $\gamma$.
-* Moving objects are contracted by a factor of $\gamma$.
-* Leading clocks lag by $\frac{Lv}{c^2}$.
-* Velocities add according to $u=\frac{u'+v}{1+\frac{u'v}{c^2}}$ (or $\beta_u=\frac{\beta_{u'}+\beta_v}{1+\beta_{u'}\beta_v}$)
+$$
+\begin{align*}
+x'&=\gamma(x-vt)\\
+t'&=\gamma\left(t-\frac{vx}{c^2}\right)\\
+\\
+x&=\gamma(x'+vt')\\
+t&=\gamma\left(t'+\frac{vx'}{c^2}\right)
+\end{align*}
+$$
 
 ## The Lorentz transform
 
-* This can be encapsulated in the Lorentz transform (with $\beta=\frac{v}{c}$).
-
-::: {.fragment}
+Or, with $\beta=\frac{v}{c}$ and using $ct,ct'$ instead of $t,t'$:
 $$
 \begin{align*}
 x'&=\gamma(x-\beta ct)\\
@@ -29,261 +31,188 @@ x&=\gamma(x'+\beta ct')\\
 ct&=\gamma(ct'+\beta x')
 \end{align*}
 $$
-:::
 
-# Invariants
+# Velocity addition
 
-## Things we don't agree on
+## Non-relativistic velocity addition
 
-* Space
-* Time
-* Simultaneity
-	* Including a “happens-before” relationship — given two clocks $A$ and $B$ separated by some distance, a person traveling from $A$ to $B$ says $A$ lags behind $B$, while a person traveling from $B$ to $A$ says $B$ lags behind $A$.
+* Velocities of non-light objects “just add normally”: [add the velocity of the frame and the velocity of the object in the frame.]{.fragment}
+	* If $A$ is traveling at $0.9c$ relative to $B$, and $A$ launches something forwards at $0.9c$ relative to $A$, $B$ would observe the speed of the object as $1.8c>c$.
+* Yet the velocity of light is constant and universal: [it's $c$ in every frame.]{.fragment}
+* This is weird, and bad, and wrong.
 
-## Things we do agree on?
+## Relativistic velocity addition
 
-* Obviously, the speed of light.
-* And whether two events are the same.
-* Anything else?
+* What we'd hope for:
+* Velocities of non-light objects add in a specific way, $v_\textrm{net}=f(v_\textrm{frame}, v_\textrm{object}')$.
+* The velocity of light adds in _the same way_, $c=f(v_\textrm{frame}, c)$.
+* Note: now we have three frames: [our unprimed “stationary” frame,]{.fragment} [the primed “moving” frame,]{.fragment} [and the frame of the object moving in the primed frame!]{.fragment}
 
-## Intervals
+## Setup
 
-* Forget about relativity for a second. [Suppose it's March, before you've taken this course.]{.fragment}
-* I ask you: given two events on Earth, what about those events can _any_ two people agree on?
-	* Note: they don't necessarily have the same spatial or temporal coordinate systems.
-* Answer:
-	* The time between the events.
-   * The distance between the events.
+* Primed frame $F'$ with origin $O'$ is moving in $F$ with velocity $v$.
+* “Double-primed” frame $F''$ with origin $O''$ is moving in $F'$ with velocity $u'$.
+* Q: What is the apparent velocity $u$ of $F''$ in $F$?
 
-## Distance
+## Setup
 
-* Distance is particularly interesting because space is 3D, so the observers can disagree on the $x$, $y$, and $z$ distances between the two events.
-* For instance:
-* Alice might say the events took place at positions $(x_1,y_1,z_1)=(1,2,3)$ and $(x_2,y_2,z_2)=(2,6,11)$.
-	* And says the distance between them is (Pythagorean theorem) $\sqrt{(2-1)^2+(6-2)^2+(11-3)^2}=\sqrt{81}=9$.
+![](/images/5/velo-add-1.svg){fig-align="center"}
 
-## Distance
+## Part 1: The strategy
 
-* Bob might say the events took place at positions $(x_1,y_1,z_1)=(7,4,5)$ and $(x_2,y_2,z_2)=(3,8,-2)$.
-	* And says the distance between them is $\sqrt{(3-7)^2+(8-4)^2+(-2-5)^2}=\sqrt{81}=9$.
-* Regardless of his particular coordinate system, Bob could not say the events happened at, say, $(x_1,y_1,z_1)=(0,0,0)$ and $(x_2,y_2,z_2)=(1,1,1)$, because his distance wouldn't agree with Alice’s.
+* Place a flashlight at $O''$ that sends photons towards $O$ and $O'$ with period $T''$, according to $F''$.
+* Find the apparent period $T'$ of photons arriving at $O'$ (a function of $u'$ and $T''$).
+* Find the apparent period $T$ of photons arriving at $O$ (a function of $u$ and $T''$).
+	* But also a function of $v$ and $T'$ — and $T'$ is a function of $u'$ and $T''$!
+* We have a relation between $u$, $v$, and $u'$, which is exactly what we're after.
 
-## Spacetime intervals
+## Part 1: The strategy
 
-* Back to relativity...
-* We know that Alice and Bob will not necessarily agree on either the time _or_ the distance between the events.
-* Is there something they can agree on?
-* Yes: spacetime intervals.
+![](/images/5/velo-add-2.svg){fig-align="center"}
 
-## Spacetime intervals
 
-* Definition: the _spacetime interval_ between two events $(x_1,t_1)$ and $(x_2,t_2)$ (in some inertial reference frame) is given by $(\Delta s)^2=(c\Delta t)^2-(\Delta x)^2$.
-	* Where $\Delta t=t_2-t_1$ and $\Delta x=x_2-x_1$.
-	* Definitely _not_ the Pythagorean theorem, because we're subtracting squares instead of adding.
-	* Note: we will never take the square root of this quantity, we'll just leave it as $(\Delta s)^2$. [(The RHS could be negative, and then we'd need imaginary numbers.)]{.fragment}
+## Part 2: The period of flashes
 
-::: {.notes}
-Highlight that depending on the author, the sign of the spacetime interval is flipped.
+* $F$ says that $O''$ has speed $u$. [According to $F$, how much time elapses between photons arriving at $O$?]{.fragment}
+* Due to time dilation, each flash is emitted $\gamma_u T''$ after the previous one.
+* The flashlight travels $u \gamma_u T''$ in this time.
+* So each photon must travel $u \gamma_u T''$ farther than the previous, which means it travels $\frac{u}{c} \gamma_u T''$ longer.
+* So the period between photons arriving at $O$ is $T=u \gamma_u T''+\frac{u}{c} \gamma_u T''=(1+\frac{u}{c})\gamma_u T''$.
 
-You might find the name “spacetime interval” funny because this has units of length^2, in particular there is no time at all in this expression. That's because light has been used to convert time into space.
-:::
+## Part 3: Applying to other frames
 
-## Spacetime intervals
+* The takeway: [if a flashlight emitting photons with period $T''$ is moving with speed $u$ relative to frame $F$, then $F$ receives photons with period $(1+\frac{u}{c})\gamma_u T''$.]{.fragment}
+* But this very same flashlight is moving with speed $u'$ relative to $F'$, so $F'$ perceives photons arriving at $O'$ with period $T'=(1+\frac{u'}{c})\gamma_{u'} T''$.
+* And those photons are passing through $O'$, which has speed $v$ relative to $F$, so $F$ receives those same photons with period $T=(1+\frac{v}{c})\gamma_v T'=(1+\frac{u'}{c})\gamma_{u'}(1+\frac{v}{c})\gamma_v T''$.
 
-* Q: A photon travels between two events. What is the corresponding spacetime interval?
-* Q: A massive object travels between two events. Is the corresponding spacetime interval positive or negative?
-* Q: Two events are such that even a photon is not fast enough to travel between them. Is the corresponding spacetime interval positive or negative?
+## Part 4: The key equation
 
-## Spacetime intervals
+* And so $(1+\frac{u}{c})\gamma_u T''=T=(1+\frac{u'}{c})\gamma_{u'}(1+\frac{v}{c}) \gamma_v T''$.
+* So $(1+\frac{u}{c})\gamma_u=(1+\frac{u'}{c})\gamma_{u'}(1+\frac{v}{c}) \gamma_v$!
+* We're done(ish).
+* Let's simplify a bit.
 
-* Now, we will actually prove the claim that the spacetime interval between two events is an invariant: something all observers can agree on.
-* The goal: to show that $(\Delta s')^2=(\Delta s)^2$, i.e. $(c\Delta t')^2-(\Delta x')^2=(c\Delta t)^2-(\Delta x)^2$, for arbitrary inertial frames.
+## Part 5: Math
 
-## The Lorentz transform
+$$
+\begin{align*}
+(1+\tfrac{v}{c})\gamma_v&\class{fragment}{{}=\frac{1+\tfrac{v}{c}}{\sqrt{1-(\tfrac{v}{c})^2}}}\\
+&\class{fragment}{{}=\sqrt{\frac{(1+\tfrac{v}{c})^2}{(1-\tfrac{v}{c})(1+\tfrac{v}{c})}}}\\
+&\class{fragment}{{}=\sqrt{\frac{1+\tfrac{v}{c}}{1-\tfrac{v}{c}}}}
+\end{align*}
+$$
 
-* Suppose we have two events, recorded as $(x_1,t_1)$ and $(x_2,t_2)$ in the unprimed frame and as $(x_1',t_1')$ and $(x_2',t_2')$ in the primed frame.
-* Then $\Delta x=x_2-x_1$, $\Delta t=t_2-t_1$, $\Delta x'=x_2'-x_1'$, $\Delta t'=t_2'-t_1'$.
-* Recall (Lorentz): $t'=\gamma(t-\tfrac{vx}{c^2})$ and $x'=\gamma(x-vt)$
+## Part 6: More math
 
-## Boring math
-
-* First, we show that the $\Delta$ “distributes”:
+* Recalling $(1+\frac{u}{c})\gamma_u=(1+\frac{u'}{c})\gamma_{u'}(1+\frac{v}{c})\gamma_v$, we have:
 
 ::: {.fragment}
 $$
-\begin{align*}
-\Delta t'&\class{fragment}{{}=t_2'-t_1'}\\
-&\class{fragment}{{}=\gamma(t_2-\tfrac{vx_2}{c^2})-\gamma(t_1-\tfrac{vx_1}{c^2})}\\
-&\class{fragment}{{}=\gamma((t_2-t_1)-\tfrac{v(x_2-x_1)}{c^2})}\\
-&\class{fragment}{{}=\gamma(\Delta t-\tfrac{v\Delta x}{c^2})}\\
-\end{align*}
+\sqrt{\frac{1+\tfrac{u}{c}}{1-\tfrac{u}{c}}}=\sqrt{\frac{1+\tfrac{u'}{c}}{1-\tfrac{u'}{c}}}\sqrt{\frac{1+\tfrac{v}{c}}{1-\tfrac{v}{c}}}
 $$
 :::
 
-## Boring math
+## Part 6: More math
 
-* Similarly, $\Delta x'=\gamma(\Delta x-v\Delta t)$.
-
-## Boring math
-
-* Now,
+* Square both sides, multiply tops and bottoms of all fractions by $c$:
 
 ::: {.fragment}
 $$
-\begin{align*}
-(c\Delta t')^2&\class{fragment}{{}=c^2\left(\gamma(\Delta t-\tfrac{v\Delta x}{c^2})\right)^2}\\
-&\class{fragment}{{}=\gamma^2\left(c\Delta t-\tfrac{v\Delta x}{c}\right)^2}\\
-&\class{fragment}{{}=\gamma^2(c^2(\Delta t)^2-2 v(\Delta t)(\Delta x)+\tfrac{v^2(\Delta x)^2}{c^2})}\\
-\class{fragment}{(\Delta x')^2}&\class{fragment}{{}=\left(\gamma(\Delta x-v\Delta t)\right)^2}\\
-&\class{fragment}{{}=\gamma^2((\Delta x)^2-2v(\Delta x)(\Delta t)+v^2(\Delta t)^2)}\\
-\end{align*}
+\frac{c+u}{c-u}=\frac{c+u'}{c-u'}\frac{c+v}{c-v}
 $$
 :::
 
-## Boring math
+* Let's solve for $u$.
 
-* Subtract:
+## Part 6: More math
 
-::: {.fragment}
 $$
 \begin{align*}
-(c\Delta t')^2-(\Delta x')^2&\class{fragment}{{}=\gamma^2\left((c^2-v^2)(\Delta t)^2+\left(\tfrac{v^2}{c^2}-1\right)(\Delta x)^2\right)}\\
-&\class{fragment}{{}=\gamma^2\left(c^2(1-\tfrac{v^2}{c^2})(\Delta t)^2-(1-\tfrac{v^2}{c^2})(\Delta x)^2\right)}\\
-&\class{fragment}{{}=\frac{1-\tfrac{v^2}{c^2}}{1-\tfrac{v^2}{c^2}}\left((c\Delta t)^2-(\Delta x)^2\right)}\\
-&\class{fragment}{{}=(c\Delta t)^2-(\Delta x)^2}\\
+\frac{c+u}{c-u}&=\frac{c+u'}{c-u'}\frac{c+v}{c-v}\\
+\class{fragment}{(c+u)(c-u')(c-v)}&\class{fragment}{{}=(c-u)(c+u')(c+v)}\\
 \end{align*}
 $$
-:::
+
+$$
+\begin{align*}
+&\class{fragment}{u((c-u')(c-v)+(c+u')(c+v))}\\&\class{fragment}{{}=c((c+u')(c+v)-(c-u')(c-v))}
+\end{align*}
+$$
+
+## Part 6: More math
+
+* Now:
+
+$$
+\begin{align*}
+\class{fragment}{(c+u')(c+v)}&\class{fragment}{{}=c^2+c(u'+v)+u'v}\\
+\class{fragment}{(c-u')(c-v)}&\class{fragment}{{}=c^2-c(u'+v)+u'v}\\\\
+\class{fragment}{{}(c+u')(c+v)+(c+u')(c-v)}&\class{fragment}{{}=2(c^2+u'v)}\\
+\class{fragment}{{}(c+u')(c+v)-(c+u')(c-v)}&\class{fragment}{{}=2c(u'+v)}\\
+\end{align*}
+$$
+
+## Part 6: More math
+
+$$
+\begin{align*}
+\class{fragment}{u(2(c^2+u'v))}&\class{fragment}{{}=c(2c(u'+v))}\\
+\class{fragment}{u}&\class{fragment}{{}=\frac{c^2(u'+v)}{c^2+u'v}}\\
+&\class{fragment}{{}=\frac{u'+v}{1+\frac{u'v}{c^2}}}
+\end{align*}
+$$
 
 ## Result
 
-* All observers agree on the spacetime interval between two events.
-* In a sense, this is the special relativity version of our everyday notion of distance: [an interval we can all agree on despite our different coordinate systems.]{.fragment}
+* If $F'$ has velocity $v$ relative to $F$, and $F''$ has velocity $u'$ relative to $F'$, then the velocity of $F''$ relative to $F$ is $u=\frac{u'+v}{1+\frac{u'v}{c^2}}$.
 
-# Causality
+## Result
 
-## When can one event _influence_ another?
+::: {.columns}
+:::: {.column .fragment}
 
-* True or false: [If event $A$ happens before event $B$ (according to some observer), then it's definitely _possible_ that $A$ might have caused $B$ to happen.]{.fragment}
-* False! [Ex: If $B$ happens one second after $A$, but $A$ and $B$ are two light-seconds apart, then $A$ could not have influenced $B$, as a photon emitted from $A$ would have arrived at the location of $B$ after $B$ had happened.]{.fragment}
-* Conclusion: Not everything that happens before an event $E$ can influence $E$ — it needs to have happened sufficiently close to $E$.
+![Velocity Addition, Naive](/images/5/velocity_addition_bad.png)
 
-## Is causality relative?
+::::
 
-* Q: Do all observers agree on causality?
-* Meaning: Frame $F$ says that $A$ caused $B$, e.g. I hit a home run ($A$) and the ball broke someone’s window ($B$). [Must another frame $F'$ agree that the ball I hit broke their window,]{.fragment} [or could $F'$ think that my home run and the broken window were unrelated?]{.fragment}
-* Remember: In general, $F$ and $F'$ don't even necessarily agree on the order in which events happen!
-* Might it be possible that $F'$ thinks that a ball broke the window, and then, unrelated — perhaps even later! — I hit a home run?
+:::: {.column .fragment}
 
-## No!
+![Velocity Addition, Actual](/images/5/velocity_addition.png)
 
-* Let's frame this in terms of spacetime intervals.
-* For one event to (maybe) have caused/influenced another, the spacetime interval must be... [nonnegative.]{.fragment}
-	* Because $(\Delta s)^2=(c\Delta t)^2-(\Delta x)^2$.
-	* Photons always traverse an interval of $(\Delta s)^2=0$.
-	* Massive objects travel at $v<c$, which means $\Delta x<c\Delta t$, which means $(\Delta s)^2>0$.
-
-## We can agree on causality
-
-* But remember, everyone agrees on spacetime intervals!
-* So if one observer says that $(\Delta s)^2>0$, all observers agree — and therefore there is a causal link.
-* Conclusion: causality is _not_ relative — all observers agree.
-
-## Spacetime intervals revisited
-
-* We can classify spacetime intervals as follows:
-
-::: {.fragment}
-|       Sign       | Causal connection             | Separation terminology |
-| :--------------: | ----------------------------- | ---------------------- |
-| $(\Delta s)^2>0$ | Connected by a massive object | Timelike               |
-| $(\Delta s)^2=0$ | Connected by a photon         | Lightlike              |
-| $(\Delta s)^2<0$ | Disconnected                  | Spacelike              |
-:::
-
-::: {.notes}
-Rationale: timelike = separated more by time than by space (close enough for causal link). Spacelike = separated more by space than by time (too far for causal link).
-:::
-
-## Spacetime diagrams
-
-* Note: causality is a stronger condition than happens-before. [Just because something happens in the future does not mean it happens in the _causal_ future.]{.fragment}
-* Just because $A$ occurs before $B$ does not mean $A$ may have caused $B$.
-* How does this appear on our good friend, the spacetime diagram?
-
-## Light cones
-
-![SVG version: K. Aainsqatsi at en.wikipedia Original PNG version: Stib at en.wikipedia, CC BY-SA 3.0 <http://creativecommons.org/licenses/by-sa/3.0/>, via Wikimedia Commons](/images/6/World_line.svg)
-
-## Light cones
-
-* Relative to a given event $E$, all other events can be one of five types, based on where they fall relative to the light cone:
-
-## Spacetime diagrams
-
-1. _On_ the future light cone: a photon sent from $E$ could affect this event.
-1. _Inside_ the future light cone: a massive object sent from $E$ could affect this event.
-1. _On_ the past light cone: a photon sent from this event could affect $E$.
-1. _Inside_ the past light cone: a massive object sent from this event could affect $E$.
-1. _Outside_ either light cone: events that can neither affect nor be affected by $E$.
-
-
-## The relativity of simultaneity
-
-* Recall that in the “relativity of simultaneity” experiment, a photon was sent from the middle of the train to the clocks at either end of the train.
-* In the train’s own frame, the clocks are separated by $\Delta x=L$, and the photons strike them simultaneously [($\Delta t=0$),]{.nowrap} resulting in a negative (spacelike) spacetime interval, which all observers agree on.
-* Therefore, the events of the photons striking the clocks cannot be causally related — neither is in the other’s causal future!
-
-## The relativity of simultaneity
-
-* This is the only way it is possible for observers to disagree on the order in which the photons strike the two clocks.
-	* A person on the train says the photons reach the front clock and back clock simultaneously.
-	* A person moving in one direction observes the photon reach the back clock before the front clock.
-	* A person moving in the other direction observes the photon reach the front clock before the back clock.
-
-## The relativity of simultaneity
-
-* All three are possible precisely because the spacetime interval is negative — in the train’s frame, and therefore in every frame.
-* Compare to the example of my home run breaking the window — [evidently, the breaking of the window was in the causal future of my hitting the baseball, which all observers agree on.]{.fragment}
-	* The spacetime interval was positive (it was traversed by a massive object), [so _all_ observers say I hit the ball before the window broke.]{.fragment}
-
-## Spacetime diagram
-
-::: {.r-stack}
-
-<iframe src="../special-relativity-lessons/lesson-6/SpacetimeDiagramLightCones" width="1400" height="600" frameborder="true" ></iframe>
+::::
 
 :::
 
-## Special topic: causality and gravity
+## Observations
 
-* Suppose that the Sun simply vanished. [How long would it take for the Earth to notice?]{.fragment}
-* Newton’s equation for the force of gravity between two objects with masses $m_1$ and $m_2$, separated by a distance $r$:
+* $F'$ is traveling at $v=0.9c$ relative to $F$. $F''$ is traveling at $u'=0.9c$ relative to $F'$. [What is the speed $u$ of $F''$ relative to $F$?]{.fragment}
+* Naively: $u=u'+v=1.8c>c$ — bad!
+* Actually: $u=\frac{u'+v}{1+\frac{u'v}{c^2}}=\frac{1.8c}{1+0.81}\approx 0.994c<c$ — good!
 
-  ::: {.fragment}
-  $$
-  F=G\frac{m_1m_2}{r^2}
-  $$
-  :::
+## Observations
 
-* Meaning: the force is proportional to each mass in question and inversely proportional to the square of the distance between them.
+* $F'$ is traveling at $v=100\,\textrm{m/s}$ relative to $F$. $F''$ is traveling at $u'=100\,\textrm{m/s}$ relative to $F'$. [What is the speed $u$ of $F''$ relative to $F$?]{.fragment}
+* Naively: $u=u'+v=200\,\textrm{m/s}$.
+* Actually: $u=\frac{u'+v}{1+\frac{u'v}{c^2}}=200\,\textrm{m/s}\class{fragment}{{}-2.225\times 10^{-11}\,\textrm{m/s}.}$
 
-## Special topic: causality and gravity
 
-* Once the Sun is plucked out of the sky, the spot where it used to be will have zero mass.
-* And so (according to Newton) the gravitational force on the Earth would drop to zero _immediately_.
-* This is less time than it takes the Sun’s light to reach us (roughly eight minutes), violating causality — [we would have been informed of the Sun’s disappearance before its photons reached us.]{.fragment}
-* In particular, as the spacetime interval is spacelike, an observer might see us careen off into space _before_ they see the Sun disappear — impossible!
+## Observations
 
-## Special topic: causality and gravity
+* $F'$ emits a photon in the $+x$ direction. What is its speed $u$ relative to $F$?
+	* Now, $u'=c$
+* $u=\frac{c+v}{1+\frac{cv}{c^2}}=\frac{c^2(c+v)}{c^2+cv}=\frac{c^2(c+v)}{c(c+v)}=c$.&nbsp;
+	* Phew! (It didn't matter what $v$ was.)
 
-* Einstein realized that this was a significant flaw in Newton’s theory of gravity, and developed general relativity in part to fix it.
-	* While Newton would have been aware that the speed of light is finite, he probably saw no reason that the speed of light should be a universal speed limit.
-* In GR, changes to the gravitational field propagate (as gravitational waves) at the speed of light, preserving causality.
+## Observations
+
+* $F'$ emits a photon in the $-x$ direction. What is its speed $u$ relative to $F$?
+	* Now, $u'=-c$
+* $u=\frac{-c+v}{1+\frac{-cv}{c^2}}=\frac{c^2(-c+v)}{c^2-cv}=\frac{c^2(-c+v)}{c(c-v)}=-c$.&nbsp;
+	* Phew! (It didn't matter what $v$ was.)
 
 ## Conclusion
 
-* All observers agree on the spacetime interval between two events.
-* _Therefore causality is not relative_: if one observer says one event (might have) caused another, then all observers agree.
-* Two events are causally related if and only if all observers agree that the cause occurred before the effect.
-* Two events are causally unrelated if and only if it's possible to observe any chronological ordering of those events.
+* We can now deal with three (and, by repeating this process, arbitrarily many) frames in relative motion.
+* The velocity addition formula handles both massive objects and photons equivalently.
+* No amount of velocity addition can get something to appear to travel faster than light.
+	* Challenge: show that $\frac{u'+v}{1+\tfrac{u'v}{c^2}}$ is indeed at most $c$ for all $0\le u',v\le c$.
