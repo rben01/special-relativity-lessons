@@ -11,7 +11,7 @@ Slides are built using [Reveal.js](https://revealjs.com). To view a slideshow’
 
 * [Lesson 0: Why Relativity?](lessons/lesson-0.html)
 * [Lesson 1: The Basics of Relativity](lessons/lesson-1.html)
-
+* [Lesson 2: Time Dilation](lessons/lesson-2.html)
 
 [q]: # "\* [Lesson 2: Time Dilation](lessons/lesson-2.html)"
 [w]: # "\* This lesson was covered over two classes and talked about both the axioms of relativity and time dilation."
