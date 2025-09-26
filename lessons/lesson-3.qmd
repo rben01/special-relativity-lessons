@@ -1,5 +1,5 @@
 ---
-title: "Lesson 2: Length Contraction"
+title: "Lesson 3: Length Contraction"
 format: revealjs
 title-slide-attributes:
   data-notes: |
@@ -21,7 +21,8 @@ title-slide-attributes:
 
 * Unsurprisingly, if the passage of time changes for observers in relative motion, [and speed (of light) is distance divided by time,]{.fragment} [and the speed of light is constant for all observers,]{.fragment} [then distance should change too.]{.fragment}
 * By how much?
-* Say we wanted to measure the length of a train whizzing by us at speed $v$. [What would we measure its length to be?]{.fragment}
+* Say we wanted to measure the length of a train with _rest length_ $L$ whizzing by us at speed $v$. [What would we measure its length to be?]{.fragment}
+  * Meaning that someone at rest with respect to the train perceives it as having length $L$.
 
 ::: {.notes}
 For the speed of light to remain constant (with respect to a given frame), either neither or both of space and time must change. Our intuition says that the speed of light is constant with respect to a universal background frame, and neither space nor time change. But in reality the speed of light is constant with respect to each and every observer, and that leads to time changing, which requires that space change as well.
@@ -30,7 +31,7 @@ For the speed of light to remain constant (with respect to a given frame), eithe
 ## Challenges
 
 * Maybe I want to measure the train by running alongside it with a ruler or tape measure... [why wouldn't this work?]{.fragment}
-* Your turn: devise an experiment _whose outcome we can already predict_ that would yield the length of the train according to the platform observer.
+* Your turn: devise a thought experiment _whose outcome we can already predict_ that will tell us the length of the train according to the platform observer.
 
 
 ::: {.notes}
@@ -51,8 +52,7 @@ _Pause for a bit here and really let them think. If they want to use light as a 
 
 ## The method
 
-* Suppose the train has a _rest length_ of $L$:
-	* Meaning that someone at rest with respect to the train perceives it as having length $L$.
+* Suppose the train has a rest length of $L$.
 * What will _we_ measure $\Delta t$ to be?
 * Naively, we'd simply expect to measure $\Delta t=\frac{L}{v}$. [But, unsurprisingly, this is not the case.]{.fragment}
 
@@ -156,7 +156,7 @@ Importantly, this could be verified by a third party in the same frame and equid
 * Each clock has its initial time set to $d/c$, where $d$ is its distance from Alice.
 * Alice sends out a spherical pulse of light.
 * Each clock is started when the pulse reaches it.
-* Conclusion: we can talk about the times of events at arbitrary points in space (in our reference frame).
+* So we can talk about the times of events at arbitrary points in space (in our reference frame)! [Just put an observer at the points, have them observe the events, and then reconvene afterwards.]{.fragment}
 
 ## Synchronized clocks
 
