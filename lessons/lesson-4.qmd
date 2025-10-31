@@ -1,5 +1,5 @@
 ---
-title: "Lesson 3: Simultaneity"
+title: "Lesson 4: Simultaneity"
 format: revealjs
 ---
 
@@ -60,7 +60,7 @@ format: revealjs
 
 * Everyone agrees that the forward-moving and backward-moving photons have the same speed...
 * but to those on the platform, the front of the train is moving _away_ from the forward-moving photon,
-* and the back of the train is moving _towards_ the forward moving photon,
+* and the back of the train is moving _towards_ the backward- moving photon,
 * and so platform observers will see Beth stop her clock before Frank!
 * Takeaway 1: Events simultaneous in one frame are not simultaneous in other frames!
 
@@ -70,7 +70,7 @@ format: revealjs
 * and they both read the same value when they stop,
 * and they stop at different times,
 * they must not have been in sync to begin with!
-* Takeaway 2: Clocks synchronized in one frame are not synchronized in other frames! [Whose clock is ahead?]{.fragment}
+* Takeaway 2: Clocks synchronized in one frame are not synchronized in other frames! [According to observers on the platform, whose clock is ahead?]{.fragment}
 
 ::: {.notes}
 Beth’s, because the photon reached her first
@@ -158,9 +158,9 @@ $$
 
 ## Exercise (5–10 min)
 
-* A rocket ship of (rest) length $L$ is traveling at speed $v$.
+* A rocket ship of (rest) length $L$ is traveling at speed $+v$ (to the right).
 * At $t=0$, its rear clock is next to us (at $x=0$), also reading $t'_\textrm{rear}=0$.
-* When its front clock reads $t'_\textrm{front}=0$, it sends us a photon.
+* When its front clock reads $t'_\textrm{front}=0$, a photon is emitted towards us (traveling left) from the front of the rocket ship.
 * When will the photon arrive?
 * Answer: $L\gamma(\frac{v+c}{c^2})$ (but you have to prove it!)
 
