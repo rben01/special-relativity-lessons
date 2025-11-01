@@ -95,6 +95,12 @@ Beth’s, because the photon reached her first
 
 ## Calculating the time difference
 
+From the platform perspective, Frank and his photon (blue) collide at a later time than Beth and her photon (yellow), indicating that the photons do not arrive at the ends of the train simultaneously.
+
+![The positions (𝑥) of Frank, Beth, and their photons over time (𝑡), from the perspective of the platform](/images/4/simultaneity.svg)
+
+## Calculating the time difference
+
 * Supposing we're on the platform, right next to Larry when he turns on the lightbulb, then:
 * The time when Frank and his photon meet is given by [$0+ct_F=+\frac{L}{2\gamma}+vt_F$]{.fragment} [$\Rightarrow t_F=\frac{L}{2\gamma(c-v)}$.]{.fragment}
 * The time when Beth and her photon meet is given by [$0-ct_B=-\frac{L}{2\gamma}+vt_B$]{.fragment} [$\Rightarrow t_B=\frac{L}{2\gamma(c+v)}$.]{.fragment}
