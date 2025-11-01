@@ -167,7 +167,7 @@ $$
 * A rocket ship of (rest) length $L$ is traveling at speed $+v$ (to the right).
 * At $t=0$, its rear clock is next to us (at $x=0$), also reading $t'_\textrm{rear}=0$.
 * When its front clock reads $t'_\textrm{front}=0$, a photon is emitted towards us (traveling left) from the front of the rocket ship.
-* When will the photon arrive?
+* When will the photon reach us?
 * Answer: $L\gamma(\frac{v+c}{c^2})$ (but you have to prove it!)
 
 ## Solution 1 (our perspective)
