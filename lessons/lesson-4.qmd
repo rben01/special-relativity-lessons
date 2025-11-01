@@ -164,11 +164,11 @@ $$
 
 ## Exercise (5–10 min)
 
-* A rocket ship of (rest) length $L$ is traveling at speed $+v$ (to the right).
+* A rocket ship of (rest) length $L$ is traveling at speed $+v$ (to the right). In its frame, its clocks are in sync.
 * At $t=0$, its rear clock is next to us (at $x=0$), also reading $t'_\textrm{rear}=0$.
 * When its front clock reads $t'_\textrm{front}=0$, a photon is emitted towards us (traveling left) from the front of the rocket ship.
 * When will the photon reach us?
-* Answer: $L\gamma(\frac{v+c}{c^2})$ (but you have to prove it!)
+* Answer: $\frac{L}{c}\sqrt{\frac{1+v/c}{1-v/c}}$ (but you have to prove it!)
 
 ## Solution 1 (our perspective)
 
@@ -182,24 +182,12 @@ $$
 
 $$
 \begin{align*}
-\frac{L}{\gamma}+L\gamma\frac{v^2}{c^2}&\class{fragment}{{}=\frac{L}{\gamma}\left(1+\frac{\gamma^2 v^2}{c^2}\right)}\\
-&\class{fragment}{{}=\frac{L}{\gamma}\left(1+\frac{v^2}{c^2(1-(v/c)^2)}\right)}\\
-&\class{fragment}{{}=\frac{L}{\gamma}\left(1+\frac{v^2}{c^2-v^2}\right)}\\
-&\class{fragment}{{}=\frac{L}{\gamma}\left(\frac{(c^2-v^2)+v^2}{c^2-v^2}\right)}\\
+\frac{L}{\gamma}+L\gamma\frac{v^2}{c^2}&\class{fragment}{{}=L\gamma\left(\frac{1}{\gamma^2}+\frac{v^2}{c^2}\right)}\\
+&\class{fragment}{{}=L\gamma\left(\left(1-\tfrac{v^2}{c^2}\right)+\frac{v^2}{c^2}\right)}\\
+&\class{fragment}{{}=L\gamma}
 \end{align*}
 $$
 
-## Solution 1 (our perspective)
-
-$$
-\begin{align*}
-\frac{L}{\gamma}+L\gamma\frac{v^2}{c^2}&=\frac{L}{\gamma}\left(\frac{(c^2-v^2)+v^2}{c^2-v^2}\right)\\
-&\class{fragment}{{}=\frac{L}{\gamma}\left(\frac{c^2}{c^2-v^2}\right)}\\
-&\class{fragment}{{}=\frac{L}{\gamma}\left(\frac{1}{1-(v/c)^2}\right)}\\
-&\class{fragment}{{}=\frac{L}{\gamma}\gamma^2}\\
-&\class{fragment}{{}=L\gamma}\\
-\end{align*}
-$$
 
 ## Solution 1 (our perspective)
 
@@ -210,10 +198,22 @@ $$
 $$
 \begin{align*}
 t_\textrm{emit}+t_\textrm{photon}&=\frac{L\gamma v}{c^2}+\frac{L\gamma}{c}\\
-&=L\gamma\left(\frac{v+c}{c^2}\right)
+&=\frac{L\gamma}{c}\left(\frac{v}{c}+1\right)
 \end{align*}
 $$
+
+* Simplifying...
 :::
+
+## Solution 1 (our perspective)
+
+$$
+\begin{align*}
+\frac{L\gamma}{c}\left(\frac{v}{c}+1\right)&\class{fragment}{{}=\frac{L}{c}\left(\frac{1+v/c}{\sqrt{1-(v/c)^2}}\right)}\\
+&\class{fragment}{{}=\frac{L}{c}\left(\frac{\left(\sqrt{1+v/c}\right)^2}{\left(\sqrt{1-v/c}\right)\left(\sqrt{1+v/c}\right)}\right)}\\
+&\class{fragment}{{}=\frac{L}{c}\sqrt{\frac{1+v/c}{1-v/c}}}
+\end{align*}
+$$
 
 ## Solution 2 (ship perspective)
 
@@ -242,7 +242,7 @@ $$
 \frac{L}{\gamma(c-v)}&\class{fragment}{{}=\frac{L\sqrt{1-(v/c)^2}}{(c-v)}}\\
 &\class{fragment}{{}=\frac{L\sqrt{(1-v/c)(1+v/c)}}{c(1-v/c)}}\\
 &\class{fragment}{{}=\frac{L\sqrt{1+v/c}}{c\sqrt{1-v/c}}}\\
-&\class{fragment}{{}=\frac{L(1+v/c)}{c\sqrt{1-(v/c)^2}}}\class{fragment}{{}=L\gamma\left(\frac{v+c}{c^2}\right)}
+&\class{fragment}{{}=\frac{L}{c}\sqrt{\frac{1+v/c}{1-v/c}}}
 \end{align*}
 $$
 
