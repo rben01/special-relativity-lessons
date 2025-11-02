@@ -91,7 +91,7 @@ Beth’s, because the photon reached her first
 | Frank’s photon | $0$            | $c$  |
 | Beth’s photon | $0$            | $-c$  |
 
-* We want to find the times $t_F,t_B$ when the photons reach Frank and Beth.
+* We want to find the times $t_F,t_B$ when the photons reach Frank and Beth from the platform perspective.
 
 ## Calculating the time difference
 
