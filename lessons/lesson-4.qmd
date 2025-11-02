@@ -95,9 +95,7 @@ Beth’s, because the photon reached her first
 
 ## Calculating the time difference
 
-From the platform perspective, Frank and his photon (blue) collide at a later time than Beth and her photon (yellow), indicating that the photons do not arrive at the ends of the train simultaneously.
-
-![The positions (𝑥) of Frank, Beth, and their photons over time (𝑡), from the perspective of the platform](/images/4/simultaneity.svg)
+![The positions (𝑥) of Frank, Beth, and their photons over time (𝑡), from the perspective of the platform. Frank and his photon (blue) collide at a later time than Beth and her photon (yellow), indicating that from the platform perspective, the photons do not arrive at the ends of the train simultaneously. The time difference on the platform is indicated by the horizontal distance between the vertical white lines. What would this graph look like from the train’s perspective? What would this graph look like from the platform perspective if rather than traveling at $c$, the photons got a “boost” from the train?](/images/4/simultaneity.svg)
 
 ## Calculating the time difference
 
