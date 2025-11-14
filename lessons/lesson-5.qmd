@@ -1,5 +1,5 @@
 ---
-title: "Lesson 4: The Lorentz Transform"
+title: "Lesson 5: The Lorentz Transform"
 format: revealjs
 ---
 
@@ -42,7 +42,7 @@ format: revealjs
 ## The primed position component
 
 1. Length contraction: $F$ observes the distance between $O'$ and $x'$ to be $\frac{x'}{\gamma}$.
-1. At time $t$, $O'$ is at position $vt$.
+1. At time $t$, $O'$ is at position $x=vt$.
 1. So at time $t$, $F$ observes $x'$ at $x=vt+\frac{x'}{\gamma}$.
 1. Solve for $x'$: [$x'=\gamma(x-vt)$.]{.fragment}
 
