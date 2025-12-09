@@ -1,5 +1,5 @@
 ---
-title: "Lesson 5: Velocity Addition"
+title: "Lesson 6: Velocity Addition"
 format: revealjs
 title-slide-attributes:
   data-notes: ""
