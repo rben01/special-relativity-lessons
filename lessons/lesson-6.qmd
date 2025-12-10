@@ -56,6 +56,14 @@ $$
 
 ## Setup
 
+| Observer frame | Observed frame | Velocity | Given? |
+|------------------|--------------|----------|--------|
+| $F$ | $F'$ | $v$ | Yes |
+| $F'$ | $F''$ | $u'$ | Yes |
+| $F$ | $F''$ | $u$ | No, need to find from $v$ and $u'$ |
+
+## Setup
+
 ![](/images/5/velo-add-1.svg){fig-align="center"}
 
 ## Part 1: The strategy
