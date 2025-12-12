@@ -166,4 +166,4 @@ $$
 
 * “Paradoxes” simply are not possible within the theory of relativity.
 * If something looks paradoxical, it's probably because you're asking a non-relativistic question to begin with.
-* While two observers need not see the same thing, everyone agrees on what everyone else sees.
+* If two observers’ perspectives disagree, it's because they're not looking at two events at the same place at the same time.
