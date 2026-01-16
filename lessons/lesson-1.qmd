@@ -122,7 +122,7 @@ _Ask for thumbs up: “who's seen the Cartesian plane before?”_
 
 ## Reference frames
 
-* We'll generally restrict ourselves to just one spatial dimension, so coordinates will look like $(t, x)$. [In two spatial dimensions, they'd look like $(t, x, y)$.]{.fragment} [An _event_ is just a point in this coordinate system: a point in time at a given location.]{.fragment}
+* We'll generally restrict ourselves to just one spatial dimension, so coordinates will look like $(t, x)$, with $x$ increasing as you go right and decreasing as you go left. [In two spatial dimensions, they'd look like $(t, x, y)$.]{.fragment} [An _event_ is just a point in this coordinate system: a point in time at a given location.]{.fragment}
 
 ::: {.fragment}
 [![Stigmatella aurantiaca, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons](/images/1/Observer_in_special_relativity.svg){fig-align=center width=900}](https://commons.wikimedia.org/wiki/File:Observer_in_special_relativity.svg)
