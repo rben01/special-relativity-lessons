@@ -80,7 +80,7 @@ Let's say an event happens one light second away from me, and I observe its ligh
 * What happens when the train reaches the tunnel: [does it crash or fly through?]{.fragment}
 * The tunnel and train must agree, but they don't — contradiction!
 
-## Exercise (5–10 minutes)
+<!-- ## Exercise (5–10 minutes)
 
 * A space probe will be sent to Io to record some data.
 * The probe travels from Earth at a constant speed of $\frac{4}{5}c$. According to a clock on the probe, at this speed it takes ten hours to travel from Earth to Io.
@@ -103,7 +103,7 @@ Also, as stated, the space probe is launched, but if it makes you feel better yo
 
 * For the probe to travel that distance would take $t_1=l/v=\frac{(40/3)\,\textrm{hrs}\cdot c}{(4/5)\,c}=\frac{50}{3}\,\textrm{hrs}$.
 * For the photon to travel that distance would take $t_2=l/c=\frac{(40/3)\,\textrm{hrs}\cdot c}{c}=\frac{40}{3}\,\textrm{hrs}$.
-* And so the total time is $t_1+t_2=\frac{90}{3}\,\textrm{hrs}=30\,\textrm{hrs}$.
+* And so the total time is $t_1+t_2=\frac{90}{3}\,\textrm{hrs}=30\,\textrm{hrs}$. -->
 
 ## Special topic: muons
 
