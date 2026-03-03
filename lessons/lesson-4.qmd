@@ -15,6 +15,21 @@ format: revealjs
 
 * What is the challenge of having observers at different locations discuss their findings?
 
+
+## Homework
+
+* A space probe will be sent to Io to record some data.
+* The probe travels from Earth at a constant speed of $\frac{4}{5}c$. According to a clock on the probe, at this speed it takes ten hours to travel from Earth to Io.
+* When the probe arrives at Io, it sends a single photon back to Earth to let us know it arrived safely.
+* Q: According to us on Earth, how many hours after the probe leaves Earth should we expect the photon to arrive?
+
+::: {.notes}
+We mentioned before that there is no such thing as a truly inertial reference frame in our universe, but here, assume that the Earth and Io are stationary relative to each other and are not accelerating.
+
+Also, as stated, the space probe is launched, but if it makes you feel better you can imagine that it's always been traveling at (4/5)c and that ten hours starts when it passes by Earth.
+:::
+
+
 # The relativity of simultaneity
 
 ## Simultaneity

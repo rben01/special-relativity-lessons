@@ -80,30 +80,6 @@ Let's say an event happens one light second away from me, and I observe its ligh
 * What happens when the train reaches the tunnel: [does it crash or fly through?]{.fragment}
 * The tunnel and train must agree, but they don't — contradiction!
 
-<!-- ## Exercise (5–10 minutes)
-
-* A space probe will be sent to Io to record some data.
-* The probe travels from Earth at a constant speed of $\frac{4}{5}c$. According to a clock on the probe, at this speed it takes ten hours to travel from Earth to Io.
-* When the probe arrives at Io, it sends a single photon back to Earth to let us know it arrived safely.
-* Q: According to us on Earth, how many hours after the probe leaves Earth should we expect the photon to arrive?
-
-::: {.notes}
-We mentioned before that there is no such thing as a truly inertial reference frame in our universe, but here, assume that the Earth and Io are stationary relative to each other and are not accelerating.
-
-Also, as stated, the space probe is launched, but if it makes you feel better you can imagine that it's always been traveling at (4/5)c and that ten hours starts when it passes by Earth.
-:::
-
-## Solution
-
-* The probe travels for $t'=10\,\textrm{hrs}$ at $v=\frac{4}{5}c$, so it perceives the distance between Earth and Io to be $l'=t'v=10\,\textrm{hrs}\cdot \frac{4}{5}c$.
-* But the probe perceives the distance between Earth and Io (which are moving relative to it) as length-contracted.
-  * Earth observers would see that same distance as $l=l'\gamma=10\,\textrm{hrs}\cdot \frac{4}{5}c\cdot \frac{5}{3}=\frac{40}{3}\,\textrm{hrs}\cdot c$.
-
-## Solution
-
-* For the probe to travel that distance would take $t_1=l/v=\frac{(40/3)\,\textrm{hrs}\cdot c}{(4/5)\,c}=\frac{50}{3}\,\textrm{hrs}$.
-* For the photon to travel that distance would take $t_2=l/c=\frac{(40/3)\,\textrm{hrs}\cdot c}{c}=\frac{40}{3}\,\textrm{hrs}$.
-* And so the total time is $t_1+t_2=\frac{90}{3}\,\textrm{hrs}=30\,\textrm{hrs}$. -->
 
 ## Special topic: muons
 
