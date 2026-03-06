@@ -16,11 +16,11 @@ import Layout from "../../layouts/Layout.astro";
 			max={0.95}
 			label="\\(\\beta\\)"
 		/>
-		<Slider id="x" class="below" value={0} min={-5} max={5} label="\\(x\\)" />
 		<Slider id="ct" class="below" value={0} min={-5} max={5} label="\\(ct\\)" />
+		<Slider id="x" class="below" value={0} min={-5} max={5} label="\\(x\\)" />
 		<span style="display:inline-block;height:10px"></span><span></span>
-		<NumericValue id="xp" value={0} label="\\(x'\\)" /><span></span>
-		<NumericValue id="ctp" value={0} label="\\(ct'\\)" />
+		<NumericValue id="ctp" value={0} label="\\(ct'\\)" /><span></span>
+		<NumericValue id="xp" value={0} label="\\(x'\\)" />
 	</div>
 </Layout>
 
@@ -80,12 +80,12 @@ import Layout from "../../layouts/Layout.astro";
 		.marker("end", arrowheadMain);
 
 	draw
-		.text("𝑥")
+		.text("𝑐𝑡")
 		.font(axisLabelFont)
 		.ax(`${xScale(0.9 * X_MAX)}`)
 		.ay(`${yScale(-0.1 * X_MAX)}`);
 	draw
-		.text("𝑐𝑡")
+		.text("𝑥")
 		.font(axisLabelFont)
 		.ax(`${xScale(-0.075 * X_MAX)}`)
 		.ay(`${yScale(0.875 * X_MAX)}`);
@@ -102,8 +102,8 @@ import Layout from "../../layouts/Layout.astro";
 		.stroke({ ...axisStroke, color: primeColor })
 		.marker("end", arrowheadSecondary);
 
-	const xPrimeLabel = draw.text("𝑥′").font({ ...axisLabelFont, fill: primeColor });
-	const yPrimeLabel = draw.text("𝑐𝑡′").font({ ...axisLabelFont, fill: primeColor });
+	const xPrimeLabel = draw.text("𝑐𝑡′").font({ ...axisLabelFont, fill: primeColor });
+	const yPrimeLabel = draw.text("𝑥′").font({ ...axisLabelFont, fill: primeColor });
 
 	const [spaceSlice, timeSlice] = [0, 1].map(() =>
 		draw.line(0, 0, 0, 0).stroke({ width: 2, color: eventColor, opacity: 0.9 }),
@@ -122,6 +122,7 @@ import Layout from "../../layouts/Layout.astro";
 		const dashLength = (xScale(1) - xScale(0)) * axisLengthScale;
 		const dashOffset = dashLength / 2;
 
+		// x' and ct' axes (blue)
 		for (const { axis, points } of [
 			{
 				axis: xPrimeAxis,
@@ -183,21 +184,21 @@ import Layout from "../../layouts/Layout.astro";
 		const x = +(document.getElementById("x")! as HTMLInputElement).value;
 		const ct = +(document.getElementById("ct")! as HTMLInputElement).value;
 
-		mainPoint.cx(xScale(x)).cy(yScale(ct));
+		mainPoint.cx(xScale(ct)).cy(yScale(x));
 
 		spaceSlice.plot([
-			[xScale(x), yScale(ct)],
+			[xScale(ct), yScale(x)],
 			[
-				xScale((beta * (beta * x - ct)) / (beta ** 2 - 1)),
-				yScale((beta * x - ct) / (beta ** 2 - 1)),
+				xScale((beta * x - ct) / (beta ** 2 - 1)),
+				yScale((beta * (beta * x - ct)) / (beta ** 2 - 1)),
 			],
 		]);
 
 		timeSlice.plot([
-			[xScale(x), yScale(ct)],
+			[xScale(ct), yScale(x)],
 			[
-				xScale((beta * ct - x) / (beta ** 2 - 1)),
-				yScale((beta * (beta * ct - x)) / (beta ** 2 - 1)),
+				xScale((beta * (beta * ct - x)) / (beta ** 2 - 1)),
+				yScale((beta * ct - x) / (beta ** 2 - 1)),
 			],
 		]);
 	}

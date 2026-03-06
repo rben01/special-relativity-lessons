@@ -9,7 +9,7 @@ format: revealjs
 
 * Time dilation: [a clock in motion appears to tick slower by a factor of $\gamma$]{.fragment}
 * Length contraction: [an object in motion appears contracted along its direction of motion by a factor of $\gamma$]{.fragment}
-* Relativity of simultaneity: [if two clocks are synchronized in their own frame, and separated by a distance $L$ in the direction of their motion, the front clock appears to lag behind the rear clock by $\frac{Lv}{c^2}$ (“leading clocks lag”)]{.fragment}
+* Relativity of simultaneity: [if two clocks are synchronized in their own frame, and separated by a rest distance $L$ in the direction of their motion, the front clock appears to lag behind the rear clock by $\frac{Lv}{c^2}$ (“leading clocks lag”)]{.fragment}
 
 # The Lorentz transform
 
@@ -159,6 +159,8 @@ $$
 * Then $t'=\gamma\left(t-\frac{v(L/\gamma)}{c^2}\right)=-\frac{vL}{c^2}$.
 * Great! The leading clock does indeed lag behind the origin by $\frac{vL}{c^2}$.
 
+<!--
+
 ## Io (5 min)
 
 * A space probe will be sent to Io to record some data.
@@ -191,6 +193,7 @@ Use the Lorentz transform!
 * The time it takes the photon to reach Earth from Io is $\frac{x}{c}=\frac{40}{3}\,\textrm{hrs}$.
 * Just add: $t_{\textrm{total}}=\left(\frac{40}{3}+\frac{50}{3}\right)\,\textrm{hrs}=30\,\textrm{hrs}$.
 
+ -->
 
 ## The speed of light
 
@@ -217,10 +220,11 @@ $$
 
 * We now have a rote, mindless way to convert between different frames’ coordinates.
 * Furthermore, the Lorentz transform is “just” a pair of linear equations, of the form $x'=Ax+Bt$ and $t'=Cx+Dt$.
+* And, crucially, it preserves the speed of light.
 
 ## Conclusion
 
-* We can plot events on a graph with $x$ on the horizontal axis and $ct$ on the vertical axis. Ponder:
+* We can plot events on a graph with $ct$ on the horizontal axis and $x$ on the vertical axis. Ponder:
 	* What path do photons trace out on this graph? How does the path of a photon change from frame to frame? (Hint: it shouldn't change speed!)
    * In a given frame, simultaneous events lie on a horizontal line. What do those same events look like in a frame with relative velocity $v$?
 	* In a given frame, co-located events lie on a vertical line. What do those same events look like in a frame with relative velocity $v$?
