@@ -226,8 +226,8 @@ $$
 
 * We can plot events on a graph with $ct$ on the horizontal axis and $x$ on the vertical axis. Ponder:
 	* What path do photons trace out on this graph? How does the path of a photon change from frame to frame? (Hint: it shouldn't change speed!)
-   * In a given frame, simultaneous events lie on a horizontal line. What do those same events look like in a frame with relative velocity $v$?
-	* In a given frame, co-located events lie on a vertical line. What do those same events look like in a frame with relative velocity $v$?
+   * In a given frame, simultaneous events lie on a vertical line. What do those same events look like in a frame with relative velocity $v$?
+	* In a given frame, co-located events lie on a horizontal line. What do those same events look like in a frame with relative velocity $v$?
 
 ## Conclusion
 
