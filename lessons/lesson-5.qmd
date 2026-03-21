@@ -54,7 +54,7 @@ format: revealjs
 	* Negative! — because $F$ is, relatively, moving in the opposite direction.
 
 1. So at time $t'$, $F'$ observes $x$ at $x'=-vt'+\frac{x}{\gamma}$.
-1. Solve for $x$: [$x=\gamma(x'+vt)$.]{.fragment}
+1. Solve for $x$: [$x=\gamma(x'+vt')$.]{.fragment}
 1. Note: as we'd hope, the equations are the symmetric in unprimed and primed variables, with $v$ inverted.
 
 ## The primed time component
